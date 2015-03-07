@@ -78,7 +78,7 @@ boost库最好是从官网下预编译的，自己编的，在编mongoclient的�
     </p>
   <p class="article-time">
     <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-    Updated:<time datetime="2015-03-07T08:17:03.181Z" itemprop="dateModified">Mar 7 2015</time>
+    Updated:<time datetime="2015-03-07T08:21:48.139Z" itemprop="dateModified">Mar 7 2015</time>
     
   </p>
 </header>
@@ -97,7 +97,7 @@ boost库最好是从官网下预编译的，自己编的，在编mongoclient的�
 
 <p>mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件</p>
 <h2 id="Linux">Linux</h2>
-<p><a href="boost.md"><strong>编译boost</strong></a><br>—layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-1.0.0需要这种名字的库<br>-j4 并行编译</p>
+<p><strong><a href="boost.md">编译boost</a></strong><br>—layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-1.0.0需要这种名字的库<br>-j4 并行编译</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./b2 --with-chrono --with-date_time --with-regex --with-system --with-thread --build-type=complete --layout=tagged -j4 --prefix=/usr/local threading=multi install</div></pre></td></tr></table></figure>
 
 <p><strong>编译mongo-cxx-driver-legacy-1.0.0</strong><br>只能编动态库，静态库无法使用</p>

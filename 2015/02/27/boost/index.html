@@ -77,7 +77,7 @@
     </p>
   <p class="article-time">
     <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-    Updated:<time datetime="2015-03-07T08:10:31.518Z" itemprop="dateModified">Mar 7 2015</time>
+    Updated:<time datetime="2015-03-07T08:21:20.034Z" itemprop="dateModified">Mar 7 2015</time>
     
   </p>
 </header>
@@ -94,9 +94,9 @@
 
 <h2 id="Linux安装Boost">Linux安装Boost</h2>
 <p><strong>编译boost</strong><br>进入libs/config</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    bash configure</div><div class="line">    ``</div><div class="line">将当前目录生成的user.hpp拷贝到boost/config下，覆盖同名文件</div><div class="line"></div><div class="line">--layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-<span class="number">1.0</span>.<span class="number">0</span>需要这种名字的库</div><div class="line">-j4 并行编译</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> bash configure</div><div class="line"> ``</div><div class="line">将当前目录生成的user.hpp拷贝到boost/config下，覆盖同名文件</div><div class="line"></div><div class="line">--layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-<span class="number">1.0</span>.<span class="number">0</span>需要这种名字的库</div><div class="line">-j4 并行编译</div></pre></td></tr></table></figure>
 
-<p> bash<br>    ./b2 —with-chrono —with-date_time —with-regex —with-system —with-thread —build-type=complete —layout=tagged -j4 —prefix=/usr/local threading=multi install<br>    ```</p>
+<p> bash<br> ./b2 —with-chrono —with-date_time —with-regex —with-system —with-thread —build-type=complete —layout=tagged -j4 —prefix=/usr/local threading=multi install<br> ```</p>
   
 	</div>
 		<footer class="article-footer clearfix">
