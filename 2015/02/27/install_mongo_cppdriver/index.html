@@ -9,9 +9,9 @@
     
     <meta name="author" content="小雨">
     
-    <meta name="description" content="准备好boost, python2, scons
-mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件
-123打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题E:\">
+    <meta name="description" content="WIN32 准备好boost, python2, scons
+boost库最好是从官网下预编译的，自己编的，在编mongoclient的时候可能会出现种问题mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件
+打开 Visual S">
     
     
     
@@ -78,7 +78,7 @@ mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件
     </p>
   <p class="article-time">
     <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-    Updated:<time datetime="2015-03-04T14:37:16.373Z" itemprop="dateModified">Mar 4 2015</time>
+    Updated:<time datetime="2015-03-07T06:02:43.682Z" itemprop="dateModified">Mar 7 2015</time>
     
   </p>
 </header>
@@ -87,14 +87,22 @@ mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备好boost,_python2,_scons"><span class="toc-number">1.</span> <span class="toc-text">准备好boost, python2, scons</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#WIN32_准备好boost,_python2,_scons"><span class="toc-number">1.</span> <span class="toc-text">WIN32 准备好boost, python2, scons</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux"><span class="toc-number">2.</span> <span class="toc-text">Linux</span></a></li></ol>
 		</div>
 		
-		<h3 id="准备好boost,_python2,_scons">准备好boost, python2, scons</h3>
-<pre><code>mongo-client-install<span class="command">\include</span><span class="command">\mongo</span><span class="command">\client</span><span class="command">\autolib</span>.h 查看要哪个库文件
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">打开 Visual Studio <span class="number">2012</span> 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题</div><div class="line"></div><div class="line">E:\work\xbdg\program\dep\mongo-cxx-driver-legacy-<span class="number">1.0</span>.<span class="number">0</span>&gt;scons --prefix=E:\work\xbdg\program\dep\mongo-client-install --extrapath=E:\work\xbdg\program\dep\boost --disable-warnings-as-errors --<span class="number">32</span>  --dbg=on --msvc-version=<span class="number">11.0</span> install</div></pre></td></tr></table></figure>
+		<h3 id="WIN32_准备好boost,_python2,_scons">WIN32 准备好boost, python2, scons</h3>
+<p>boost库最好是从官网下预编译的，自己编的，在编mongoclient的时候可能会出现种问题<br>mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件</p>
+<p>打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;scons --prefix=E:\work\xbdg\program\dep\mongo-client-install --sharedclient --dynamic-windows --cpppath=E:\work\xbdg\program\dep\boost_1_57_0 --libpath=E:\work\xbdg\program\dep\boost_1_57_0\lib32-msvc-<span class="number">11.0</span> --disable-warnings-as-errors --<span class="number">32</span>  --dbg=off --msvc-version</div><div class="line">=<span class="number">11.0</span> install</div></pre></td></tr></table></figure>
 
 <p>mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件</p>
+<h3 id="Linux">Linux</h3>
+<p><strong>编译boost</strong><br>—layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-1.0.0需要这种名字的库<br>-j4 并行编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./b2 --with-chrono --with-date_time --with-regex --with-system --with-thread --build-type=complete --layout=tagged -j4 threading=multi</div></pre></td></tr></table></figure>
+
+<p><strong>编译mongo-cxx-driver-legacy-1.0.0</strong><br>只能编动态库，静态库无法使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scons --prefix=`<span class="built_in">pwd</span>`/../out --disable-warnings-as-errors --<span class="number">64</span>  --dbg=off -j4 --sharedclient --cpppath=`<span class="built_in">pwd</span>`/../boost_1_57_0 --libpath=`<span class="built_in">pwd</span>`/../boost_1_57_0/stage/lib --runtime-library-search-path=`<span class="built_in">pwd</span>`/../boost_1_57_0/stage/lib install</div></pre></td></tr></table></figure>
+
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -148,7 +156,7 @@ mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备好boost,_python2,_scons"><span class="toc-number">1.</span> <span class="toc-text">准备好boost, python2, scons</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#WIN32_准备好boost,_python2,_scons"><span class="toc-number">1.</span> <span class="toc-text">WIN32 准备好boost, python2, scons</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux"><span class="toc-number">2.</span> <span class="toc-text">Linux</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -159,6 +167,8 @@ mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件
 <div class="categorieslist">
 	<p class="asidetitle">Categories</p>
 		<ul>
+		
+			<li><a href="/categories/Linux系统/" title="Linux系统">Linux系统<sup>1</sup></a></li>
 		
 			<li><a href="/categories/程序库/" title="程序库">程序库<sup>2</sup></a></li>
 		
@@ -172,6 +182,8 @@ mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件
 		<ul class="clearfix">
 		
 			<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+		
+			<li><a href="/tags/linux-system-manage/" title="linux system manage">linux system manage<sup>1</sup></a></li>
 		
 			<li><a href="/tags/mongo/" title="mongo">mongo<sup>1</sup></a></li>
 		

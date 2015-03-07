@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>安装boost | Pretty Sunshine</title>
+    <title>Linux系统管理 | Pretty Sunshine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="小雨">
     
-    <meta name="description" content="1234打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题bootstrap.batbjam.exe --toolset=msvc-11.0 install --prefix=E:\work\xbdg\program\dep\boos">
+    <meta name="description" content="ulimit
+所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制例如打开文件数的限制可以在/etc/security/limits.conf加入
+12*               soft    nofile           640">
     
     
     
@@ -68,7 +70,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/install_boost/" title="安装boost" itemprop="url">安装boost</a>
+      <a href="/2015/02/27/linux_manage/" title="Linux系统管理" itemprop="url">Linux系统管理</a>
   </h1>
   <p class="article-author">By
     
@@ -76,7 +78,7 @@
     </p>
   <p class="article-time">
     <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-    Updated:<time datetime="2015-03-05T12:35:16.227Z" itemprop="dateModified">Mar 5 2015</time>
+    Updated:<time datetime="2015-03-07T06:04:06.318Z" itemprop="dateModified">Mar 7 2015</time>
     
   </p>
 </header>
@@ -85,10 +87,12 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ulimit"><span class="toc-number">1.</span> <span class="toc-text">ulimit</span></a></li></ol>
 		</div>
 		
-		<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">打开 Visual Studio <span class="number">2012</span> 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题</div><div class="line"></div><div class="line">bootstrap.bat</div><div class="line">bjam.exe --toolset=msvc-<span class="number">11.0</span> install --prefix=E:\work\xbdg\program\dep\boost</div></pre></td></tr></table></figure>
+		<h3 id="ulimit">ulimit</h3>
+<p>所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制<br>例如打开文件数的限制可以在/etc/security/limits.conf加入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*               soft    nofile           <span class="number">64000</span> </div><div class="line">*               hard    nofile           <span class="number">64000</span></div></pre></td></tr></table></figure>
 
   
 	</div>
@@ -96,20 +100,20 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/boost/">boost</a>
+  <span></span> <a href="/tags/linux-system-manage/">linux system manage</a>
   </div>
 
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/程序库/">程序库</a>
+  <a class="article-category-link" href="/categories/Linux系统/">Linux系统</a>
 </div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/02/27/install_boost/" data-title="安装boost | Pretty Sunshine" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/02/27/linux_manage/" data-title="Linux系统管理 | Pretty Sunshine" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -118,19 +122,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/02/27/linux_manage/" title="Linux系统管理">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  Linux系统管理</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/02/27/install_mongo_cppdriver/"  title="安装mongo cpp driver">
+<a href="/2015/02/27/install_boost/"  title="安装boost">
  <strong>NEXT:</strong><br/> 
- <span>安装mongo cpp driver
+ <span>安装boost
 </span>
 </a>
 </div>
@@ -143,7 +139,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ulimit"><span class="toc-number">1.</span> <span class="toc-text">ulimit</span></a></li></ol>
   </div>
 
 <div id="asidepart">
