@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>安装boost | Pretty Sunshine</title>
+    <title>boost | Pretty Sunshine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="小雨">
     
-    <meta name="description" content="1234打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题bootstrap.batbjam.exe --toolset=msvc-11.0 install --prefix=E:\work\xbdg\program\dep\boos">
+    <meta name="description" content="Win安装Boost
+1234打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题bootstrap.batbjam.exe --toolset=msvc-11.0 install --prefix=E:\work\xbdg\progr">
     
     
     
@@ -68,7 +69,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/install_boost/" title="安装boost" itemprop="url">安装boost</a>
+      <a href="/2015/02/27/boost/" title="boost" itemprop="url">boost</a>
   </h1>
   <p class="article-author">By
     
@@ -76,7 +77,7 @@
     </p>
   <p class="article-time">
     <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-    Updated:<time datetime="2015-03-05T12:35:16.227Z" itemprop="dateModified">Mar 5 2015</time>
+    Updated:<time datetime="2015-03-07T08:10:31.518Z" itemprop="dateModified">Mar 7 2015</time>
     
   </p>
 </header>
@@ -85,11 +86,17 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Win安装Boost"><span class="toc-number">1.</span> <span class="toc-text">Win安装Boost</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux安装Boost"><span class="toc-number">2.</span> <span class="toc-text">Linux安装Boost</span></a></li></ol>
 		</div>
 		
-		<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">打开 Visual Studio <span class="number">2012</span> 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题</div><div class="line"></div><div class="line">bootstrap.bat</div><div class="line">bjam.exe --toolset=msvc-<span class="number">11.0</span> install --prefix=E:\work\xbdg\program\dep\boost</div></pre></td></tr></table></figure>
+		<h2 id="Win安装Boost">Win安装Boost</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">打开 Visual Studio <span class="number">2012</span> 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题</div><div class="line"></div><div class="line">bootstrap.bat</div><div class="line">bjam.exe --toolset=msvc-<span class="number">11.0</span> install --prefix=E:\work\xbdg\program\dep\boost</div></pre></td></tr></table></figure>
 
+<h2 id="Linux安装Boost">Linux安装Boost</h2>
+<p><strong>编译boost</strong><br>进入libs/config</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    bash configure</div><div class="line">    ``</div><div class="line">将当前目录生成的user.hpp拷贝到boost/config下，覆盖同名文件</div><div class="line"></div><div class="line">--layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-<span class="number">1.0</span>.<span class="number">0</span>需要这种名字的库</div><div class="line">-j4 并行编译</div></pre></td></tr></table></figure>
+
+<p> bash<br>    ./b2 —with-chrono —with-date_time —with-regex —with-system —with-thread —build-type=complete —layout=tagged -j4 —prefix=/usr/local threading=multi install<br>    ```</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -109,7 +116,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/02/27/install_boost/" data-title="安装boost | Pretty Sunshine" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/02/27/boost/" data-title="boost | Pretty Sunshine" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -127,14 +134,6 @@
 </div>
 
 
-<div class="next">
-<a href="/2015/02/27/install_mongo_cppdriver/"  title="安装mongo cpp driver">
- <strong>NEXT:</strong><br/> 
- <span>安装mongo cpp driver
-</span>
-</a>
-</div>
-
 </nav>
 
 	
@@ -143,7 +142,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Win安装Boost"><span class="toc-number">1.</span> <span class="toc-text">Win安装Boost</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux安装Boost"><span class="toc-number">2.</span> <span class="toc-text">Linux安装Boost</span></a></li></ol>
   </div>
 
 <div id="asidepart">
