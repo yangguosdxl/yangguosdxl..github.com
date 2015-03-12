@@ -13,11 +13,10 @@
 模板是自动转义的，关闭转义
 Django模板为了防止XSS，缺省情况下会自动将HTML进行转义。
 有的时候我们确实想输出一些含有HTML代码的内容（比如Web编辑器产生的文章内容数据），如何关闭自动转义？方法1：使用
-过滤器。1 
+|safe``` 过滤器。1 
 
-
-
-12这样data的内容就会原样输出，不会被转义。请确保d">
+python  
+12这样data的内容就">
     
     
     
@@ -84,7 +83,7 @@ Django模板为了防止XSS，缺省情况下会自动将HTML进行转义。
     </p>
   <p class="article-time">
     <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-    Updated:<time datetime="2015-03-12T13:55:17.171Z" itemprop="dateModified">Mar 12 2015</time>
+    Updated:<time datetime="2015-03-12T13:56:38.899Z" itemprop="dateModified">Mar 12 2015</time>
     
   </p>
 </header>
@@ -100,14 +99,13 @@ Django模板为了防止XSS，缺省情况下会自动将HTML进行转义。
 <h2 id="模板是自动转义的，关闭转义">模板是自动转义的，关闭转义</h2>
 <p>Django模板为了防止XSS，缺省情况下会自动将HTML进行转义。</p>
 <p>有的时候我们确实想输出一些含有HTML代码的内容（比如Web编辑器产生的文章内容数据），如何关闭自动转义？<br>方法1：使用</p>
-<figure class="highlight |safe```"><figcaption><span>过滤器。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight python"><figcaption><span>|safe``` 过滤器。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
 
-
-
+<p>python  </p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">这样<span class="typedef"><span class="keyword">data</span>的内容就会原样输出，不会被转义。请确保<span class="keyword">data</span>中的数据不会产生<span class="type">XSS</span>。</span></div><div class="line">方法<span class="number">2</span>：通过</div></pre></td></tr></table></figure>
 
 <p>{ % autoescape off % }</p>
-<figure class="highlight 的方式关闭整段代码的自动转义。"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="escape">``</span><span class="escape">`</span></div><div class="line">    { <span class="var_expand">% autoescape off %</span> }</div><div class="line">        </div><div class="line">    { <span class="var_expand">% endautoescape %</span> }</div></pre></td></tr></table></figure>
+<figure class="highlight 的方式关闭整段代码的自动转义。"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="escape">``</span><span class="escape">`p</span>ython</div><div class="line">    { <span class="var_expand">% autoescape off %</span> }</div><div class="line">        </div><div class="line">    { <span class="var_expand">% endautoescape %</span> }</div></pre></td></tr></table></figure>
 
 <p><a href="http://www.redicecn.com/html/blog/Django/2012/0215/370.html" target="_blank" rel="external">转自</a></p>
   
