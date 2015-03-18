@@ -78,7 +78,7 @@ boost库最好是从官网下预编译的，自己编的，在编mongoclient的�
     </p>
   <p class="article-time">
     <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-    Updated:<time datetime="2015-03-18T15:45:38.729Z" itemprop="dateModified">Mar 18 2015</time>
+    Updated:<time datetime="2015-03-18T15:50:34.634Z" itemprop="dateModified">Mar 18 2015</time>
     
   </p>
 </header>
@@ -100,7 +100,7 @@ boost库最好是从官网下预编译的，自己编的，在编mongoclient的�
 <p><strong><a href="boost.md">编译boost</a></strong><br>—layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-1.0.0需要这种名字的库<br>-j4 并行编译</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./b2 --with-chrono --with-date_time --with-regex --with-system --with-thread --build-type=complete --layout=tagged -j4 --prefix=/usr/local threading=multi install</div></pre></td></tr></table></figure>
 
-<p><strong>编译mongo-cxx-driver-legacy-1.0.0</strong><br>只能编动态库，静态库无法使用,不用使用c++11编译，会出各种编译问题</p>
+<p><strong>编译mongo-cxx-driver-legacy-1.0.0</strong><br>只能编动态库，静态库无法使用,<strong>不用使用c++11编译，会出各种编译问题</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scons --prefix=/usr/local --disable-warnings-as-errors --<span class="number">64</span>  --dbg=off -j4 --sharedclient --cpppath=`<span class="built_in">pwd</span>`/../boost_1_57_0 --libpath=`<span class="built_in">pwd</span>`/../boost_1_57_0/stage/lib --runtime-library-search-path=`<span class="built_in">pwd</span>`/../boost_1_57_0/stage/lib install</div></pre></td></tr></table></figure>
 
 <h2 id="多线程安全"><a href="https://github.com/mongodb/mongo-cxx-driver/wiki/Library-Thread-Safety" target="_blank" rel="external">多线程安全</a></h2>
