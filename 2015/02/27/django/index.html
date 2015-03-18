@@ -84,7 +84,7 @@ Django模板为了防止XSS，缺省情况下会自动将HTML进行转义。
     </p>
   <p class="article-time">
     <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-    Updated:<time datetime="2015-03-18T15:53:46.373Z" itemprop="dateModified">Mar 18 2015</time>
+    Updated:<time datetime="2015-03-18T15:54:29.402Z" itemprop="dateModified">Mar 18 2015</time>
     
   </p>
 </header>
@@ -109,10 +109,10 @@ Django模板为了防止XSS，缺省情况下会自动将HTML进行转义。
 
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">{ { data|safe } }</div></pre></td></tr></table></figure>
 
 <p>这样data的内容就会原样输出，不会被转义。请确保data中的数据不会产生XSS。<br>方法2：关闭整段代码的自动转义。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">{ % autoescape off % }</div><div class="line">    </div><div class="line">{ % endautoescape % }</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">{ % autoescape off % }</div><div class="line">    { { data } }</div><div class="line">{ % endautoescape % }</div></pre></td></tr></table></figure>
 
 <p><a href="http://www.redicecn.com/html/blog/Django/2012/0215/370.html" target="_blank" rel="external">转自</a></p>
   
