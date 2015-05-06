@@ -4,14 +4,17 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>安装mongo cpp driver | Pretty Sunshine</title>
+    <title>unity3d | Pretty Sunshine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="小雨">
     
-    <meta name="description" content="WIN32 准备好boost, python2, scons
-boost库最好是从官网下预编译的，自己编的，在编mongoclient的时候可能会出现种问题mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件
-打开 Visual S">
+    <meta name="description" content="使用凹凸贴图
+Shader
+换装
+Unity3D 模型换肤技术Unity里的人物驱动/换装备/换武器/换衣服/动画重定位换装demo时美术遇到的问题详解
+挂点
+这是为了应付不同模型同一装备要挂在不同位置而提出的解决方法。如果整个工程只能一个角色模型，那也就只用固定的挂点了，而程序也不用知道这个挂点在">
     
     
     
@@ -70,7 +73,7 @@ boost库最好是从官网下预编译的，自己编的，在编mongoclient的�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/install_mongo_cppdriver/" title="安装mongo cpp driver" itemprop="url">安装mongo cpp driver</a>
+      <a href="/2015/02/27/unity3d/" title="unity3d" itemprop="url">unity3d</a>
   </h1>
   <p class="article-author">By
     
@@ -78,7 +81,7 @@ boost库最好是从官网下预编译的，自己编的，在编mongoclient的�
     </p>
   <p class="article-time">
     <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-    Updated:<time datetime="2015-03-23T08:26:57.272Z" itemprop="dateModified">Mar 23 2015</time>
+    Updated:<time datetime="2015-05-06T09:27:23.136Z" itemprop="dateModified">May 6 2015</time>
     
   </p>
 </header>
@@ -87,46 +90,42 @@ boost库最好是从官网下预编译的，自己编的，在编mongoclient的�
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WIN32_准备好boost,_python2,_scons"><span class="toc-number">1.</span> <span class="toc-text">WIN32 准备好boost, python2, scons</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux"><span class="toc-number">2.</span> <span class="toc-text">Linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程安全"><span class="toc-number">3.</span> <span class="toc-text">多线程安全</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用凹凸贴图"><span class="toc-number">1.</span> <span class="toc-text">使用凹凸贴图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shader"><span class="toc-number">2.</span> <span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#换装"><span class="toc-number">3.</span> <span class="toc-text">换装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#挂点"><span class="toc-number">3.1.</span> <span class="toc-text">挂点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刀光"><span class="toc-number">4.</span> <span class="toc-text">刀光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#着色器"><span class="toc-number">5.</span> <span class="toc-text">着色器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#地形"><span class="toc-number">6.</span> <span class="toc-text">地形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图像特效"><span class="toc-number">7.</span> <span class="toc-text">图像特效</span></a></li></ol>
 		</div>
 		
-		<h2 id="WIN32_准备好boost,_python2,_scons">WIN32 准备好boost, python2, scons</h2>
-<p>boost库最好是从官网下预编译的，自己编的，在编mongoclient的时候可能会出现种问题<br>mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件</p>
-<p>打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;scons --prefix=E:\work\xbdg\program\dep\mongo-client-install --sharedclient --dynamic-windows --cpppath=E:\work\xbdg\program\dep\boost_1_57_0 --libpath=E:\work\xbdg\program\dep\boost_1_57_0\lib32-msvc-<span class="number">11.0</span> --disable-warnings-as-errors --<span class="number">32</span>  --dbg=off --msvc-version</div><div class="line">=<span class="number">11.0</span> install</div></pre></td></tr></table></figure>
-
-<p>mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件</p>
-<h2 id="Linux">Linux</h2>
-<p><strong><a href="boost.md">编译boost</a></strong><br>—layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-1.0.0需要这种名字的库<br>-j4 并行编译</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./b2 --with-chrono --with-date_time --with-regex --with-system --with-thread --build-type=complete --layout=tagged -j4 --prefix=/usr/local threading=multi install</div></pre></td></tr></table></figure>
-
-<p><strong>编译mongo-cxx-driver-legacy-1.0.0</strong><br>只能编动态库，静态库无法使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scons --prefix=/usr/local --disable-warnings-as-errors --<span class="number">64</span>  --dbg=off --ssl -j4 --sharedclient --cpppath=`<span class="built_in">pwd</span>`/../boost_1_57_0 --libpath=`<span class="built_in">pwd</span>`/../boost_1_57_0/stage/lib --runtime-library-search-path=`<span class="built_in">pwd</span>`/../boost_1_57_0/stage/lib install</div></pre></td></tr></table></figure>
-
-<p><strong><a href="https://jira.mongodb.org/browse/CXX-401" target="_blank" rel="external">好像3.0版后认证要用SSL</a></strong><br><strong>对于C++11程序要特别注意：</strong><br>如果程序使用了C++11编译，则该Driver也要用C++11编译，否则就都不要使用C++11编译。<br><a href="https://aur.archlinux.org/packages/mongo-cxx-driver-legacy/" target="_blank" rel="external">关于C++11</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ATTENTION FOR C++<span class="number">11</span> USERS:</div><div class="line"></div><div class="line">If you want to use this driver <span class="keyword">for</span> a project which gets compiled with c++<span class="number">11</span> features enabled (-std=c++<span class="number">11</span>), you have to add --c++<span class="number">11</span> flag to scons, otherwise intialize the driver will crash with segmentation fault (see https://jira.mongodb.org/browse/CXX-<span class="number">458</span>).</div><div class="line"></div><div class="line">I can<span class="string">'t enable this flag by default, because your project has to compile with -std=c++11, too. I could create an other package for reflecting this issue, if someone ask for it.</span></div><div class="line"></div><div class="line">Otherwise current develop-branch of this driver is for c++11 only, but will take some time until it's usable (at least <span class="keyword">for</span> testing).</div></pre></td></tr></table></figure>
-
-<h2 id="多线程安全"><a href="https://github.com/mongodb/mongo-cxx-driver/wiki/Library-Thread-Safety" target="_blank" rel="external">多线程安全</a></h2>
+		<h1 id="使用凹凸贴图"><a href="http://www.gopedu.com/article/954" target="_blank" rel="external">使用凹凸贴图</a></h1>
+<h1 id="Shader">Shader</h1>
+<h1 id="换装">换装</h1>
+<p><a href="http://blog.csdn.net/nin_cool/article/details/12714993" target="_blank" rel="external">Unity3D 模型换肤技术</a><br><a href="http://blog.csdn.net/ljy1988123/article/details/8037081" target="_blank" rel="external">Unity里的人物驱动/换装备/换武器/换衣服/动画重定位</a><br><a href="http://www.unitymanual.com/3543.html" target="_blank" rel="external">换装demo时美术遇到的问题详解</a></p>
+<h2 id="挂点">挂点</h2>
+<p>这是为了应付不同模型同一装备要挂在不同位置而提出的解决方法。如果整个工程只能一个角色模型，那也就只用固定的挂点了，而程序也不用知道这个挂点在哪，用默认的就行了。<br><a href="http://jiaowodouge.blog.163.com/blog/static/18724516820118805239994/" target="_blank" rel="external">unity中武器替换的注意点</a></p>
+<h1 id="刀光">刀光</h1>
+<p><a href="http://blog.sina.com.cn/s/blog_840e41e10102uzto.html" target="_blank" rel="external">Melee Weapon Trail—Unity刀光插件分享</a></p>
+<h1 id="着色器">着色器</h1>
+<p><a href="http://unitytaiwan.blogspot.com/2014/11/unity5.html" target="_blank" rel="external">Unity5 中基於物理的著色器</a><br><a href="http://www.cnblogs.com/martianzone/p/3394092.html" target="_blank" rel="external">Unity3d 如何找到游戏对象并改变其颜色</a></p>
+<h1 id="地形">地形</h1>
+<p><a href="http://www.cnblogs.com/TouchAfflatus/p/3536661.html" target="_blank" rel="external">IClone地形编辑器结合T4M插件在Unity3D使用</a><br><a href="http://www.reallusion.com/iClone/" target="_blank" rel="external">iClone</a><br><a href="http://v.youku.com/v_show/id_XNTI2ODIzOTA0.html" target="_blank" rel="external">视频: iClone動畫教學<em>12</em>地形轉換</a><br><a href="http://www.azert2k.fr/T4M.html" target="_blank" rel="external">t4m</a><br><a href="http://wiki.unity3d.com/index.php?title=Object2Terrain" target="_blank" rel="external">Object2Terrain</a></p>
+<h1 id="图像特效"><a href="http://game.ceeger.com/Components/comp-ImageEffects.html" target="_blank" rel="external">图像特效</a></h1>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/mongo/">mongo</a>
+  <span></span> <a href="/tags/unity3d/">unity3d</a><a href="/tags/game/">game</a>
   </div>
 
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/程序库/">程序库</a>
+  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
 </div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/02/27/install_mongo_cppdriver/" data-title="安装mongo cpp driver | Pretty Sunshine" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/02/27/unity3d/" data-title="unity3d | Pretty Sunshine" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -136,18 +135,18 @@ boost库最好是从官网下预编译的，自己编的，在编mongoclient的�
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/02/27/unity3d/" title="unity3d">
+ <a href="/2015/02/27/django/" title="django">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  unity3d</span>
+  django</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/02/27/boost/"  title="boost">
+<a href="/2015/02/27/install_mongo_cppdriver/"  title="安装mongo cpp driver">
  <strong>NEXT:</strong><br/> 
- <span>boost
+ <span>安装mongo cpp driver
 </span>
 </a>
 </div>
@@ -160,7 +159,7 @@ boost库最好是从官网下预编译的，自己编的，在编mongoclient的�
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WIN32_准备好boost,_python2,_scons"><span class="toc-number">1.</span> <span class="toc-text">WIN32 准备好boost, python2, scons</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux"><span class="toc-number">2.</span> <span class="toc-text">Linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程安全"><span class="toc-number">3.</span> <span class="toc-text">多线程安全</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用凹凸贴图"><span class="toc-number">1.</span> <span class="toc-text">使用凹凸贴图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shader"><span class="toc-number">2.</span> <span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#换装"><span class="toc-number">3.</span> <span class="toc-text">换装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#挂点"><span class="toc-number">3.1.</span> <span class="toc-text">挂点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刀光"><span class="toc-number">4.</span> <span class="toc-text">刀光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#着色器"><span class="toc-number">5.</span> <span class="toc-text">着色器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#地形"><span class="toc-number">6.</span> <span class="toc-text">地形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图像特效"><span class="toc-number">7.</span> <span class="toc-text">图像特效</span></a></li></ol>
   </div>
 
 <div id="asidepart">
