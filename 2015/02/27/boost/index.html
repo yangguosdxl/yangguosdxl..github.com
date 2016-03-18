@@ -1,0 +1,382 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>boost | Pretty Sunshine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="小雨">
+    
+    <meta name="description" content="Win安装Boost1234打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题bootstrap.batbjam.exe --toolset=msvc-11.0 install --prefix=E:\work\xbdg\progra">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Pretty Sunshine" title="Pretty Sunshine"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Pretty Sunshine">Pretty Sunshine</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/boost/" title="boost" itemprop="url">boost</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="小雨">小雨</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
+    Updated:<time datetime="2016-03-18T06:18:42.186Z" itemprop="dateModified">Mar 18 2016</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Win安装Boost"><span class="toc-number">1.</span> <span class="toc-text">Win安装Boost</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux安装Boost"><span class="toc-number">2.</span> <span class="toc-text">Linux安装Boost</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置boost"><span class="toc-number">3.</span> <span class="toc-text">配置boost</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#精简boost"><span class="toc-number">4.</span> <span class="toc-text">精简boost</span></a></li></ol>
+		</div>
+		
+		<h2 id="Win安装Boost"><a href="#Win安装Boost" class="headerlink" title="Win安装Boost"></a>Win安装Boost</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题</span><br><span class="line"></span><br><span class="line">bootstrap.bat</span><br><span class="line">bjam.exe --toolset=msvc-11.0 install --prefix=E:\work\xbdg\program\dep\boost</span><br></pre></td></tr></table></figure>
+<h2 id="Linux安装Boost"><a href="#Linux安装Boost" class="headerlink" title="Linux安装Boost"></a>Linux安装Boost</h2><p><strong>编译boost</strong><br>进入libs/config<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash configure</span><br></pre></td></tr></table></figure></p>
+<p>将当前目录生成的user.hpp拷贝到boost/config下，覆盖同名文件</p>
+<p>–layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-1.0.0需要这种名字的库<br>-j4 并行编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./b2 --with-chrono --with-date_time --with-regex --with-system --with-thread --build-type=complete --layout=tagged -j4 --prefix=/usr/<span class="built_in">local</span> threading=multi install</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置boost"><a href="#配置boost" class="headerlink" title="配置boost"></a>配置boost</h2><p>配置文件 boost/config/usr.hpp<br><a href="http://cpp.ezbty.org/myfiles/boost/libs/config/doc/html/index.html#boost_config.configuring_boost_for_your_platform" target="_blank" rel="external">说明文档：Boost.Config</a></p>
+<h2 id="精简boost"><a href="#精简boost" class="headerlink" title="精简boost"></a>精简boost</h2><p>工具<a href="http://guiquanz.me/2013/05/01/boost-bcp-intro/" target="_blank" rel="external">bcp</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/boost/">boost</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/程序库/">程序库</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2015/02/27/boost/" data-title="boost | Pretty Sunshine" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/02/27/devtools/" title="开发工具">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  开发工具</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/02/27/funny/"  title="好玩的">
+ <strong>NEXT:</strong><br/> 
+ <span>好玩的
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Win安装Boost"><span class="toc-number">1.</span> <span class="toc-text">Win安装Boost</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux安装Boost"><span class="toc-number">2.</span> <span class="toc-text">Linux安装Boost</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置boost"><span class="toc-number">3.</span> <span class="toc-text">配置boost</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#精简boost"><span class="toc-number">4.</span> <span class="toc-text">精简boost</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/AI/" title="AI">AI<sup>1</sup></a></li>
+		
+			<li><a href="/categories/DevTools/" title="DevTools">DevTools<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Linux系统/" title="Linux系统">Linux系统<sup>1</sup></a></li>
+		
+			<li><a href="/categories/OpenSource/" title="OpenSource">OpenSource<sup>1</sup></a></li>
+		
+			<li><a href="/categories/database/" title="database">database<sup>1</sup></a></li>
+		
+			<li><a href="/categories/game-dev/" title="game-dev">game-dev<sup>2</sup></a></li>
+		
+			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>3</sup></a></li>
+		
+			<li><a href="/categories/图形处理/" title="图形处理">图形处理<sup>1</sup></a></li>
+		
+			<li><a href="/categories/娱乐/" title="娱乐">娱乐<sup>1</sup></a></li>
+		
+			<li><a href="/categories/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
+		
+			<li><a href="/categories/游戏开发/" title="游戏开发">游戏开发<sup>1</sup></a></li>
+		
+			<li><a href="/categories/程序库/" title="程序库">程序库<sup>3</sup></a></li>
+		
+			<li><a href="/categories/项目分析/" title="项目分析">项目分析<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/AI/" title="AI">AI<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
+		
+			<li><a href="/tags/art/" title="art">art<sup>3</sup></a></li>
+		
+			<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+		
+			<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+		
+			<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
+		
+			<li><a href="/tags/game/" title="game">game<sup>6</sup></a></li>
+		
+			<li><a href="/tags/game-engine/" title="game-engine">game-engine<sup>1</sup></a></li>
+		
+			<li><a href="/tags/graphic/" title="graphic">graphic<sup>1</sup></a></li>
+		
+			<li><a href="/tags/linux-system-manage/" title="linux system manage">linux system manage<sup>1</sup></a></li>
+		
+			<li><a href="/tags/mongo/" title="mongo">mongo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/mysql-db/" title="mysql db">mysql db<sup>1</sup></a></li>
+		
+			<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
+		
+			<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>3</sup></a></li>
+		
+			<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
+		
+			<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+		
+			<li><a href="/tags/游戏/" title="游戏">游戏<sup>1</sup></a></li>
+		
+			<li><a href="/tags/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="小雨">小雨</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>

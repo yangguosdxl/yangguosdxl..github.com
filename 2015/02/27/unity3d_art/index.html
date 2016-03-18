@@ -1,0 +1,429 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>unity3d 美术相关 | Pretty Sunshine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="小雨">
+    
+    <meta name="description" content="场景制作
+所有相关资源放到Assets下的一个文件夹下，比如Assets/scenes
+所有场景对象放到一个对象下
+导出成AssetBundle，好在游戏中加载，就算是Demo阶段也应该这么做，因为编辑器本身的导出包功能实在不好用。这也意味着要有编辑器加载场景AssetBundle的功能，好做调试。">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Pretty Sunshine" title="Pretty Sunshine"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Pretty Sunshine">Pretty Sunshine</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/unity3d_art/" title="unity3d 美术相关" itemprop="url">unity3d 美术相关</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="小雨">小雨</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
+    Updated:<time datetime="2016-03-18T06:18:42.243Z" itemprop="dateModified">Mar 18 2016</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#场景制作"><span class="toc-number">1.</span> <span class="toc-text">场景制作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#哪些工作应该由美术做"><span class="toc-number">2.</span> <span class="toc-text">哪些工作应该由美术做</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#规范"><span class="toc-number">3.</span> <span class="toc-text">规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通用"><span class="toc-number">3.1.</span> <span class="toc-text">通用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#场景"><span class="toc-number">3.2.</span> <span class="toc-text">场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#角色与动画"><span class="toc-number">3.3.</span> <span class="toc-text">角色与动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特效"><span class="toc-number">3.4.</span> <span class="toc-text">特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI"><span class="toc-number">3.5.</span> <span class="toc-text">UI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技能"><span class="toc-number">3.6.</span> <span class="toc-text">技能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#摄像机动画"><span class="toc-number">3.7.</span> <span class="toc-text">摄像机动画</span></a></li></ol></li></ol>
+		</div>
+		
+		<h1 id="场景制作"><a href="#场景制作" class="headerlink" title="场景制作"></a>场景制作</h1><ul>
+<li>所有相关资源放到Assets下的一个文件夹下，比如Assets/scenes</li>
+<li>所有场景对象放到一个对象下</li>
+<li>导出成AssetBundle，好在游戏中加载，就算是Demo阶段也应该这么做，因为编辑器本身的导出包功能实在不好用。这也意味着要有编辑器加载场景AssetBundle的功能，好做调试。</li>
+<li>场景里要有一个点来确定场景位置</li>
+</ul>
+<h1 id="哪些工作应该由美术做"><a href="#哪些工作应该由美术做" class="headerlink" title="哪些工作应该由美术做"></a>哪些工作应该由美术做</h1><ul>
+<li>对于要外包的美术资源，能策划做的尽量让策划做，这样就减少了很多要和美术沟通的工作量。</li>
+</ul>
+<h1 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h1><h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ul>
+<li>三维软件单位用米制<br>保证所有场景和模型都是同一比例与单位就可以了<br>具体导出设置见《Unity3D4.x从入门到精通》资源导入部分</li>
+<li>同屏面数</li>
+<li>目录结构</li>
+<li>手机UI分辨率<ol>
+<li>定下最佳分辨率，最佳显示手机</li>
+<li>找到实际最佳分辨率：比第一条的分辨率低，但在第一条的分辨率下还是能显示得很清晰</li>
+<li>按实际最佳分辨率做UI，并定义控件大小</li>
+<li>目前NGUI的UIRoot设置为 ：<br>Scaling Style：Constrained On Mobile（在手机上按比例缩放，在电脑上按像素显示不缩放）<br>Content Width 实际最佳分辨率的宽<br>Content Height 实际最佳分辨率的高</li>
+</ol>
+</li>
+</ul>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ul>
+<li>地表过大时，由于烘焙图大小的限制，会导致烘焙出的阴影质量太差，可以在重要的区域单独使用一块地表</li>
+<li>T4M不支持5.0</li>
+<li>不能大面积使用法线贴</li>
+<li>网格与材质合并插件 MeshBaker</li>
+<li>移动端水插件MobileOcean</li>
+<li>使用3DMax制作场景<ol>
+<li>加载到U3D后，要在编辑器加调整Shader，加入水，加入天空盒，加入灯光，烘焙</li>
+<li>优化，如合并Mesh及材质</li>
+<li>地表Collider</li>
+</ol>
+</li>
+</ul>
+<h2 id="角色与动画"><a href="#角色与动画" class="headerlink" title="角色与动画"></a>角色与动画</h2><ul>
+<li>同一循环动作的起始位置与终止位置要重合</li>
+<li>对于不同动作，如果脚踏地，则踏地高度要一致，以免播放不同动作时，出现角色脚不在地面上的问题</li>
+</ul>
+<h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><ul>
+<li>目前特效系统是ParticleSystem</li>
+</ul>
+<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><ul>
+<li>NGUI</li>
+</ul>
+<h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><ul>
+<li>Cinema Director</li>
+</ul>
+<h2 id="摄像机动画"><a href="#摄像机动画" class="headerlink" title="摄像机动画"></a>摄像机动画</h2><ul>
+<li>CameraPath</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/unity3d/">unity3d</a><a href="/tags/game/">game</a><a href="/tags/art/">art</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2015/02/27/unity3d_art/" data-title="unity3d 美术相关 | Pretty Sunshine" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/02/27/unity3d/" title="unity3d">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  unity3d</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/02/27/mysql/"  title="mysql">
+ <strong>NEXT:</strong><br/> 
+ <span>mysql
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#场景制作"><span class="toc-number">1.</span> <span class="toc-text">场景制作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#哪些工作应该由美术做"><span class="toc-number">2.</span> <span class="toc-text">哪些工作应该由美术做</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#规范"><span class="toc-number">3.</span> <span class="toc-text">规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通用"><span class="toc-number">3.1.</span> <span class="toc-text">通用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#场景"><span class="toc-number">3.2.</span> <span class="toc-text">场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#角色与动画"><span class="toc-number">3.3.</span> <span class="toc-text">角色与动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特效"><span class="toc-number">3.4.</span> <span class="toc-text">特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI"><span class="toc-number">3.5.</span> <span class="toc-text">UI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技能"><span class="toc-number">3.6.</span> <span class="toc-text">技能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#摄像机动画"><span class="toc-number">3.7.</span> <span class="toc-text">摄像机动画</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/AI/" title="AI">AI<sup>1</sup></a></li>
+		
+			<li><a href="/categories/DevTools/" title="DevTools">DevTools<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Linux系统/" title="Linux系统">Linux系统<sup>1</sup></a></li>
+		
+			<li><a href="/categories/OpenSource/" title="OpenSource">OpenSource<sup>1</sup></a></li>
+		
+			<li><a href="/categories/database/" title="database">database<sup>1</sup></a></li>
+		
+			<li><a href="/categories/game-dev/" title="game-dev">game-dev<sup>2</sup></a></li>
+		
+			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>3</sup></a></li>
+		
+			<li><a href="/categories/图形处理/" title="图形处理">图形处理<sup>1</sup></a></li>
+		
+			<li><a href="/categories/娱乐/" title="娱乐">娱乐<sup>1</sup></a></li>
+		
+			<li><a href="/categories/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
+		
+			<li><a href="/categories/游戏开发/" title="游戏开发">游戏开发<sup>1</sup></a></li>
+		
+			<li><a href="/categories/程序库/" title="程序库">程序库<sup>3</sup></a></li>
+		
+			<li><a href="/categories/项目分析/" title="项目分析">项目分析<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/AI/" title="AI">AI<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
+		
+			<li><a href="/tags/art/" title="art">art<sup>3</sup></a></li>
+		
+			<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+		
+			<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+		
+			<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
+		
+			<li><a href="/tags/game/" title="game">game<sup>6</sup></a></li>
+		
+			<li><a href="/tags/game-engine/" title="game-engine">game-engine<sup>1</sup></a></li>
+		
+			<li><a href="/tags/graphic/" title="graphic">graphic<sup>1</sup></a></li>
+		
+			<li><a href="/tags/linux-system-manage/" title="linux system manage">linux system manage<sup>1</sup></a></li>
+		
+			<li><a href="/tags/mongo/" title="mongo">mongo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/mysql-db/" title="mysql db">mysql db<sup>1</sup></a></li>
+		
+			<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
+		
+			<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>3</sup></a></li>
+		
+			<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
+		
+			<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+		
+			<li><a href="/tags/游戏/" title="游戏">游戏<sup>1</sup></a></li>
+		
+			<li><a href="/tags/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="小雨">小雨</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
