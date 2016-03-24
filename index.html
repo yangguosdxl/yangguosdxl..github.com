@@ -5,40 +5,54 @@
   <meta charset="UTF-8">
   
     <title>Pretty Sunshine</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="开伦">
     
+
     
+    <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pretty Sunshine">
+<meta property="og:url" content="http://yangguosdxl.github.io/index.html">
+<meta property="og:site_name" content="Pretty Sunshine">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pretty Sunshine">
+<meta name="twitter:description">
+
     
+    <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/pacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
     <header>
-      <div>
+      
+<div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.svg" alt="Pretty Sunshine" title="Pretty Sunshine"/></a>
+				<a href="/"><img src="/img/logo.png" alt="Pretty Sunshine" title="Pretty Sunshine"/></a>
 			</div>
 			
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="Pretty Sunshine">Pretty Sunshine</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
-					
+					<ul>
+					 
 						<li><a href="/">Home</a></li>
 					
 						<li><a href="/archives">Archives</a></li>
@@ -46,10 +60,10 @@
 						<li><a href="/about">About</a></li>
 					
 					<li>
-					
+ 					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yangguosdxl.github.io">
 					</form>
 					
@@ -57,226 +71,761 @@
 				</ul>
 			</nav>			
 </div>
-
     </header>
     <div id="container">
       <div id="main">
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/03/19/360运营/" title="360 运营" itemprop="url">
-  
-    <h1 itemprop="name">360 运营</h1>
+   
     
-     
-           <p itemprop="description" >服务器
-默认80端口是封闭的，要设置iptables 开放端口
-不能使用root用户，只能使用sudo
-ssh连接奇慢，服务器SSH配置有问题
-  12UseDNS noGSSAPIAuthentication no
-
-缺少软件：expect zip</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/19/360运营/" title="360 运营" itemprop="url">360 运营</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-19T15:08:00.000Z" itemprop="datePublished"> Published Mar 19 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
-    
-    <time datetime="2016-03-19T15:08:00.000Z" itemprop="datePublished">Mar 19 2016</time>
-  </a>
-</section>
+        <h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><ul>
+<li>默认80端口是封闭的，要设置iptables 开放端口</li>
+<li>不能使用root用户，只能使用sudo</li>
+<li><p>ssh连接奇慢，服务器SSH配置有问题</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UseDNS no</span><br><span class="line">GSSAPIAuthentication no</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺少软件：expect zip</p>
+</li>
+<li></li>
+</ul>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/03/19/expect/" title="expect" itemprop="url">
-  
-    <h1 itemprop="name">expect</h1>
-    
-     
-           <p itemprop="description" >FAQ
-如何从参数传命令给spawn?
-12set cmdstr [lindex $argv 0]spawn &amp;#123;*&amp;#125;$cmdstr
-控制台使用
-1expect ls .</p>
         
-    
-    <time datetime="2016-03-19T09:39:45.000Z" itemprop="datePublished">Mar 19 2016</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/03/18/hello-world/" title="Hello World" itemprop="url">
-  
-    <h1 itemprop="name">Hello World</h1>
-    
-     
-           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
         
-    
-    <time datetime="2016-03-18T04:59:38.988Z" itemprop="datePublished">Mar 18 2016</time>
-  </a>
-</section>
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-  <section class="post" itemscope itemprop="blogPost">
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/游戏运营/">游戏运营</a>
+</div>
+
+
+  <div class="article-tags">
   
-    <a href="/2015/02/27/install_mongo_cppdriver/" title="安装mongo cpp driver" itemprop="url">
-  
-    <h1 itemprop="name">安装mongo cpp driver</h1>
+  <span></span> <a href="/tags/360-游戏运营/">360 游戏运营</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-     
-           <p itemprop="description" >WIN32 准备好boost, python2, sconsboost库最好是从官网下预编译的，自己编的，在编mongoclient的时候可能会出现种问题mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件
-打开</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/19/expect/" title="expect" itemprop="url">expect</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-19T09:39:45.000Z" itemprop="datePublished"> Published Mar 19 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+        <h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><ul>
+<li><p>如何从参数传命令给spawn?</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> cmdstr [lindex <span class="variable">$argv</span> 0]</span><br><span class="line">spawn &#123;*&#125;<span class="variable">$cmdstr</span></span><br></pre></td></tr></table></figure>
+<p>控制台使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expect ls .</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/ai/" title="游戏人工智能" itemprop="url">
-  
-    <h1 itemprop="name">游戏人工智能</h1>
-    
-     
-           <p itemprop="description" >要解决的问题
-决策
-决策与动作的配合，角色在做某些动作时是不能中断的。
-调试，行为树这类有图形编辑器的，比较好调试。但是要用好不简单。行为树在表示状态方面很简单，并不能针对状态提供进入的退出操作。</p>
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/django/" title="django" itemprop="url">
-  
-    <h1 itemprop="name">django</h1>
-    
-     
-           <p itemprop="description" >安装Linux安装pip安装django安装mongoengineuwsgi安装命令行参数中文参考
-模板模板是自动转义的，关闭转义Django模板为了防止XSS，缺省情况下会自动将HTML进行转义。
-有的时候我们确实想输出一些含有HTML代码的内容（比如Web编辑器产生的文章内容</p>
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-  <section class="post" itemscope itemprop="blogPost">
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/shell/">shell</a>
+</div>
+
+
+  <div class="article-tags">
   
-    <a href="/2015/02/27/boost/" title="boost" itemprop="url">
-  
-    <h1 itemprop="name">boost</h1>
+  <span></span> <a href="/tags/shell-expect/">shell expect</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-     
-           <p itemprop="description" >Win安装Boost1234打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题bootstrap.batbjam.exe --toolset=msvc-11.0 install --prefix=E:\work\x</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/18/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-18T04:59:38.988Z" itemprop="datePublished"> Published Mar 18 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/funny/" title="好玩的" itemprop="url">
-  
-    <h1 itemprop="name">好玩的</h1>
-    
-     
-           <p itemprop="description" >游戏
-奥日与黑暗森林
-三位一体
-[饥荒]
-[纸境]
-[]</p>
+<p><img src="/images/1.jpg" alt=""><br><img src="/images/1.jpg"><br></p>
+<p><embed src="http://www.xiami.com/widget/0_3515679/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"><br>
+
+	<div class="row">
+	  <iframe src="undefined/asset/expect.pdf" style="width:100%; height:550px"></iframe>
+	</div>
+
+
+<br>
+
+	<div class="row">
+	  <iframe src="undefinedhttp://7xov2f.com1.z0.glb.clouddn.com/bash_freshman.pdf" style="width:100%; height:550px"></iframe>
+	</div>
+
+
+</p>
+
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/game_art/" title="游戏美术规则" itemprop="url">
-  
-    <h1 itemprop="name">游戏美术规则</h1>
-    
-     
-           <p itemprop="description" >图片格式图形文件格式比较-维基
-tga 无损无压缩有Alpha通道 图片资源大，占硬盘大 加载速度快
-png 有损压缩有Alpha通道   图片资源小，占硬盘小 加载速度慢
-3DMax
-加载Bip骨骼动画选中一根骨骼，然后在Motion面板加载BIP骨骼动画文件
-
-线框和实体相互</p>
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/graphic_gameengine/" title="图形与游戏引擎基础" itemprop="url">
-  
-    <h1 itemprop="name">图形与游戏引擎基础</h1>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-     
-           <p itemprop="description" >骨骼蒙皮动画Skinned Mesh 原理解析和一个最简单的实现示例</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/install_mongo_cppdriver/" title="安装mongo cpp driver" itemprop="url">安装mongo cpp driver</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
+        <h2 id="WIN32-准备好boost-python2-scons"><a href="#WIN32-准备好boost-python2-scons" class="headerlink" title="WIN32 准备好boost, python2, scons"></a>WIN32 准备好boost, python2, scons</h2><p>boost库最好是从官网下预编译的，自己编的，在编mongoclient的时候可能会出现种问题<br>mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件</p>
+<p>打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;scons --prefix=E:\work\xbdg\program\dep\mongo-client-install --sharedclient --dynamic-windows --cpppath=E:\work\xbdg\program\dep\boost_1_57_0 --libpath=E:\work\xbdg\program\dep\boost_1_57_0\lib32-msvc-11.0 --disable-warnings-as-errors --32  --dbg=off --msvc-version</span><br><span class="line">=11.0 install</span><br></pre></td></tr></table></figure></p>
+<p>mongo-client-install\include\mongo\client\autolib.h 查看要哪个库文件</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p><strong><a href="boost.md">编译boost</a></strong><br>–layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-1.0.0需要这种名字的库<br>-j4 并行编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./b2 --with-chrono --with-date_time --with-regex --with-system --with-thread --build-type=complete --layout=tagged -j4 --prefix=/usr/<span class="built_in">local</span> threading=multi install</span><br></pre></td></tr></table></figure></p>
+<p><strong>编译mongo-cxx-driver-legacy-1.0.0</strong><br>只能编动态库，静态库无法使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scons --prefix=/usr/<span class="built_in">local</span> --disable-warnings-as-errors --64  --dbg=off --ssl -j4 --sharedclient --cpppath=`<span class="built_in">pwd</span>`/../boost_1_57_0 --libpath=`<span class="built_in">pwd</span>`/../boost_1_57_0/stage/lib --runtime-library-search-path=`<span class="built_in">pwd</span>`/../boost_1_57_0/stage/lib install</span><br></pre></td></tr></table></figure></p>
+<p><strong><a href="https://jira.mongodb.org/browse/CXX-401" target="_blank" rel="external">好像3.0版后认证要用SSL</a></strong><br><strong>对于C++11程序要特别注意：</strong><br>如果程序使用了C++11编译，则该Driver也要用C++11编译，否则就都不要使用C++11编译。<br><a href="https://aur.archlinux.org/packages/mongo-cxx-driver-legacy/" target="_blank" rel="external">关于C++11</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ATTENTION FOR C++11 USERS:</span><br><span class="line"></span><br><span class="line">If you want to use this driver <span class="keyword">for</span> a project <span class="built_in">which</span> gets compiled with c++11 features enabled (-std=c++11), you have to add --c++11 flag to scons, otherwise intialize the driver will crash with segmentation fault (see https://jira.mongodb.org/browse/CXX-458).</span><br><span class="line"></span><br><span class="line">I can<span class="string">'t enable this flag by default, because your project has to compile with -std=c++11, too. I could create an other package for reflecting this issue, if someone ask for it.</span><br><span class="line"></span><br><span class="line">Otherwise current develop-branch of this driver is for c++11 only, but will take some time until it'</span>s usable (at least <span class="keyword">for</span> testing).</span><br></pre></td></tr></table></figure></p>
+<h2 id="多线程安全"><a href="#多线程安全" class="headerlink" title="多线程安全"></a><a href="https://github.com/mongodb/mongo-cxx-driver/wiki/Library-Thread-Safety" target="_blank" rel="external">多线程安全</a></h2>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/程序库/">程序库</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/mongo/">mongo</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/ai/" title="游戏人工智能" itemprop="url">游戏人工智能</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h3><ul>
+<li>决策</li>
+<li>决策与动作的配合，角色在做某些动作时是不能中断的。</li>
+<li>调试，行为树这类有图形编辑器的，比较好调试。但是要用好不简单。行为树在表示状态方面很简单，并不能针对状态提供进入的退出操作。</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/游戏人工智能/">游戏人工智能</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/游戏人工智能/">游戏人工智能</a><a href="/tags/AI/">AI</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/django/" title="django" itemprop="url">django</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="安装pip"><a href="#安装pip" class="headerlink" title="安装pip"></a><a href="https://pip.pypa.io/en/latest/installing.html" target="_blank" rel="external">安装pip</a></h3><h3 id="安装django"><a href="#安装django" class="headerlink" title="安装django"></a><a href="https://docs.djangoproject.com/en/1.7/topics/install/" target="_blank" rel="external">安装django</a></h3><h3 id="安装mongoengine"><a href="#安装mongoengine" class="headerlink" title="安装mongoengine"></a><a href="http://docs.mongoengine.org/en/latest/guide/installing.html" target="_blank" rel="external">安装mongoengine</a></h3><h3 id="uwsgi"><a href="#uwsgi" class="headerlink" title="uwsgi"></a><a href="https://uwsgi-docs.readthedocs.org/en/latest/#" target="_blank" rel="external">uwsgi</a></h3><p><a href="http://django-china.cn/topic/101/" target="_blank" rel="external">安装</a><br><a href="http://www.cnblogs.com/zhouej/archive/2012/03/25/2379646.html" target="_blank" rel="external">命令行参数中文参考</a></p>
+<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><h2 id="模板是自动转义的，关闭转义"><a href="#模板是自动转义的，关闭转义" class="headerlink" title="模板是自动转义的，关闭转义"></a>模板是自动转义的，关闭转义</h2><p>Django模板为了防止XSS，缺省情况下会自动将HTML进行转义。</p>
+<p>有的时候我们确实想输出一些含有HTML代码的内容（比如Web编辑器产生的文章内容数据），如何关闭自动转义？<br>方法1：使用过滤器。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">|safe</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123; data|safe &#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>这样data的内容就会原样输出，不会被转义。请确保data中的数据不会产生XSS。<br>方法2：关闭整段代码的自动转义。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; % autoescape off % &#125;</span><br><span class="line">    &#123; &#123; data &#125; &#125;</span><br><span class="line">&#123; % endautoescape % &#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://www.redicecn.com/html/blog/Django/2012/0215/370.html" target="_blank" rel="external">转自</a></p>
+<h1 id="时区"><a href="#时区" class="headerlink" title="时区"></a><a href="https://docs.djangoproject.com/en/dev/ref/settings/#time-zone" target="_blank" rel="external">时区</a></h1><p><a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区代码参考</a><br>中国上海时区代码：Asia/Shanghai</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/程序库/">程序库</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/django/">django</a><a href="/tags/web/">web</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/boost/" title="boost" itemprop="url">boost</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="Win安装Boost"><a href="#Win安装Boost" class="headerlink" title="Win安装Boost"></a>Win安装Boost</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题</span><br><span class="line"></span><br><span class="line">bootstrap.bat</span><br><span class="line">bjam.exe --toolset=msvc-11.0 install --prefix=E:\work\xbdg\program\dep\boost</span><br></pre></td></tr></table></figure>
+<h2 id="Linux安装Boost"><a href="#Linux安装Boost" class="headerlink" title="Linux安装Boost"></a>Linux安装Boost</h2><p><strong>编译boost</strong><br>进入libs/config<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash configure</span><br></pre></td></tr></table></figure></p>
+<p>将当前目录生成的user.hpp拷贝到boost/config下，覆盖同名文件</p>
+<p>–layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-1.0.0需要这种名字的库<br>-j4 并行编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./b2 --with-chrono --with-date_time --with-regex --with-system --with-thread --build-type=complete --layout=tagged -j4 --prefix=/usr/<span class="built_in">local</span> threading=multi install</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置boost"><a href="#配置boost" class="headerlink" title="配置boost"></a>配置boost</h2><p>配置文件 boost/config/usr.hpp<br><a href="http://cpp.ezbty.org/myfiles/boost/libs/config/doc/html/index.html#boost_config.configuring_boost_for_your_platform" target="_blank" rel="external">说明文档：Boost.Config</a></p>
+<h2 id="精简boost"><a href="#精简boost" class="headerlink" title="精简boost"></a>精简boost</h2><p>工具<a href="http://guiquanz.me/2013/05/01/boost-bcp-intro/" target="_blank" rel="external">bcp</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/程序库/">程序库</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/boost/">boost</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/funny/" title="好玩的" itemprop="url">好玩的</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h1><ul>
+<li><a href="http://www.gamersky.com/z/oatbf/" target="_blank" rel="external">奥日与黑暗森林</a></li>
+<li><a href="">三位一体</a></li>
+<li>[饥荒]</li>
+<li>[纸境]</li>
+<li>[]</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/娱乐/">娱乐</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/funny/">funny</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/game_art/" title="游戏美术规则" itemprop="url">游戏美术规则</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="图片格式"><a href="#图片格式" class="headerlink" title="图片格式"></a>图片格式</h1><p><a href="http://zh.wikipedia.org/wiki/%E5%9B%BE%E5%BD%A2%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E6%AF%94%E8%BE%83" target="_blank" rel="external">图形文件格式比较-维基</a></p>
+<p>tga 无损无压缩有Alpha通道 图片资源大，占硬盘大 加载速度快</p>
+<p>png 有损压缩有Alpha通道   图片资源小，占硬盘小 加载速度慢</p>
+<h1 id="3DMax"><a href="#3DMax" class="headerlink" title="3DMax"></a>3DMax</h1><ul>
+<li><p>加载Bip骨骼动画<br>选中一根骨骼，然后在Motion面板加载BIP骨骼动画文件</p>
+</li>
+<li><p>线框和实体相互转换的快捷键是F3。<br>如果你文件中的骨骼显示的形状是立方体的话，需要选中所有的骨骼，右击进入物体属性，把 display as box 勾选掉就可以了。</p>
+</li>
+<li><p>设置Pivot<br>选中物体~进入设置面板（Herarchy）,(影响轴)Adjust Pivot，（仅影响轴）Affect Pivot only</p>
+</li>
+<li><p>快捷键<br>7-查看面数<br>m-材质面板</p>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/game-dev/">game-dev</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/game/">game</a><a href="/tags/art/">art</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/graphic_gameengine/" title="图形与游戏引擎基础" itemprop="url">图形与游戏引擎基础</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="骨骼蒙皮动画"><a href="#骨骼蒙皮动画" class="headerlink" title="骨骼蒙皮动画"></a>骨骼蒙皮动画</h1><p><a href="http://blog.csdn.net/n5/article/details/3105872" target="_blank" rel="external">Skinned Mesh 原理解析和一个最简单的实现示例</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/game-dev/">game-dev</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/graphic/">graphic</a><a href="/tags/game-engine/">game-engine</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
 
 
   <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
   </nav>
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
+
+
+  
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
+		  
 			<li><a href="/categories/AI/" title="AI">AI<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/DevTools/" title="DevTools">DevTools<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/Linux系统/" title="Linux系统">Linux系统<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/OpenSource/" title="OpenSource">OpenSource<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/database/" title="database">database<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/game-dev/" title="game-dev">game-dev<sup>2</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/shell/" title="shell">shell<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>3</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/博客/" title="博客">博客<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/图形处理/" title="图形处理">图形处理<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/娱乐/" title="娱乐">娱乐<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/游戏开发/" title="游戏开发">游戏开发<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/游戏运营/" title="游戏运营">游戏运营<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/程序库/" title="程序库">程序库<sup>3</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/项目分析/" title="项目分析">项目分析<sup>1</sup></a></li>
+		  
 		
 		</ul>
 </div>
@@ -284,56 +833,112 @@ png 有损压缩有Alpha通道   图片资源小，占硬盘小 加载速度慢
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/360-游戏运营/" title="360 游戏运营">360 游戏运营<sup>1</sup></a></li>
+			
+				<li><a href="/tags/game/" title="game">game<sup>6</sup></a></li>
+			
 		
-			<li><a href="/tags/AI/" title="AI">AI<sup>2</sup></a></li>
+			
+				<li><a href="/tags/art/" title="art">art<sup>3</sup></a></li>
+			
 		
-			<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
+			
+				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>3</sup></a></li>
+			
 		
-			<li><a href="/tags/art/" title="art">art<sup>3</sup></a></li>
+			
+				<li><a href="/tags/AI/" title="AI">AI<sup>2</sup></a></li>
+			
 		
-			<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+			
+				<li><a href="/tags/graphic/" title="graphic">graphic<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+			
+				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+			
+				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
+			
+				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/game/" title="game">game<sup>6</sup></a></li>
+			
+				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/game-engine/" title="game-engine">game-engine<sup>1</sup></a></li>
+			
+				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/graphic/" title="graphic">graphic<sup>1</sup></a></li>
+			
+				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/linux-system-manage/" title="linux system manage">linux system manage<sup>1</sup></a></li>
+			
+				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/mongo/" title="mongo">mongo<sup>1</sup></a></li>
+			
+				<li><a href="/tags/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/mysql-db/" title="mysql db">mysql db<sup>1</sup></a></li>
+			
+				<li><a href="/tags/game-engine/" title="game-engine">game-engine<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
+			
+				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
+			
+				<li><a href="/tags/mongo/" title="mongo">mongo<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
+			
+				<li><a href="/tags/游戏/" title="游戏">游戏<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>3</sup></a></li>
+			
+				<li><a href="/tags/mysql-db/" title="mysql db">mysql db<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
+			
+				<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+			
+				<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
+			
 		
 		</ul>
 </div>
 
 
-  <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+    </ul>
 </div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
 
 </aside>
 </div>
@@ -346,21 +951,40 @@ png 有损压缩有Alpha通道   图片资源小，占硬盘小 加载速度慢
 	</div>
 	
 	
-	<div class="social-font clearfix">
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
 		
 		
 		
 		
 		
 	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+			
 		
-		<a href="http://yangguosdxl.github.io" target="_blank" title="开伦">开伦</a>
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="开伦">开伦</a>
+		
 		
 		</p>
 </div>
 </footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -378,18 +1002,6 @@ $(document).ready(function(){
       a = $('#asidepart'),
       c = $('.closeaside'),
       o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-        
-    }
-  });
   c.click(function(){
     a.addClass('fadeOut').css('display', 'none');
     o.css('display', 'block').addClass('fadeIn');
@@ -403,6 +1015,18 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
 });
 </script>
 
@@ -411,6 +1035,59 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
 
   </body>
  </html>

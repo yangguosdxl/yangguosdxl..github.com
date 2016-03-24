@@ -5,40 +5,54 @@
   <meta charset="UTF-8">
   
     <title>Pretty Sunshine</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="开伦">
     
+
     
+    <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pretty Sunshine">
+<meta property="og:url" content="http://yangguosdxl.github.io/page/2/index.html">
+<meta property="og:site_name" content="Pretty Sunshine">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pretty Sunshine">
+<meta name="twitter:description">
+
     
+    <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/pacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
     <header>
-      <div>
+      
+<div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.svg" alt="Pretty Sunshine" title="Pretty Sunshine"/></a>
+				<a href="/"><img src="/img/logo.png" alt="Pretty Sunshine" title="Pretty Sunshine"/></a>
 			</div>
 			
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="Pretty Sunshine">Pretty Sunshine</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
-					
+					<ul>
+					 
 						<li><a href="/">Home</a></li>
 					
 						<li><a href="/archives">Archives</a></li>
@@ -46,10 +60,10 @@
 						<li><a href="/about">About</a></li>
 					
 					<li>
-					
+ 					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yangguosdxl.github.io">
 					</form>
 					
@@ -57,228 +71,799 @@
 				</ul>
 			</nav>			
 </div>
-
     </header>
     <div id="container">
       <div id="main">
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/hexo/" title="hexo" itemprop="url">
-  
-    <h1 itemprop="name">hexo</h1>
+   
     
-     
-           <p itemprop="description" >gitwindows下配置 ssh 公钥1. 安装git，从程序目录打开 &amp;quot;Git Bash&amp;quot;
-2. 键入命令：ssh-keygen -t rsa -C &amp;quot;email@email.com&amp;quot;
-  &amp;quot;email@email.com&amp;q</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/hexo/" title="hexo" itemprop="url">hexo</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+        <h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="windows下配置-ssh-公钥"><a href="#windows下配置-ssh-公钥" class="headerlink" title="windows下配置 ssh 公钥"></a>windows下配置 ssh 公钥</h2><pre><code>1. 安装git，从程序目录打开 &quot;Git Bash&quot;
+2. 键入命令：ssh-keygen -t rsa -C &quot;email@email.com&quot;
+  &quot;email@email.com&quot;是github账号
+3. 提醒你输入key的名称，输入如id_rsa
+4. 在C:\Documents and Settings\Administrator\下产生两个文件：id_rsa和id_rsa.pub
+5. 把4中生成的密钥文件复制到C:\Documents and Settings\Administrator\.ssh\ 目 录下。
+6. 用记事本打开id_rsa.pub文件，复制内容，在github.com的网站上到ssh密钥管理页面，添加新公钥，随便取个名字，内容粘贴刚公钥
+</code></pre><h2 id="git-1"><a href="#git-1" class="headerlink" title="git"></a>git</h2><p>   git 远程URL只有在使用git协议时才能使用ssh的方式pull push, https是不能使用 ssh的</p>
+<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><h1 id="hexo-plugin"><a href="#hexo-plugin" class="headerlink" title="hexo plugin"></a>hexo plugin</h1><ul>
+<li><a href="https://github.com/superalsrk/hexo-pdf" target="_blank" rel="external">hexo-pdf</a></li>
+</ul>
+<h1 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h1><ul>
+<li><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">语法</a></li>
+</ul>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/3guo/" title="三国志3D版" itemprop="url">
-  
-    <h1 itemprop="name">三国志3D版</h1>
-    
-     
-           <p itemprop="description" >资源管理器
-相关路径
-各平台资源保存目录
-远程资源URL
-各平台资源加载器</p>
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/devtools/" title="开发工具" itemprop="url">
-  
-    <h1 itemprop="name">开发工具</h1>
-    
-     
-           <p itemprop="description" >VS
-VS2013 要安装Microsoft .NET Framework 4.6 Targeting Pack 才能在工程中选择使用.netframework 4.6</p>
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-  <section class="post" itemscope itemprop="blogPost">
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/博客/">博客</a>
+</div>
+
+
+  <div class="article-tags">
   
-    <a href="/2015/02/27/mygame/" title="想要的游戏特征" itemprop="url">
-  
-    <h1 itemprop="name">想要的游戏特征</h1>
+  <span></span> <a href="/tags/blog-hexo-git/">blog hexo git</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-     
-           <p itemprop="description" >基本特性
-高AI
-更多的环境互动</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/3guo/" title="三国志3D版" itemprop="url">三国志3D版</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+        <h1 id="资源管理器"><a href="#资源管理器" class="headerlink" title="资源管理器"></a>资源管理器</h1><ol>
+<li>相关路径<ul>
+<li>各平台资源保存目录</li>
+<li>远程资源URL</li>
+<li>各平台资源加载器</li>
+</ul>
+</li>
+</ol>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/mysql/" title="mysql" itemprop="url">
-  
-    <h1 itemprop="name">mysql</h1>
-    
-     
-           <p itemprop="description" >mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
-#FAQ
-
-无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户</p>
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/ps/" title="ps" itemprop="url">
-  
-    <h1 itemprop="name">ps</h1>
-    
-     
-           <p itemprop="description" >序列帧生成GIF图制作alpha通道</p>
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/open_source_misc/" title="开源杂谈" itemprop="url">
-  
-    <h1 itemprop="name">开源杂谈</h1>
-    
-     
-           <p itemprop="description" >大公司的开源地址国内一些大公司的开源项目
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/项目分析/">项目分析</a>
+</div>
 
-阿里巴巴
-腾讯
-网易
-豆瓣</p>
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/三国志3D版/">三国志3D版</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/devtools/" title="开发工具" itemprop="url">开发工具</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+        <h1 id="VS"><a href="#VS" class="headerlink" title="VS"></a>VS</h1><ul>
+<li>VS2013 要安装Microsoft .NET Framework 4.6 Targeting Pack 才能在工程中选择使用.netframework 4.6</li>
+</ul>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/linux_manage/" title="Linux系统管理" itemprop="url">
-  
-    <h1 itemprop="name">Linux系统管理</h1>
-    
-     
-           <p itemprop="description" >命令ulimit所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制例如打开文件数的限制可以在/etc/security/limits.conf加入12*               soft    nofile    </p>
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/02/27/unity3d_art/" title="unity3d 美术相关" itemprop="url">
-  
-    <h1 itemprop="name">unity3d 美术相关</h1>
-    
-     
-           <p itemprop="description" >场景制作
-所有相关资源放到Assets下的一个文件夹下，比如Assets/scenes
-所有场景对象放到一个对象下
-导出成AssetBundle，好在游戏中加载，就算是Demo阶段也应该这么做，因为编辑器本身的导出包功能实在不好用。这也意味着要有编辑器加载场景AssetBundl</p>
         
-    
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-  <section class="post" itemscope itemprop="blogPost">
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/DevTools/">DevTools</a>
+</div>
+
+
+  <div class="article-tags">
   
-    <a href="/2015/02/27/unity3d_plugin/" title="unity3d 插件相关" itemprop="url">
-  
-    <h1 itemprop="name">unity3d 插件相关</h1>
+  <span></span> <a href="/tags/Dev-Tools/">Dev Tools</a><a href="/tags/game/">game</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-     
-           <p itemprop="description" >Dynamic Bone
-实时骨骼动画，用于制作乳摇，头发甩动，裙摆等
-至少在1.1.7之前，都是无法处理Scale为负值的骨骼
-
-#ulua
-
-集成Lua到Unity3D中，用于IOS应用内更新
-
-#NGUI-目前不支持Unity5的新版Assetbundle打包方式
-#VST</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/mygame/" title="想要的游戏特征" itemprop="url">想要的游戏特征</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
+        <h2 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h2><ul>
+<li>高AI</li>
+<li>更多的环境互动</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/游戏开发/">游戏开发</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/游戏/">游戏</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished">Feb 27 2015</time>
-  </a>
-</section>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/mysql/" title="mysql" itemprop="url">mysql</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="mysql-连接-127-0-0-1-与-localhost的区别"><a href="#mysql-连接-127-0-0-1-与-localhost的区别" class="headerlink" title="mysql 连接 127.0.0.1 与 localhost的区别"></a>mysql 连接 127.0.0.1 与 localhost的区别</h1><p>  127.0.0.1 通过TCP连接可指定端口<br>  localhost 通过unix socket连接，不能指定端口，指定了也不生效</p>
+<p>#FAQ</p>
+<ul>
+<li><p>无法连接数据库的一些原因<br>1 密码不对<br>2 未给用户设置密码<br>3 未给用户usage权限<br>  连接权限：GRANT USAGE ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘rootpassword’;<br>  所有权限：GRANT ALL PRIVILEGES on <em>.</em> TO ‘root’@’%’ WITH GRANT OPTION;<br>  更新密码：UPDATE mysql.user set password=PASSWORD(‘jubian@2013’) where user=’root’;<br>  更新权限：flush privileges;</p>
+</li>
+<li><p>如何安全启动mysqld_multi<br>mysqld_multi –mysqld=mysqld_safe start 1,2,3..</p>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/database/">database</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/mysql-db/">mysql db</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/ps/" title="ps" itemprop="url">ps</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="序列帧生成GIF图"><a href="#序列帧生成GIF图" class="headerlink" title="序列帧生成GIF图"></a><a href="http://blog.163.com/lrm_1036/blog/static/9291615020126443450414/" target="_blank" rel="external">序列帧生成GIF图</a></h3><h3 id="制作alpha通道"><a href="#制作alpha通道" class="headerlink" title="制作alpha通道"></a><a href="http://www.chinavid.com/2d/2008-8-4/PhotoshopAlpha.htm" target="_blank" rel="external">制作alpha通道</a></h3>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/图形处理/">图形处理</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/ps/">ps</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/open_source_misc/" title="开源杂谈" itemprop="url">开源杂谈</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="大公司的开源地址"><a href="#大公司的开源地址" class="headerlink" title="大公司的开源地址"></a>大公司的开源地址</h1><p><a href="http://my.oschina.net/flashsword/blog/156638" target="_blank" rel="external">国内一些大公司的开源项目</a></p>
+<ul>
+<li><a href="https://github.com/alibaba" target="_blank" rel="external">阿里巴巴</a></li>
+<li><a href="https://github.com/TencentOpen" target="_blank" rel="external">腾讯</a></li>
+<li><a href="https://github.com/netease" target="_blank" rel="external">网易</a></li>
+<li><a href="https://github.com/douban" target="_blank" rel="external">豆瓣</a></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/OpenSource/">OpenSource</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/opensource/">opensource</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/linux_manage/" title="Linux系统管理" itemprop="url">Linux系统管理</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="ulimit"><a href="#ulimit" class="headerlink" title="ulimit"></a>ulimit</h2><p>所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制<br>例如打开文件数的限制可以在/etc/security/limits.conf加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*               soft    nofile           64000</span><br><span class="line">*               hard    nofile           64000</span><br></pre></td></tr></table></figure></p>
+<p>#iptables</p>
+<p>#查看Linux系统性能<br>1 iotop<br>root权限<br>查看实时磁盘读写情况</p>
+<p>2 vmstat 秒数<br>主要看si so ，单位字节<br>si:从交换分区换入的页面<br>so:从内存换出的页面</p>
+<p>3 free -m<br>以MB查看内存使用情况</p>
+<p>-/+buffers/cache 1024                 1024</p>
+<p>真正使用的内存        可释放内存+空闲内存</p>
+<p>以上两个值的和等于总内存</p>
+<p>buffers指buffer cache</p>
+<p>cached指page cache</p>
+<p>#VirtualBox<br>迁移virtualbox虚拟机<br>1 vboxmanage list vms<br>2 vboxmanage unregistervm vm_name<br>3 移动虚拟机文件夹到新的目录<br>4 移除虚拟机关联的硬盘<br>5 vboxmanage registervm vm_new_absolute_path/xxx.vbox</p>
+<p>VBoxManager controlvm centos75 poweroff<br>VBoxManager startvm centos75 –type headless</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Linux系统/">Linux系统</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/linux-system-manage/">linux system manage</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/unity3d_art/" title="unity3d 美术相关" itemprop="url">unity3d 美术相关</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="场景制作"><a href="#场景制作" class="headerlink" title="场景制作"></a>场景制作</h1><ul>
+<li>所有相关资源放到Assets下的一个文件夹下，比如Assets/scenes</li>
+<li>所有场景对象放到一个对象下</li>
+<li>导出成AssetBundle，好在游戏中加载，就算是Demo阶段也应该这么做，因为编辑器本身的导出包功能实在不好用。这也意味着要有编辑器加载场景AssetBundle的功能，好做调试。</li>
+<li>场景里要有一个点来确定场景位置</li>
+</ul>
+<h1 id="哪些工作应该由美术做"><a href="#哪些工作应该由美术做" class="headerlink" title="哪些工作应该由美术做"></a>哪些工作应该由美术做</h1><ul>
+<li>对于要外包的美术资源，能策划做的尽量让策划做，这样就减少了很多要和美术沟通的工作量。</li>
+</ul>
+<h1 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h1><h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ul>
+<li>三维软件单位用米制<br>保证所有场景和模型都是同一比例与单位就可以了<br>具体导出设置见《Unity3D4.x从入门到精通》资源导入部分</li>
+<li>同屏面数</li>
+<li>目录结构</li>
+<li>手机UI分辨率<ol>
+<li>定下最佳分辨率，最佳显示手机</li>
+<li>找到实际最佳分辨率：比第一条的分辨率低，但在第一条的分辨率下还是能显示得很清晰</li>
+<li>按实际最佳分辨率做UI，并定义控件大小</li>
+<li>目前NGUI的UIRoot设置为 ：<br>Scaling Style：Constrained On Mobile（在手机上按比例缩放，在电脑上按像素显示不缩放）<br>Content Width 实际最佳分辨率的宽<br>Content Height 实际最佳分辨率的高</li>
+</ol>
+</li>
+</ul>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ul>
+<li>地表过大时，由于烘焙图大小的限制，会导致烘焙出的阴影质量太差，可以在重要的区域单独使用一块地表</li>
+<li>T4M不支持5.0</li>
+<li>不能大面积使用法线贴</li>
+<li>网格与材质合并插件 MeshBaker</li>
+<li>移动端水插件MobileOcean</li>
+<li>使用3DMax制作场景<ol>
+<li>加载到U3D后，要在编辑器加调整Shader，加入水，加入天空盒，加入灯光，烘焙</li>
+<li>优化，如合并Mesh及材质</li>
+<li>地表Collider</li>
+</ol>
+</li>
+</ul>
+<h2 id="角色与动画"><a href="#角色与动画" class="headerlink" title="角色与动画"></a>角色与动画</h2><ul>
+<li>同一循环动作的起始位置与终止位置要重合</li>
+<li>对于不同动作，如果脚踏地，则踏地高度要一致，以免播放不同动作时，出现角色脚不在地面上的问题</li>
+</ul>
+<h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><ul>
+<li>目前特效系统是ParticleSystem</li>
+</ul>
+<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><ul>
+<li>NGUI</li>
+</ul>
+<h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><ul>
+<li>Cinema Director</li>
+</ul>
+<h2 id="摄像机动画"><a href="#摄像机动画" class="headerlink" title="摄像机动画"></a>摄像机动画</h2><ul>
+<li>CameraPath</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/game/">game</a><a href="/tags/art/">art</a><a href="/tags/unity3d/">unity3d</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/unity3d_plugin/" title="unity3d 插件相关" itemprop="url">unity3d 插件相关</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> Published Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="Dynamic-Bone"><a href="#Dynamic-Bone" class="headerlink" title="Dynamic Bone"></a>Dynamic Bone</h1><ul>
+<li>实时骨骼动画，用于制作乳摇，头发甩动，裙摆等</li>
+<li>至少在1.1.7之前，都是无法处理Scale为负值的骨骼</li>
+</ul>
+<p>#ulua</p>
+<ul>
+<li>集成Lua到Unity3D中，用于IOS应用内更新</li>
+</ul>
+<p>#NGUI<br>-目前不支持Unity5的新版Assetbundle打包方式</p>
+<p>#VSTU2012<br>-5.2没有问题<br>-4.1.5不能自动检测到VSTU的包，要自己找到安装路径里的VSTU包</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/game/">game</a><a href="/tags/art/">art</a><a href="/tags/unity3d/">unity3d</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
 
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
   </nav>
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
+
+
+  
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
+		  
 			<li><a href="/categories/AI/" title="AI">AI<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/DevTools/" title="DevTools">DevTools<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/Linux系统/" title="Linux系统">Linux系统<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/OpenSource/" title="OpenSource">OpenSource<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/database/" title="database">database<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/game-dev/" title="game-dev">game-dev<sup>2</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/shell/" title="shell">shell<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>3</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/博客/" title="博客">博客<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/图形处理/" title="图形处理">图形处理<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/娱乐/" title="娱乐">娱乐<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/游戏开发/" title="游戏开发">游戏开发<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/游戏运营/" title="游戏运营">游戏运营<sup>1</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/程序库/" title="程序库">程序库<sup>3</sup></a></li>
+		  
 		
+		  
 			<li><a href="/categories/项目分析/" title="项目分析">项目分析<sup>1</sup></a></li>
+		  
 		
 		</ul>
 </div>
@@ -286,56 +871,112 @@ VS2013 要安装Microsoft .NET Framework 4.6 Targeting Pack 才能在工程中�
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/360-游戏运营/" title="360 游戏运营">360 游戏运营<sup>1</sup></a></li>
+			
+				<li><a href="/tags/game/" title="game">game<sup>6</sup></a></li>
+			
 		
-			<li><a href="/tags/AI/" title="AI">AI<sup>2</sup></a></li>
+			
+				<li><a href="/tags/art/" title="art">art<sup>3</sup></a></li>
+			
 		
-			<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
+			
+				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>3</sup></a></li>
+			
 		
-			<li><a href="/tags/art/" title="art">art<sup>3</sup></a></li>
+			
+				<li><a href="/tags/AI/" title="AI">AI<sup>2</sup></a></li>
+			
 		
-			<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+			
+				<li><a href="/tags/graphic/" title="graphic">graphic<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+			
+				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+			
+				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
+			
+				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/game/" title="game">game<sup>6</sup></a></li>
+			
+				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/game-engine/" title="game-engine">game-engine<sup>1</sup></a></li>
+			
+				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/graphic/" title="graphic">graphic<sup>1</sup></a></li>
+			
+				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/linux-system-manage/" title="linux system manage">linux system manage<sup>1</sup></a></li>
+			
+				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/mongo/" title="mongo">mongo<sup>1</sup></a></li>
+			
+				<li><a href="/tags/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/mysql-db/" title="mysql db">mysql db<sup>1</sup></a></li>
+			
+				<li><a href="/tags/game-engine/" title="game-engine">game-engine<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
+			
+				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
+			
+				<li><a href="/tags/mongo/" title="mongo">mongo<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
+			
+				<li><a href="/tags/游戏/" title="游戏">游戏<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>3</sup></a></li>
+			
+				<li><a href="/tags/mysql-db/" title="mysql db">mysql db<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
+			
+				<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+			
+				<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
+			
 		
 		</ul>
 </div>
 
 
-  <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+    </ul>
 </div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
 
 </aside>
 </div>
@@ -348,21 +989,40 @@ VS2013 要安装Microsoft .NET Framework 4.6 Targeting Pack 才能在工程中�
 	</div>
 	
 	
-	<div class="social-font clearfix">
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
 		
 		
 		
 		
 		
 	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+			
 		
-		<a href="http://yangguosdxl.github.io" target="_blank" title="开伦">开伦</a>
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="开伦">开伦</a>
+		
 		
 		</p>
 </div>
 </footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -380,18 +1040,6 @@ $(document).ready(function(){
       a = $('#asidepart'),
       c = $('.closeaside'),
       o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-        
-    }
-  });
   c.click(function(){
     a.addClass('fadeOut').css('display', 'none');
     o.css('display', 'block').addClass('fadeIn');
@@ -405,6 +1053,18 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
 });
 </script>
 
@@ -413,6 +1073,59 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
 
   </body>
  </html>
