@@ -347,7 +347,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/game_art/" title="游戏美术规则" itemprop="url">游戏美术规则</a>
+      <a href="/2015/02/27/funny/" title="好玩的" itemprop="url">好玩的</a>
   </h1>
   <p class="article-author">By
        
@@ -360,9 +360,13 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 </header>
     <div class="article-content">
         
-        <h1 id="图片格式"><a href="#图片格式" class="headerlink" title="图片格式"></a>图片格式</h1><p><a href="http://zh.wikipedia.org/wiki/%E5%9B%BE%E5%BD%A2%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E6%AF%94%E8%BE%83" target="_blank" rel="external">图形文件格式比较-维基</a></p>
-<p>tga 无损无压缩有Alpha通道 图片资源大，占硬盘大 加载速度快</p>
-<p>png 有损压缩有Alpha通道   图片资源小，占硬盘小 加载速度慢</p>
+        <h1 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h1><ul>
+<li><a href="http://www.gamersky.com/z/oatbf/" target="_blank" rel="external">奥日与黑暗森林</a></li>
+<li><a href="">三位一体</a></li>
+<li>[饥荒]</li>
+<li>[纸境]</li>
+<li>[]</li>
+</ul>
 
         
         
@@ -375,13 +379,13 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/game-dev/">game-dev</a>
+  <a class="article-category-link" href="/categories/娱乐/">娱乐</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/game/">game</a><a href="/tags/art/">art</a>
+  <span></span> <a href="/tags/funny/">funny</a>
   </div>
 
 </div>
@@ -392,7 +396,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 <div class="comments-count">
 	
 	  	<span></span>
-		<a href="/2015/02/27/game_art/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/game_art/" data-count-type="comments">&nbsp;</a>
+		<a href="/2015/02/27/funny/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/funny/" data-count-type="comments">&nbsp;</a>
 	
 </div>
 
@@ -479,74 +483,6 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/boost/" title="boost" itemprop="url">boost</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="Win安装Boost"><a href="#Win安装Boost" class="headerlink" title="Win安装Boost"></a>Win安装Boost</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题</span><br><span class="line"></span><br><span class="line">bootstrap.bat</span><br><span class="line">bjam.exe --toolset=msvc-11.0 install --prefix=E:\work\xbdg\program\dep\boost</span><br></pre></td></tr></table></figure>
-<h2 id="Linux安装Boost"><a href="#Linux安装Boost" class="headerlink" title="Linux安装Boost"></a>Linux安装Boost</h2><p><strong>编译boost</strong><br>进入libs/config<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash configure</span><br></pre></td></tr></table></figure></p>
-<p>将当前目录生成的user.hpp拷贝到boost/config下，覆盖同名文件</p>
-<p>–layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-1.0.0需要这种名字的库<br>-j4 并行编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./b2 --with-chrono --with-date_time --with-regex --with-system --with-thread --build-type=complete --layout=tagged -j4 --prefix=/usr/<span class="built_in">local</span> threading=multi install</span><br></pre></td></tr></table></figure></p>
-<h2 id="配置boost"><a href="#配置boost" class="headerlink" title="配置boost"></a>配置boost</h2><p>配置文件 boost/config/usr.hpp<br><a href="http://cpp.ezbty.org/myfiles/boost/libs/config/doc/html/index.html#boost_config.configuring_boost_for_your_platform" target="_blank" rel="external">说明文档：Boost.Config</a></p>
-<h2 id="精简boost"><a href="#精简boost" class="headerlink" title="精简boost"></a>精简boost</h2><p>工具<a href="http://guiquanz.me/2013/05/01/boost-bcp-intro/" target="_blank" rel="external">bcp</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/程序库/">程序库</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/boost/">boost</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/boost/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/boost/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
       <a href="/2015/02/27/mygame/" title="想要的游戏特征" itemprop="url">想要的游戏特征</a>
   </h1>
   <p class="article-author">By
@@ -594,6 +530,89 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 	
 	  	<span></span>
 		<a href="/2015/02/27/mygame/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/mygame/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2000/03/25/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2000-03-25T13:00:00.000Z" itemprop="datePublished"> 发表于 Mar 25 2000</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+<p><img src="/images/1.jpg" alt=""><br><img src="/images/1.jpg"><br></p>
+<p><embed src="http://www.xiami.com/widget/0_3515679/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"><br>
+
+	<div class="row">
+	  <iframe src="undefined/asset/expect.pdf" style="width:100%; height:550px"></iframe>
+	</div>
+
+
+<br>
+
+	<div class="row">
+	  <iframe src="undefinedhttp://7xov2f.com1.z0.glb.clouddn.com/bash_freshman.pdf" style="width:100%; height:550px"></iframe>
+	</div>
+
+
+</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/博客/">博客</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2000/03/25/hello-world/#comments" class="ds-thread-count comments-count-link" data-thread-key="2000/03/25/hello-world/" data-count-type="comments">&nbsp;</a>
 	
 </div>
 
@@ -666,7 +685,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
-			<li><a href="/categories/博客/" title="博客">博客<sup>2</sup></a></li>
+			<li><a href="/categories/博客/" title="博客">博客<sup>3</sup></a></li>
 		  
 		
 		  
