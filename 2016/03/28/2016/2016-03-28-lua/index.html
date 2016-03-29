@@ -4,32 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>mysql | Pretty Sunshine</title>
+    <title>lua | Pretty Sunshine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="开伦">
     
 
     
-    <meta name="description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
-#FAQ
-
-无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
+    <meta name="description" content="文档注释
+ldoc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql">
-<meta property="og:url" content="http://yangguosdxl.github.io/2015/02/27/mysql/index.html">
+<meta property="og:title" content="lua">
+<meta property="og:url" content="http://yangguosdxl.github.io/2016/03/28/2016/2016-03-28-lua/index.html">
 <meta property="og:site_name" content="Pretty Sunshine">
-<meta property="og:description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
-#FAQ
-
-无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
-<meta property="og:updated_time" content="2016-03-18T06:18:42.231Z">
+<meta property="og:description" content="文档注释
+ldoc">
+<meta property="og:updated_time" content="2016-03-28T06:10:31.702Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql">
-<meta name="twitter:description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
-#FAQ
-
-无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
+<meta name="twitter:title" content="lua">
+<meta name="twitter:description" content="文档注释
+ldoc">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -89,14 +83,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/mysql/" title="mysql" itemprop="url">mysql</a>
+      <a href="/2016/03/28/2016/2016-03-28-lua/" title="lua" itemprop="url">lua</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
 		
   <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    <time datetime="2016-03-28T06:09:00.000Z" itemprop="datePublished"> 发表于 Mar 28 2016</time>
     
   </p>
 </header>
@@ -105,17 +99,12 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-连接-127-0-0-1-与-localhost的区别"><span class="toc-number">1.</span> <span class="toc-text">mysql 连接 127.0.0.1 与 localhost的区别</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文档注释"><span class="toc-number">1.</span> <span class="toc-text">文档注释</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="mysql-连接-127-0-0-1-与-localhost的区别"><a href="#mysql-连接-127-0-0-1-与-localhost的区别" class="headerlink" title="mysql 连接 127.0.0.1 与 localhost的区别"></a>mysql 连接 127.0.0.1 与 localhost的区别</h1><p>  127.0.0.1 通过TCP连接可指定端口<br>  localhost 通过unix socket连接，不能指定端口，指定了也不生效</p>
-<p>#FAQ</p>
-<ul>
-<li><p>无法连接数据库的一些原因<br>1 密码不对<br>2 未给用户设置密码<br>3 未给用户usage权限<br>  连接权限：GRANT USAGE ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘rootpassword’;<br>  所有权限：GRANT ALL PRIVILEGES on <em>.</em> TO ‘root’@’%’ WITH GRANT OPTION;<br>  更新密码：UPDATE mysql.user set password=PASSWORD(‘jubian@2013’) where user=’root’;<br>  更新权限：flush privileges;</p>
-</li>
-<li><p>如何安全启动mysqld_multi<br>mysqld_multi –mysqld=mysqld_safe start 1,2,3..</p>
-</li>
+		<h1 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h1><ul>
+<li><a href="http://stevedonovan.github.io/ldoc/" target="_blank" rel="external">ldoc</a></li>
 </ul>
   
 	</div>
@@ -124,13 +113,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/database/">database</a>
+  <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/mysql-db/">mysql db</a>
+  <span></span> <a href="/tags/script/">script</a><a href="/tags/lua/">lua</a>
   </div>
 
 </div>
@@ -139,7 +128,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yangguosdxl.github.io/2015/02/27/mysql/" data-title="mysql | Pretty Sunshine" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yangguosdxl.github.io/2016/03/28/2016/2016-03-28-lua/" data-title="lua | Pretty Sunshine" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -152,19 +141,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/02/27/ai/" title="游戏人工智能">
-  <strong>上一篇：</strong><br/>
-  <span>
-  游戏人工智能</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2000/03/25/hello-world/"  title="Hello World">
+<a href="/2016/03/27/2016/2016-03-27-linux硬盘管理/"  title="linux硬盘管理">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>linux硬盘管理
 </span>
 </a>
 </div>
@@ -173,7 +154,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/02/27/mysql/" data-title="mysql" data-url="http://yangguosdxl.github.io/2015/02/27/mysql/"></div>
+	<div class="ds-thread" data-thread-key="2016/03/28/2016/2016-03-28-lua/" data-title="lua" data-url="http://yangguosdxl.github.io/2016/03/28/2016/2016-03-28-lua/"></div>
 
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -198,7 +179,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-连接-127-0-0-1-与-localhost的区别"><span class="toc-number">1.</span> <span class="toc-text">mysql 连接 127.0.0.1 与 localhost的区别</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文档注释"><span class="toc-number">1.</span> <span class="toc-text">文档注释</span></a></li></ol>
  
   </div>
 
