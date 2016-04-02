@@ -4,31 +4,50 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Unity3D光照图 | Pretty Sunshine</title>
+    <title>unity3d 插件相关 | Pretty Sunshine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="开伦">
     
 
     
-    <meta name="description" content="GI流程
-参考链接
-UVs for GI">
+    <meta name="description" content="Dynamic Bone
+实时骨骼动画，用于制作乳摇，头发甩动，裙摆等
+至少在1.1.7之前，都是无法处理Scale为负值的骨骼
+
+#ulua
+
+集成Lua到Unity3D中，用于IOS应用内更新
+
+#NGUI-目前不支持Unity5的新版Assetbundle打包方式
+#VSTU2012-5.2没有问题-4.1.5不能自动检测到VSTU的包，要自己找到安装路径里的VSTU包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity3D光照图">
-<meta property="og:url" content="http://yangguosdxl.github.io/2016/04/02/2016/2016-04-02-Unity3D光照图/index.html">
+<meta property="og:title" content="unity3d 插件相关">
+<meta property="og:url" content="http://yangguosdxl.github.io/2015/02/27/unity3d/unity3d_plugin/index.html">
 <meta property="og:site_name" content="Pretty Sunshine">
-<meta property="og:description" content="GI流程
-参考链接
-UVs for GI">
-<meta property="og:image" content="http://yangguosdxl.github.io/images/GI_Jobs.png">
-<meta property="og:updated_time" content="2016-04-02T07:18:37.347Z">
+<meta property="og:description" content="Dynamic Bone
+实时骨骼动画，用于制作乳摇，头发甩动，裙摆等
+至少在1.1.7之前，都是无法处理Scale为负值的骨骼
+
+#ulua
+
+集成Lua到Unity3D中，用于IOS应用内更新
+
+#NGUI-目前不支持Unity5的新版Assetbundle打包方式
+#VSTU2012-5.2没有问题-4.1.5不能自动检测到VSTU的包，要自己找到安装路径里的VSTU包">
+<meta property="og:updated_time" content="2016-03-18T06:18:42.157Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unity3D光照图">
-<meta name="twitter:description" content="GI流程
-参考链接
-UVs for GI">
-<meta name="twitter:image" content="http://yangguosdxl.github.io/images/GI_Jobs.png">
+<meta name="twitter:title" content="unity3d 插件相关">
+<meta name="twitter:description" content="Dynamic Bone
+实时骨骼动画，用于制作乳摇，头发甩动，裙摆等
+至少在1.1.7之前，都是无法处理Scale为负值的骨骼
+
+#ulua
+
+集成Lua到Unity3D中，用于IOS应用内更新
+
+#NGUI-目前不支持Unity5的新版Assetbundle打包方式
+#VSTU2012-5.2没有问题-4.1.5不能自动检测到VSTU的包，要自己找到安装路径里的VSTU包">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -88,14 +107,14 @@ UVs for GI">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/02/2016/2016-04-02-Unity3D光照图/" title="Unity3D光照图" itemprop="url">Unity3D光照图</a>
+      <a href="/2015/02/27/unity3d/unity3d_plugin/" title="unity3d 插件相关" itemprop="url">unity3d 插件相关</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-02T05:26:00.000Z" itemprop="datePublished"> 发表于 Apr 2 2016</time>
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
     
   </p>
 </header>
@@ -104,14 +123,20 @@ UVs for GI">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GI流程"><span class="toc-number">1.</span> <span class="toc-text">GI流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">2.</span> <span class="toc-text">参考链接</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dynamic-Bone"><span class="toc-number">1.</span> <span class="toc-text">Dynamic Bone</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="GI流程"><a href="#GI流程" class="headerlink" title="GI流程"></a>GI流程</h1><p><img src="/images/GI_Jobs.png" alt=""></p>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
-<li><a href="https://goo.gl/bHsCyq" target="_blank" rel="external">UVs for GI </a></li>
+		<h1 id="Dynamic-Bone"><a href="#Dynamic-Bone" class="headerlink" title="Dynamic Bone"></a>Dynamic Bone</h1><ul>
+<li>实时骨骼动画，用于制作乳摇，头发甩动，裙摆等</li>
+<li>至少在1.1.7之前，都是无法处理Scale为负值的骨骼</li>
 </ul>
+<p>#ulua</p>
+<ul>
+<li>集成Lua到Unity3D中，用于IOS应用内更新</li>
+</ul>
+<p>#NGUI<br>-目前不支持Unity5的新版Assetbundle打包方式</p>
+<p>#VSTU2012<br>-5.2没有问题<br>-4.1.5不能自动检测到VSTU的包，要自己找到安装路径里的VSTU包</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -125,7 +150,7 @@ UVs for GI">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/unity3d/">unity3d</a><a href="/tags/GI-lightmap/">GI lightmap</a>
+  <span></span> <a href="/tags/game/">game</a><a href="/tags/art/">art</a><a href="/tags/unity3d/">unity3d</a>
   </div>
 
 </div>
@@ -134,7 +159,7 @@ UVs for GI">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yangguosdxl.github.io/2016/04/02/2016/2016-04-02-Unity3D光照图/" data-title="Unity3D光照图 | Pretty Sunshine" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yangguosdxl.github.io/2015/02/27/unity3d/unity3d_plugin/" data-title="unity3d 插件相关 | Pretty Sunshine" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,11 +172,19 @@ UVs for GI">
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2015/02/27/unity3d/unity3d_art/" title="unity3d 美术相关">
+  <strong>上一篇：</strong><br/>
+  <span>
+  unity3d 美术相关</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2016/03/31/2016/2016-03-31-MongoDB/"  title="MongoDB">
+<a href="/2015/02/27/open_source_misc/"  title="开源杂谈">
  <strong>下一篇：</strong><br/> 
- <span>MongoDB
+ <span>开源杂谈
 </span>
 </a>
 </div>
@@ -160,7 +193,7 @@ UVs for GI">
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/04/02/2016/2016-04-02-Unity3D光照图/" data-title="Unity3D光照图" data-url="http://yangguosdxl.github.io/2016/04/02/2016/2016-04-02-Unity3D光照图/"></div>
+	<div class="ds-thread" data-thread-key="2015/02/27/unity3d/unity3d_plugin/" data-title="unity3d 插件相关" data-url="http://yangguosdxl.github.io/2015/02/27/unity3d/unity3d_plugin/"></div>
 
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -185,7 +218,7 @@ UVs for GI">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GI流程"><span class="toc-number">1.</span> <span class="toc-text">GI流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">2.</span> <span class="toc-text">参考链接</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dynamic-Bone"><span class="toc-number">1.</span> <span class="toc-text">Dynamic Bone</span></a></li></ol>
  
   </div>
 

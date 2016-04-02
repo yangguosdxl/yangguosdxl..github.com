@@ -4,44 +4,31 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>unity3d 美术相关 | Pretty Sunshine</title>
+    <title>Unity3D光照图 | Pretty Sunshine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="开伦">
     
 
     
-    <meta name="description" content="场景制作
-所有相关资源放到Assets下的一个文件夹下，比如Assets/scenes
-所有场景对象放到一个对象下
-导出成AssetBundle，好在游戏中加载，就算是Demo阶段也应该这么做，因为编辑器本身的导出包功能实在不好用。这也意味着要有编辑器加载场景AssetBundle的功能，好做调试。
-场景里要有一个点来确定场景位置
-
-哪些工作应该由美术做
-对于要外包的美术资源，能策划做的尽量让策划">
+    <meta name="description" content="GI流程
+参考链接
+UVs for GI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="unity3d 美术相关">
-<meta property="og:url" content="http://yangguosdxl.github.io/2015/02/27/unity3d_art/index.html">
+<meta property="og:title" content="Unity3D光照图">
+<meta property="og:url" content="http://yangguosdxl.github.io/2016/04/02/unity3d/2016-04-02-Unity3D光照图/index.html">
 <meta property="og:site_name" content="Pretty Sunshine">
-<meta property="og:description" content="场景制作
-所有相关资源放到Assets下的一个文件夹下，比如Assets/scenes
-所有场景对象放到一个对象下
-导出成AssetBundle，好在游戏中加载，就算是Demo阶段也应该这么做，因为编辑器本身的导出包功能实在不好用。这也意味着要有编辑器加载场景AssetBundle的功能，好做调试。
-场景里要有一个点来确定场景位置
-
-哪些工作应该由美术做
-对于要外包的美术资源，能策划做的尽量让策划">
-<meta property="og:updated_time" content="2016-03-18T06:18:42.243Z">
+<meta property="og:description" content="GI流程
+参考链接
+UVs for GI">
+<meta property="og:image" content="http://yangguosdxl.github.io/images/GI_Jobs.png">
+<meta property="og:updated_time" content="2016-04-02T07:18:37.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="unity3d 美术相关">
-<meta name="twitter:description" content="场景制作
-所有相关资源放到Assets下的一个文件夹下，比如Assets/scenes
-所有场景对象放到一个对象下
-导出成AssetBundle，好在游戏中加载，就算是Demo阶段也应该这么做，因为编辑器本身的导出包功能实在不好用。这也意味着要有编辑器加载场景AssetBundle的功能，好做调试。
-场景里要有一个点来确定场景位置
-
-哪些工作应该由美术做
-对于要外包的美术资源，能策划做的尽量让策划">
+<meta name="twitter:title" content="Unity3D光照图">
+<meta name="twitter:description" content="GI流程
+参考链接
+UVs for GI">
+<meta name="twitter:image" content="http://yangguosdxl.github.io/images/GI_Jobs.png">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -101,14 +88,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/unity3d_art/" title="unity3d 美术相关" itemprop="url">unity3d 美术相关</a>
+      <a href="/2016/04/02/unity3d/2016-04-02-Unity3D光照图/" title="Unity3D光照图" itemprop="url">Unity3D光照图</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
 		
   <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    <time datetime="2016-04-02T05:26:00.000Z" itemprop="datePublished"> 发表于 Apr 2 2016</time>
     
   </p>
 </header>
@@ -117,59 +104,13 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#场景制作"><span class="toc-number">1.</span> <span class="toc-text">场景制作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#哪些工作应该由美术做"><span class="toc-number">2.</span> <span class="toc-text">哪些工作应该由美术做</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#规范"><span class="toc-number">3.</span> <span class="toc-text">规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通用"><span class="toc-number">3.1.</span> <span class="toc-text">通用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#场景"><span class="toc-number">3.2.</span> <span class="toc-text">场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#角色与动画"><span class="toc-number">3.3.</span> <span class="toc-text">角色与动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特效"><span class="toc-number">3.4.</span> <span class="toc-text">特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI"><span class="toc-number">3.5.</span> <span class="toc-text">UI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技能"><span class="toc-number">3.6.</span> <span class="toc-text">技能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#摄像机动画"><span class="toc-number">3.7.</span> <span class="toc-text">摄像机动画</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GI流程"><span class="toc-number">1.</span> <span class="toc-text">GI流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">2.</span> <span class="toc-text">参考链接</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="场景制作"><a href="#场景制作" class="headerlink" title="场景制作"></a>场景制作</h1><ul>
-<li>所有相关资源放到Assets下的一个文件夹下，比如Assets/scenes</li>
-<li>所有场景对象放到一个对象下</li>
-<li>导出成AssetBundle，好在游戏中加载，就算是Demo阶段也应该这么做，因为编辑器本身的导出包功能实在不好用。这也意味着要有编辑器加载场景AssetBundle的功能，好做调试。</li>
-<li>场景里要有一个点来确定场景位置</li>
-</ul>
-<h1 id="哪些工作应该由美术做"><a href="#哪些工作应该由美术做" class="headerlink" title="哪些工作应该由美术做"></a>哪些工作应该由美术做</h1><ul>
-<li>对于要外包的美术资源，能策划做的尽量让策划做，这样就减少了很多要和美术沟通的工作量。</li>
-</ul>
-<h1 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h1><h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ul>
-<li>三维软件单位用米制<br>保证所有场景和模型都是同一比例与单位就可以了<br>具体导出设置见《Unity3D4.x从入门到精通》资源导入部分</li>
-<li>同屏面数</li>
-<li>目录结构</li>
-<li>手机UI分辨率<ol>
-<li>定下最佳分辨率，最佳显示手机</li>
-<li>找到实际最佳分辨率：比第一条的分辨率低，但在第一条的分辨率下还是能显示得很清晰</li>
-<li>按实际最佳分辨率做UI，并定义控件大小</li>
-<li>目前NGUI的UIRoot设置为 ：<br>Scaling Style：Constrained On Mobile（在手机上按比例缩放，在电脑上按像素显示不缩放）<br>Content Width 实际最佳分辨率的宽<br>Content Height 实际最佳分辨率的高</li>
-</ol>
-</li>
-</ul>
-<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>地表过大时，由于烘焙图大小的限制，会导致烘焙出的阴影质量太差，可以在重要的区域单独使用一块地表</li>
-<li>T4M不支持5.0</li>
-<li>不能大面积使用法线贴</li>
-<li>网格与材质合并插件 MeshBaker</li>
-<li>移动端水插件MobileOcean</li>
-<li>使用3DMax制作场景<ol>
-<li>加载到U3D后，要在编辑器加调整Shader，加入水，加入天空盒，加入灯光，烘焙</li>
-<li>优化，如合并Mesh及材质</li>
-<li>地表Collider</li>
-</ol>
-</li>
-</ul>
-<h2 id="角色与动画"><a href="#角色与动画" class="headerlink" title="角色与动画"></a>角色与动画</h2><ul>
-<li>同一循环动作的起始位置与终止位置要重合</li>
-<li>对于不同动作，如果脚踏地，则踏地高度要一致，以免播放不同动作时，出现角色脚不在地面上的问题</li>
-</ul>
-<h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><ul>
-<li>目前特效系统是ParticleSystem</li>
-</ul>
-<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><ul>
-<li>NGUI</li>
-</ul>
-<h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><ul>
-<li>Cinema Director</li>
-</ul>
-<h2 id="摄像机动画"><a href="#摄像机动画" class="headerlink" title="摄像机动画"></a>摄像机动画</h2><ul>
-<li>CameraPath</li>
+		<h1 id="GI流程"><a href="#GI流程" class="headerlink" title="GI流程"></a>GI流程</h1><p><img src="/images/GI_Jobs.png" alt=""></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://goo.gl/bHsCyq" target="_blank" rel="external">UVs for GI </a></li>
 </ul>
   
 	</div>
@@ -184,7 +125,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/game/">game</a><a href="/tags/art/">art</a><a href="/tags/unity3d/">unity3d</a>
+  <span></span> <a href="/tags/unity3d/">unity3d</a><a href="/tags/GI-lightmap/">GI lightmap</a>
   </div>
 
 </div>
@@ -193,7 +134,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yangguosdxl.github.io/2015/02/27/unity3d_art/" data-title="unity3d 美术相关 | Pretty Sunshine" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yangguosdxl.github.io/2016/04/02/unity3d/2016-04-02-Unity3D光照图/" data-title="Unity3D光照图 | Pretty Sunshine" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -206,19 +147,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/02/27/linux_manage/" title="Linux系统管理">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Linux系统管理</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/02/27/unity3d_plugin/"  title="unity3d 插件相关">
+<a href="/2016/03/31/2016/2016-03-31-MongoDB/"  title="MongoDB">
  <strong>下一篇：</strong><br/> 
- <span>unity3d 插件相关
+ <span>MongoDB
 </span>
 </a>
 </div>
@@ -227,7 +160,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/02/27/unity3d_art/" data-title="unity3d 美术相关" data-url="http://yangguosdxl.github.io/2015/02/27/unity3d_art/"></div>
+	<div class="ds-thread" data-thread-key="2016/04/02/unity3d/2016-04-02-Unity3D光照图/" data-title="Unity3D光照图" data-url="http://yangguosdxl.github.io/2016/04/02/unity3d/2016-04-02-Unity3D光照图/"></div>
 
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -252,7 +185,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#场景制作"><span class="toc-number">1.</span> <span class="toc-text">场景制作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#哪些工作应该由美术做"><span class="toc-number">2.</span> <span class="toc-text">哪些工作应该由美术做</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#规范"><span class="toc-number">3.</span> <span class="toc-text">规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通用"><span class="toc-number">3.1.</span> <span class="toc-text">通用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#场景"><span class="toc-number">3.2.</span> <span class="toc-text">场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#角色与动画"><span class="toc-number">3.3.</span> <span class="toc-text">角色与动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特效"><span class="toc-number">3.4.</span> <span class="toc-text">特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI"><span class="toc-number">3.5.</span> <span class="toc-text">UI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技能"><span class="toc-number">3.6.</span> <span class="toc-text">技能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#摄像机动画"><span class="toc-number">3.7.</span> <span class="toc-text">摄像机动画</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GI流程"><span class="toc-number">1.</span> <span class="toc-text">GI流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">2.</span> <span class="toc-text">参考链接</span></a></li></ol>
  
   </div>
 
