@@ -95,6 +95,14 @@
     <div class="article-content">
         
         <h1 id="GI流程"><a href="#GI流程" class="headerlink" title="GI流程"></a>GI流程</h1><p><img src="/images/GI_Jobs.png" alt=""></p>
+<h1 id="Lighting界面下的烘焙参数"><a href="#Lighting界面下的烘焙参数" class="headerlink" title="Lighting界面下的烘焙参数"></a>Lighting界面下的烘焙参数</h1><ol>
+<li>Object-&gt;Scale In Lightmap 物体接受的阴影是PixelPerUnit（Scene）设置的多少倍。</li>
+<li>Scene-&gt;Bake Resolution 每个世界单位（1米）对应LightMap中多少个像素，一般5就可以了。</li>
+</ol>
+<p>#FAQ</p>
+<ol>
+<li>阴影太淡<br>原因是地表太大，一张光照图的大小是有限的，地表太大，会使得每个世界单位对应光照图上的像素变少，所以光照图贴到地表上后，一经放大，阴影就会非常模糊非常淡。解决的办法是分割<br>，将重点区域的地表对应的Scale In Lightmap的值调大，非重点区域的物体及地表Scale In Lightmap值调小。</li>
+</ol>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
 <li><a href="https://goo.gl/bHsCyq" target="_blank" rel="external">UVs for GI </a></li>
 </ul>

@@ -12,22 +12,37 @@
 
     
     <meta name="description" content="GI流程
-参考链接
-UVs for GI">
+Lighting界面下的烘焙参数
+Object-&amp;gt;Scale In Lightmap 物体接受的阴影是PixelPerUnit（Scene）设置的多少倍。
+Scene-&amp;gt;Bake Resolution 每个世界单位（1米）对应LightMap中多少个像素，一般5就可以了。
+
+#FAQ
+
+阴影太淡原因是地表太大，一张光照图的大小是有限的，地表太大，会使得每个世界单位对应光照图上">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity3D光照图">
 <meta property="og:url" content="http://yangguosdxl.github.io/2016/04/02/unity3d/2016-04-02-Unity3D光照图/index.html">
 <meta property="og:site_name" content="Pretty Sunshine">
 <meta property="og:description" content="GI流程
-参考链接
-UVs for GI">
+Lighting界面下的烘焙参数
+Object-&amp;gt;Scale In Lightmap 物体接受的阴影是PixelPerUnit（Scene）设置的多少倍。
+Scene-&amp;gt;Bake Resolution 每个世界单位（1米）对应LightMap中多少个像素，一般5就可以了。
+
+#FAQ
+
+阴影太淡原因是地表太大，一张光照图的大小是有限的，地表太大，会使得每个世界单位对应光照图上">
 <meta property="og:image" content="http://yangguosdxl.github.io/images/GI_Jobs.png">
-<meta property="og:updated_time" content="2016-04-02T07:18:37.347Z">
+<meta property="og:updated_time" content="2016-04-05T02:49:54.599Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity3D光照图">
 <meta name="twitter:description" content="GI流程
-参考链接
-UVs for GI">
+Lighting界面下的烘焙参数
+Object-&amp;gt;Scale In Lightmap 物体接受的阴影是PixelPerUnit（Scene）设置的多少倍。
+Scene-&amp;gt;Bake Resolution 每个世界单位（1米）对应LightMap中多少个像素，一般5就可以了。
+
+#FAQ
+
+阴影太淡原因是地表太大，一张光照图的大小是有限的，地表太大，会使得每个世界单位对应光照图上">
 <meta name="twitter:image" content="http://yangguosdxl.github.io/images/GI_Jobs.png">
 
     
@@ -104,11 +119,19 @@ UVs for GI">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GI流程"><span class="toc-number">1.</span> <span class="toc-text">GI流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">2.</span> <span class="toc-text">参考链接</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GI流程"><span class="toc-number">1.</span> <span class="toc-text">GI流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lighting界面下的烘焙参数"><span class="toc-number">2.</span> <span class="toc-text">Lighting界面下的烘焙参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">3.</span> <span class="toc-text">参考链接</span></a></li></ol>
 		
 		</div>
 		
 		<h1 id="GI流程"><a href="#GI流程" class="headerlink" title="GI流程"></a>GI流程</h1><p><img src="/images/GI_Jobs.png" alt=""></p>
+<h1 id="Lighting界面下的烘焙参数"><a href="#Lighting界面下的烘焙参数" class="headerlink" title="Lighting界面下的烘焙参数"></a>Lighting界面下的烘焙参数</h1><ol>
+<li>Object-&gt;Scale In Lightmap 物体接受的阴影是PixelPerUnit（Scene）设置的多少倍。</li>
+<li>Scene-&gt;Bake Resolution 每个世界单位（1米）对应LightMap中多少个像素，一般5就可以了。</li>
+</ol>
+<p>#FAQ</p>
+<ol>
+<li>阴影太淡<br>原因是地表太大，一张光照图的大小是有限的，地表太大，会使得每个世界单位对应光照图上的像素变少，所以光照图贴到地表上后，一经放大，阴影就会非常模糊非常淡。解决的办法是分割<br>，将重点区域的地表对应的Scale In Lightmap的值调大，非重点区域的物体及地表Scale In Lightmap值调小。</li>
+</ol>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
 <li><a href="https://goo.gl/bHsCyq" target="_blank" rel="external">UVs for GI </a></li>
 </ul>
@@ -185,7 +208,7 @@ UVs for GI">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GI流程"><span class="toc-number">1.</span> <span class="toc-text">GI流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">2.</span> <span class="toc-text">参考链接</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GI流程"><span class="toc-number">1.</span> <span class="toc-text">GI流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lighting界面下的烘焙参数"><span class="toc-number">2.</span> <span class="toc-text">Lighting界面下的烘焙参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">3.</span> <span class="toc-text">参考链接</span></a></li></ol>
  
   </div>
 
