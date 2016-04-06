@@ -4,26 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Linux系统管理 | Pretty Sunshine</title>
+    <title>mysql | Pretty Sunshine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="开伦">
     
 
     
-    <meta name="description" content="命令ulimit所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制例如打开文件数的限制可以在/etc/security/limits.conf加入12*               soft    nofile           64000*               hard    nofile           64000
-#">
+    <meta name="description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
+#FAQ
+
+无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux系统管理">
-<meta property="og:url" content="http://yangguosdxl.github.io/2015/02/27/linux_manage/index.html">
+<meta property="og:title" content="mysql">
+<meta property="og:url" content="http://yangguosdxl.github.io/2015/02/27/数据库/mysql/index.html">
 <meta property="og:site_name" content="Pretty Sunshine">
-<meta property="og:description" content="命令ulimit所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制例如打开文件数的限制可以在/etc/security/limits.conf加入12*               soft    nofile           64000*               hard    nofile           64000
-#">
-<meta property="og:updated_time" content="2016-03-18T06:18:42.223Z">
+<meta property="og:description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
+#FAQ
+
+无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
+<meta property="og:updated_time" content="2016-03-31T02:48:30.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux系统管理">
-<meta name="twitter:description" content="命令ulimit所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制例如打开文件数的限制可以在/etc/security/limits.conf加入12*               soft    nofile           64000*               hard    nofile           64000
-#">
+<meta name="twitter:title" content="mysql">
+<meta name="twitter:description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
+#FAQ
+
+无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -83,7 +89,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/linux_manage/" title="Linux系统管理" itemprop="url">Linux系统管理</a>
+      <a href="/2015/02/27/数据库/mysql/" title="mysql" itemprop="url">mysql</a>
   </h1>
   <p class="article-author">By
        
@@ -99,22 +105,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#命令"><span class="toc-number">1.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ulimit"><span class="toc-number">1.1.</span> <span class="toc-text">ulimit</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-连接-127-0-0-1-与-localhost的区别"><span class="toc-number">1.</span> <span class="toc-text">mysql 连接 127.0.0.1 与 localhost的区别</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="ulimit"><a href="#ulimit" class="headerlink" title="ulimit"></a>ulimit</h2><p>所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制<br>例如打开文件数的限制可以在/etc/security/limits.conf加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*               soft    nofile           64000</span><br><span class="line">*               hard    nofile           64000</span><br></pre></td></tr></table></figure></p>
-<p>#iptables</p>
-<p>#查看Linux系统性能<br>1 iotop<br>root权限<br>查看实时磁盘读写情况</p>
-<p>2 vmstat 秒数<br>主要看si so ，单位字节<br>si:从交换分区换入的页面<br>so:从内存换出的页面</p>
-<p>3 free -m<br>以MB查看内存使用情况</p>
-<p>-/+buffers/cache 1024                 1024</p>
-<p>真正使用的内存        可释放内存+空闲内存</p>
-<p>以上两个值的和等于总内存</p>
-<p>buffers指buffer cache</p>
-<p>cached指page cache</p>
-<p>#VirtualBox<br>迁移virtualbox虚拟机<br>1 vboxmanage list vms<br>2 vboxmanage unregistervm vm_name<br>3 移动虚拟机文件夹到新的目录<br>4 移除虚拟机关联的硬盘<br>5 vboxmanage registervm vm_new_absolute_path/xxx.vbox</p>
-<p>VBoxManager controlvm centos75 poweroff<br>VBoxManager startvm centos75 –type headless</p>
+		<h1 id="mysql-连接-127-0-0-1-与-localhost的区别"><a href="#mysql-连接-127-0-0-1-与-localhost的区别" class="headerlink" title="mysql 连接 127.0.0.1 与 localhost的区别"></a>mysql 连接 127.0.0.1 与 localhost的区别</h1><p>  127.0.0.1 通过TCP连接可指定端口<br>  localhost 通过unix socket连接，不能指定端口，指定了也不生效</p>
+<p>#FAQ</p>
+<ul>
+<li><p>无法连接数据库的一些原因<br>1 密码不对<br>2 未给用户设置密码<br>3 未给用户usage权限<br>  连接权限：GRANT USAGE ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘rootpassword’;<br>  所有权限：GRANT ALL PRIVILEGES on <em>.</em> TO ‘root’@’%’ WITH GRANT OPTION;<br>  更新密码：UPDATE mysql.user set password=PASSWORD(‘jubian@2013’) where user=’root’;<br>  更新权限：flush privileges;</p>
+</li>
+<li><p>如何安全启动mysqld_multi<br>mysqld_multi –mysqld=mysqld_safe start 1,2,3..</p>
+</li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -122,13 +124,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Linux系统/">Linux系统</a>
+  <a class="article-category-link" href="/categories/数据库/">数据库</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/linux-system-manage/">linux system manage</a>
+  <span></span> <a href="/tags/mysql-db/">mysql db</a>
   </div>
 
 </div>
@@ -137,7 +139,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yangguosdxl.github.io/2015/02/27/linux_manage/" data-title="Linux系统管理 | Pretty Sunshine" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yangguosdxl.github.io/2015/02/27/数据库/mysql/" data-title="mysql | Pretty Sunshine" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -151,18 +153,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/02/27/3guo/" title="三国志3D版">
+ <a href="/2015/02/27/mygame/" title="想要的游戏特征">
   <strong>上一篇：</strong><br/>
   <span>
-  三国志3D版</span>
+  想要的游戏特征</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/02/27/sport_ai/"  title="体育AI">
+<a href="/2000/03/25/hello-world/"  title="Hello World">
  <strong>下一篇：</strong><br/> 
- <span>体育AI
+ <span>Hello World
 </span>
 </a>
 </div>
@@ -171,7 +173,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/02/27/linux_manage/" data-title="Linux系统管理" data-url="http://yangguosdxl.github.io/2015/02/27/linux_manage/"></div>
+	<div class="ds-thread" data-thread-key="2015/02/27/数据库/mysql/" data-title="mysql" data-url="http://yangguosdxl.github.io/2015/02/27/数据库/mysql/"></div>
 
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -196,7 +198,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#命令"><span class="toc-number">1.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ulimit"><span class="toc-number">1.1.</span> <span class="toc-text">ulimit</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-连接-127-0-0-1-与-localhost的区别"><span class="toc-number">1.</span> <span class="toc-text">mysql 连接 127.0.0.1 与 localhost的区别</span></a></li></ol>
  
   </div>
 

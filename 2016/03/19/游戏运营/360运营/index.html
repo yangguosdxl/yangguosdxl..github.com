@@ -4,32 +4,41 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>mysql | Pretty Sunshine</title>
+    <title>360 运营 | Pretty Sunshine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="开伦">
     
 
     
-    <meta name="description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
-#FAQ
+    <meta name="description" content="服务器
+默认80端口是封闭的，要设置iptables 开放端口
+不能使用root用户，只能使用sudo
+ssh连接奇慢，服务器SSH配置有问题
+  12UseDNS noGSSAPIAuthentication no
 
-无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
+缺少软件：expect zip">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql">
-<meta property="og:url" content="http://yangguosdxl.github.io/2015/02/27/mysql/index.html">
+<meta property="og:title" content="360 运营">
+<meta property="og:url" content="http://yangguosdxl.github.io/2016/03/19/游戏运营/360运营/index.html">
 <meta property="og:site_name" content="Pretty Sunshine">
-<meta property="og:description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
-#FAQ
+<meta property="og:description" content="服务器
+默认80端口是封闭的，要设置iptables 开放端口
+不能使用root用户，只能使用sudo
+ssh连接奇慢，服务器SSH配置有问题
+  12UseDNS noGSSAPIAuthentication no
 
-无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
-<meta property="og:updated_time" content="2016-03-31T02:48:30.883Z">
+缺少软件：expect zip">
+<meta property="og:updated_time" content="2016-03-19T15:34:45.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql">
-<meta name="twitter:description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
-#FAQ
+<meta name="twitter:title" content="360 运营">
+<meta name="twitter:description" content="服务器
+默认80端口是封闭的，要设置iptables 开放端口
+不能使用root用户，只能使用sudo
+ssh连接奇慢，服务器SSH配置有问题
+  12UseDNS noGSSAPIAuthentication no
 
-无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
+缺少软件：expect zip">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -89,14 +98,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/mysql/" title="mysql" itemprop="url">mysql</a>
+      <a href="/2016/03/19/游戏运营/360运营/" title="360 运营" itemprop="url">360 运营</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
 		
   <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    <time datetime="2016-03-19T15:08:00.000Z" itemprop="datePublished"> 发表于 Mar 19 2016</time>
     
   </p>
 </header>
@@ -105,17 +114,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-连接-127-0-0-1-与-localhost的区别"><span class="toc-number">1.</span> <span class="toc-text">mysql 连接 127.0.0.1 与 localhost的区别</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="mysql-连接-127-0-0-1-与-localhost的区别"><a href="#mysql-连接-127-0-0-1-与-localhost的区别" class="headerlink" title="mysql 连接 127.0.0.1 与 localhost的区别"></a>mysql 连接 127.0.0.1 与 localhost的区别</h1><p>  127.0.0.1 通过TCP连接可指定端口<br>  localhost 通过unix socket连接，不能指定端口，指定了也不生效</p>
-<p>#FAQ</p>
-<ul>
-<li><p>无法连接数据库的一些原因<br>1 密码不对<br>2 未给用户设置密码<br>3 未给用户usage权限<br>  连接权限：GRANT USAGE ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘rootpassword’;<br>  所有权限：GRANT ALL PRIVILEGES on <em>.</em> TO ‘root’@’%’ WITH GRANT OPTION;<br>  更新密码：UPDATE mysql.user set password=PASSWORD(‘jubian@2013’) where user=’root’;<br>  更新权限：flush privileges;</p>
+		<h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><ul>
+<li>默认80端口是封闭的，要设置iptables 开放端口</li>
+<li>不能使用root用户，只能使用sudo</li>
+<li><p>ssh连接奇慢，服务器SSH配置有问题</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UseDNS no</span><br><span class="line">GSSAPIAuthentication no</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>如何安全启动mysqld_multi<br>mysqld_multi –mysqld=mysqld_safe start 1,2,3..</p>
+<li><p>缺少软件：expect zip</p>
 </li>
+<li></li>
 </ul>
   
 	</div>
@@ -124,13 +135,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/数据库/">数据库</a>
+  <a class="article-category-link" href="/categories/游戏运营/">游戏运营</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/mysql-db/">mysql db</a>
+  <span></span> <a href="/tags/360-游戏运营/">360 游戏运营</a>
   </div>
 
 </div>
@@ -139,7 +150,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yangguosdxl.github.io/2015/02/27/mysql/" data-title="mysql | Pretty Sunshine" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yangguosdxl.github.io/2016/03/19/游戏运营/360运营/" data-title="360 运营 | Pretty Sunshine" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -153,18 +164,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/02/27/mygame/" title="想要的游戏特征">
+ <a href="/2016/03/25/3dmax/" title="3dMax">
   <strong>上一篇：</strong><br/>
   <span>
-  想要的游戏特征</span>
+  3dMax</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/02/27/ps/"  title="ps">
+<a href="/2016/03/19/expect/"  title="expect">
  <strong>下一篇：</strong><br/> 
- <span>ps
+ <span>expect
 </span>
 </a>
 </div>
@@ -173,7 +184,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/02/27/mysql/" data-title="mysql" data-url="http://yangguosdxl.github.io/2015/02/27/mysql/"></div>
+	<div class="ds-thread" data-thread-key="2016/03/19/游戏运营/360运营/" data-title="360 运营" data-url="http://yangguosdxl.github.io/2016/03/19/游戏运营/360运营/"></div>
 
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -198,7 +209,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-连接-127-0-0-1-与-localhost的区别"><span class="toc-number">1.</span> <span class="toc-text">mysql 连接 127.0.0.1 与 localhost的区别</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li></ol>
  
   </div>
 

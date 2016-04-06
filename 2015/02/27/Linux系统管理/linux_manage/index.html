@@ -4,41 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>360 运营 | Pretty Sunshine</title>
+    <title>Linux系统管理 | Pretty Sunshine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="开伦">
     
 
     
-    <meta name="description" content="服务器
-默认80端口是封闭的，要设置iptables 开放端口
-不能使用root用户，只能使用sudo
-ssh连接奇慢，服务器SSH配置有问题
-  12UseDNS noGSSAPIAuthentication no
-
-缺少软件：expect zip">
+    <meta name="description" content="命令ulimit所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制例如打开文件数的限制可以在/etc/security/limits.conf加入12*               soft    nofile           64000*               hard    nofile           64000
+i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="360 运营">
-<meta property="og:url" content="http://yangguosdxl.github.io/2016/03/19/360运营/index.html">
+<meta property="og:title" content="Linux系统管理">
+<meta property="og:url" content="http://yangguosdxl.github.io/2015/02/27/Linux系统管理/linux_manage/index.html">
 <meta property="og:site_name" content="Pretty Sunshine">
-<meta property="og:description" content="服务器
-默认80端口是封闭的，要设置iptables 开放端口
-不能使用root用户，只能使用sudo
-ssh连接奇慢，服务器SSH配置有问题
-  12UseDNS noGSSAPIAuthentication no
-
-缺少软件：expect zip">
-<meta property="og:updated_time" content="2016-03-19T15:34:45.113Z">
+<meta property="og:description" content="命令ulimit所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制例如打开文件数的限制可以在/etc/security/limits.conf加入12*               soft    nofile           64000*               hard    nofile           64000
+i">
+<meta property="og:updated_time" content="2016-04-06T09:58:57.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="360 运营">
-<meta name="twitter:description" content="服务器
-默认80端口是封闭的，要设置iptables 开放端口
-不能使用root用户，只能使用sudo
-ssh连接奇慢，服务器SSH配置有问题
-  12UseDNS noGSSAPIAuthentication no
-
-缺少软件：expect zip">
+<meta name="twitter:title" content="Linux系统管理">
+<meta name="twitter:description" content="命令ulimit所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制例如打开文件数的限制可以在/etc/security/limits.conf加入12*               soft    nofile           64000*               hard    nofile           64000
+i">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -98,14 +83,14 @@ ssh连接奇慢，服务器SSH配置有问题
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/19/360运营/" title="360 运营" itemprop="url">360 运营</a>
+      <a href="/2015/02/27/Linux系统管理/linux_manage/" title="Linux系统管理" itemprop="url">Linux系统管理</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
 		
   <p class="article-time">
-    <time datetime="2016-03-19T15:08:00.000Z" itemprop="datePublished"> 发表于 Mar 19 2016</time>
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
     
   </p>
 </header>
@@ -114,20 +99,24 @@ ssh连接奇慢，服务器SSH配置有问题
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#命令"><span class="toc-number">1.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ulimit"><span class="toc-number">1.1.</span> <span class="toc-text">ulimit</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#iptables"><span class="toc-number">2.</span> <span class="toc-text">iptables</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看Linux系统性能"><span class="toc-number">3.</span> <span class="toc-text">查看Linux系统性能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VirtualBox"><span class="toc-number">4.</span> <span class="toc-text">VirtualBox</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">5.</span> <span class="toc-text">参考链接</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><ul>
-<li>默认80端口是封闭的，要设置iptables 开放端口</li>
-<li>不能使用root用户，只能使用sudo</li>
-<li><p>ssh连接奇慢，服务器SSH配置有问题</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UseDNS no</span><br><span class="line">GSSAPIAuthentication no</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>缺少软件：expect zip</p>
-</li>
-<li></li>
-</ul>
+		<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="ulimit"><a href="#ulimit" class="headerlink" title="ulimit"></a>ulimit</h2><p>所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制<br>例如打开文件数的限制可以在/etc/security/limits.conf加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*               soft    nofile           64000</span><br><span class="line">*               hard    nofile           64000</span><br></pre></td></tr></table></figure></p>
+<h1 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h1><h1 id="查看Linux系统性能"><a href="#查看Linux系统性能" class="headerlink" title="查看Linux系统性能"></a>查看Linux系统性能</h1><p>1 iotop<br>root权限<br>查看实时磁盘读写情况</p>
+<p>2 vmstat 秒数<br>主要看si so ，单位字节<br>si:从交换分区换入的页面<br>so:从内存换出的页面</p>
+<p>3 free -m<br>以MB查看内存使用情况</p>
+<p>-/+buffers/cache 1024                 1024</p>
+<p>真正使用的内存        可释放内存+空闲内存</p>
+<p>以上两个值的和等于总内存</p>
+<p>buffers指buffer cache</p>
+<p>cached指page cache</p>
+<h1 id="VirtualBox"><a href="#VirtualBox" class="headerlink" title="VirtualBox"></a>VirtualBox</h1><p>迁移virtualbox虚拟机<br>1 vboxmanage list vms<br>2 vboxmanage unregistervm vm_name<br>3 移动虚拟机文件夹到新的目录<br>4 移除虚拟机关联的硬盘<br>5 vboxmanage registervm vm_new_absolute_path/xxx.vbox</p>
+<p>VBoxManager controlvm centos75 poweroff<br>VBoxManager startvm centos75 –type headless</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
+<li><a href="https://www.ttlsa.com/linux/update-linux-swap/" target="_blank" rel="external">linux下如何增加swap交换分区</a></li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -135,13 +124,13 @@ ssh连接奇慢，服务器SSH配置有问题
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/游戏运营/">游戏运营</a>
+  <a class="article-category-link" href="/categories/Linux系统/">Linux系统</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/360-游戏运营/">360 游戏运营</a>
+  <span></span> <a href="/tags/linux-system-manage/">linux system manage</a>
   </div>
 
 </div>
@@ -150,7 +139,7 @@ ssh连接奇慢，服务器SSH配置有问题
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yangguosdxl.github.io/2016/03/19/360运营/" data-title="360 运营 | Pretty Sunshine" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yangguosdxl.github.io/2015/02/27/Linux系统管理/linux_manage/" data-title="Linux系统管理 | Pretty Sunshine" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -164,18 +153,18 @@ ssh连接奇慢，服务器SSH配置有问题
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/03/25/3dmax/" title="3dMax">
+ <a href="/2015/02/27/unity3d/unity3d/" title="unity3d">
   <strong>上一篇：</strong><br/>
   <span>
-  3dMax</span>
+  unity3d</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/03/19/expect/"  title="expect">
+<a href="/2015/02/27/mygame/"  title="想要的游戏特征">
  <strong>下一篇：</strong><br/> 
- <span>expect
+ <span>想要的游戏特征
 </span>
 </a>
 </div>
@@ -184,7 +173,7 @@ ssh连接奇慢，服务器SSH配置有问题
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/03/19/360运营/" data-title="360 运营" data-url="http://yangguosdxl.github.io/2016/03/19/360运营/"></div>
+	<div class="ds-thread" data-thread-key="2015/02/27/Linux系统管理/linux_manage/" data-title="Linux系统管理" data-url="http://yangguosdxl.github.io/2015/02/27/Linux系统管理/linux_manage/"></div>
 
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -209,7 +198,7 @@ ssh连接奇慢，服务器SSH配置有问题
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#命令"><span class="toc-number">1.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ulimit"><span class="toc-number">1.1.</span> <span class="toc-text">ulimit</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#iptables"><span class="toc-number">2.</span> <span class="toc-text">iptables</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看Linux系统性能"><span class="toc-number">3.</span> <span class="toc-text">查看Linux系统性能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VirtualBox"><span class="toc-number">4.</span> <span class="toc-text">VirtualBox</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">5.</span> <span class="toc-text">参考链接</span></a></li></ol>
  
   </div>
 
