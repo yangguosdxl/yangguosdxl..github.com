@@ -221,6 +221,118 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/02/27/unity3d/unity3d_art/" title="unity3d 美术相关" itemprop="url">unity3d 美术相关</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="场景制作"><a href="#场景制作" class="headerlink" title="场景制作"></a>场景制作</h1><ul>
+<li>所有相关资源放到Assets下的一个文件夹下，比如Assets/scenes</li>
+<li>所有场景对象放到一个对象下</li>
+<li>导出成AssetBundle，好在游戏中加载，就算是Demo阶段也应该这么做，因为编辑器本身的导出包功能实在不好用。这也意味着要有编辑器加载场景AssetBundle的功能，好做调试。</li>
+<li>场景里要有一个点来确定场景位置</li>
+</ul>
+<h1 id="哪些工作应该由美术做"><a href="#哪些工作应该由美术做" class="headerlink" title="哪些工作应该由美术做"></a>哪些工作应该由美术做</h1><ul>
+<li>对于要外包的美术资源，能策划做的尽量让策划做，这样就减少了很多要和美术沟通的工作量。</li>
+</ul>
+<h1 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h1><h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ul>
+<li>三维软件单位用米制<br>保证所有场景和模型都是同一比例与单位就可以了<br>具体导出设置见《Unity3D4.x从入门到精通》资源导入部分</li>
+<li>同屏面数</li>
+<li>目录结构</li>
+<li>手机UI分辨率<ol>
+<li>定下最佳分辨率，最佳显示手机</li>
+<li>找到实际最佳分辨率：比第一条的分辨率低，但在第一条的分辨率下还是能显示得很清晰</li>
+<li>按实际最佳分辨率做UI，并定义控件大小</li>
+<li>目前NGUI的UIRoot设置为 ：<br>Scaling Style：Constrained On Mobile（在手机上按比例缩放，在电脑上按像素显示不缩放）<br>Content Width 实际最佳分辨率的宽<br>Content Height 实际最佳分辨率的高</li>
+</ol>
+</li>
+</ul>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ul>
+<li>地表过大时，由于烘焙图大小的限制，会导致烘焙出的阴影质量太差，可以在重要的区域单独使用一块地表</li>
+<li>T4M不支持5.0</li>
+<li>不能大面积使用法线贴</li>
+<li>网格与材质合并插件 MeshBaker</li>
+<li>移动端水插件MobileOcean</li>
+<li>使用3DMax制作场景<ol>
+<li>加载到U3D后，要在编辑器加调整Shader，加入水，加入天空盒，加入灯光，烘焙</li>
+<li>优化，如合并Mesh及材质</li>
+<li>地表Collider</li>
+</ol>
+</li>
+</ul>
+<h2 id="角色与动画"><a href="#角色与动画" class="headerlink" title="角色与动画"></a>角色与动画</h2><ul>
+<li>同一循环动作的起始位置与终止位置要重合</li>
+<li>对于不同动作，如果脚踏地，则踏地高度要一致，以免播放不同动作时，出现角色脚不在地面上的问题</li>
+</ul>
+<h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><ul>
+<li>目前特效系统是ParticleSystem</li>
+</ul>
+<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><ul>
+<li>NGUI</li>
+</ul>
+<h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><ul>
+<li>Cinema Director</li>
+</ul>
+<h2 id="摄像机动画"><a href="#摄像机动画" class="headerlink" title="摄像机动画"></a>摄像机动画</h2><ul>
+<li>CameraPath</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/game/">game</a><a href="/tags/art/">art</a><a href="/tags/unity3d/">unity3d</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/unity3d/unity3d_art/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/unity3d/unity3d_art/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/02/27/ps/" title="ps" itemprop="url">ps</a>
   </h1>
   <p class="article-author">By
@@ -264,75 +376,6 @@
 	
 	  	<span></span>
 		<a href="/2015/02/27/ps/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/ps/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/open_source_misc/" title="开源杂谈" itemprop="url">开源杂谈</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="大公司的开源地址"><a href="#大公司的开源地址" class="headerlink" title="大公司的开源地址"></a>大公司的开源地址</h1><p><a href="http://my.oschina.net/flashsword/blog/156638" target="_blank" rel="external">国内一些大公司的开源项目</a></p>
-<ul>
-<li><a href="https://github.com/alibaba" target="_blank" rel="external">阿里巴巴</a></li>
-<li><a href="https://github.com/TencentOpen" target="_blank" rel="external">腾讯</a></li>
-<li><a href="https://github.com/netease" target="_blank" rel="external">网易</a></li>
-<li><a href="https://github.com/douban" target="_blank" rel="external">豆瓣</a></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/OpenSource/">OpenSource</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/opensource/">opensource</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/open_source_misc/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/open_source_misc/" data-count-type="comments">&nbsp;</a>
 	
 </div>
 
@@ -419,7 +462,7 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/ai/" title="游戏人工智能" itemprop="url">游戏人工智能</a>
+      <a href="/2015/02/27/mygame/" title="想要的游戏特征" itemprop="url">想要的游戏特征</a>
   </h1>
   <p class="article-author">By
        
@@ -432,10 +475,9 @@
 </header>
     <div class="article-content">
         
-        <h3 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h3><ul>
-<li>决策</li>
-<li>决策与动作的配合，角色在做某些动作时是不能中断的。</li>
-<li>调试，行为树这类有图形编辑器的，比较好调试。但是要用好不简单。行为树在表示状态方面很简单，并不能针对状态提供进入的退出操作。</li>
+        <h2 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h2><ul>
+<li>高AI</li>
+<li>更多的环境互动</li>
 </ul>
 
         
@@ -449,13 +491,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/游戏人工智能/">游戏人工智能</a>
+  <a class="article-category-link" href="/categories/游戏开发/">游戏开发</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/游戏人工智能/">游戏人工智能</a><a href="/tags/AI/">AI</a>
+  <span></span> <a href="/tags/游戏/">游戏</a>
   </div>
 
 </div>
@@ -466,7 +508,7 @@
 <div class="comments-count">
 	
 	  	<span></span>
-		<a href="/2015/02/27/ai/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/ai/" data-count-type="comments">&nbsp;</a>
+		<a href="/2015/02/27/mygame/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/mygame/" data-count-type="comments">&nbsp;</a>
 	
 </div>
 
@@ -554,7 +596,7 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/devtools/" title="开发工具" itemprop="url">开发工具</a>
+      <a href="/2015/02/27/ai/" title="游戏人工智能" itemprop="url">游戏人工智能</a>
   </h1>
   <p class="article-author">By
        
@@ -567,8 +609,10 @@
 </header>
     <div class="article-content">
         
-        <h1 id="VS"><a href="#VS" class="headerlink" title="VS"></a>VS</h1><ul>
-<li>VS2013 要安装Microsoft .NET Framework 4.6 Targeting Pack 才能在工程中选择使用.netframework 4.6</li>
+        <h3 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h3><ul>
+<li>决策</li>
+<li>决策与动作的配合，角色在做某些动作时是不能中断的。</li>
+<li>调试，行为树这类有图形编辑器的，比较好调试。但是要用好不简单。行为树在表示状态方面很简单，并不能针对状态提供进入的退出操作。</li>
 </ul>
 
         
@@ -582,13 +626,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/DevTools/">DevTools</a>
+  <a class="article-category-link" href="/categories/游戏人工智能/">游戏人工智能</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Dev-Tools/">Dev Tools</a><a href="/tags/game/">game</a>
+  <span></span> <a href="/tags/游戏人工智能/">游戏人工智能</a><a href="/tags/AI/">AI</a>
   </div>
 
 </div>
@@ -599,7 +643,7 @@
 <div class="comments-count">
 	
 	  	<span></span>
-		<a href="/2015/02/27/devtools/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/devtools/" data-count-type="comments">&nbsp;</a>
+		<a href="/2015/02/27/ai/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/ai/" data-count-type="comments">&nbsp;</a>
 	
 </div>
 
@@ -619,7 +663,7 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/django/" title="django" itemprop="url">django</a>
+      <a href="/2015/02/27/hexo/" title="hexo" itemprop="url">hexo</a>
   </h1>
   <p class="article-author">By
        
@@ -632,13 +676,24 @@
 </header>
     <div class="article-content">
         
-        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="安装pip"><a href="#安装pip" class="headerlink" title="安装pip"></a><a href="https://pip.pypa.io/en/latest/installing.html" target="_blank" rel="external">安装pip</a></h3><h3 id="安装django"><a href="#安装django" class="headerlink" title="安装django"></a><a href="https://docs.djangoproject.com/en/1.7/topics/install/" target="_blank" rel="external">安装django</a></h3><h3 id="安装mongoengine"><a href="#安装mongoengine" class="headerlink" title="安装mongoengine"></a><a href="http://docs.mongoengine.org/en/latest/guide/installing.html" target="_blank" rel="external">安装mongoengine</a></h3><h3 id="uwsgi"><a href="#uwsgi" class="headerlink" title="uwsgi"></a><a href="https://uwsgi-docs.readthedocs.org/en/latest/#" target="_blank" rel="external">uwsgi</a></h3><p><a href="http://django-china.cn/topic/101/" target="_blank" rel="external">安装</a><br><a href="http://www.cnblogs.com/zhouej/archive/2012/03/25/2379646.html" target="_blank" rel="external">命令行参数中文参考</a></p>
-<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><h2 id="模板是自动转义的，关闭转义"><a href="#模板是自动转义的，关闭转义" class="headerlink" title="模板是自动转义的，关闭转义"></a>模板是自动转义的，关闭转义</h2><p>Django模板为了防止XSS，缺省情况下会自动将HTML进行转义。</p>
-<p>有的时候我们确实想输出一些含有HTML代码的内容（比如Web编辑器产生的文章内容数据），如何关闭自动转义？<br>方法1：使用过滤器。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">|safe</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123; data|safe &#125; &#125;</span><br></pre></td></tr></table></figure>
-<p>这样data的内容就会原样输出，不会被转义。请确保data中的数据不会产生XSS。<br>方法2：关闭整段代码的自动转义。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; % autoescape off % &#125;</span><br><span class="line">    &#123; &#123; data &#125; &#125;</span><br><span class="line">&#123; % endautoescape % &#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://www.redicecn.com/html/blog/Django/2012/0215/370.html" target="_blank" rel="external">转自</a></p>
-<h1 id="时区"><a href="#时区" class="headerlink" title="时区"></a><a href="https://docs.djangoproject.com/en/dev/ref/settings/#time-zone" target="_blank" rel="external">时区</a></h1><p><a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区代码参考</a><br>中国上海时区代码：Asia/Shanghai</p>
+        <h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="windows下配置-ssh-公钥"><a href="#windows下配置-ssh-公钥" class="headerlink" title="windows下配置 ssh 公钥"></a>windows下配置 ssh 公钥</h2><pre><code>1. 安装git，从程序目录打开 &quot;Git Bash&quot;
+2. 键入命令：ssh-keygen -t rsa -C &quot;email@email.com&quot;
+  &quot;email@email.com&quot;是github账号
+3. 提醒你输入key的名称，输入如id_rsa
+4. 在C:\Documents and Settings\Administrator\下产生两个文件：id_rsa和id_rsa.pub
+5. 把4中生成的密钥文件复制到C:\Documents and Settings\Administrator\.ssh\ 目 录下。
+6. 用记事本打开id_rsa.pub文件，复制内容，在github.com的网站上到ssh密钥管理页面，添加新公钥，随便取个名字，内容粘贴刚公钥
+</code></pre><h2 id="git-1"><a href="#git-1" class="headerlink" title="git"></a>git</h2><p>   git 远程URL只有在使用git协议时才能使用ssh的方式pull push, https是不能使用 ssh的</p>
+<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><h1 id="hexo-plugin"><a href="#hexo-plugin" class="headerlink" title="hexo plugin"></a>hexo plugin</h1><ul>
+<li><a href="https://github.com/superalsrk/hexo-pdf" target="_blank" rel="external">hexo-pdf</a></li>
+</ul>
+<h1 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h1><ul>
+<li><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">语法</a></li>
+</ul>
+<h1 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h1><ul>
+<li><a href="http://duoshuo.com/" target="_blank" rel="external">多说</a></li>
+<li><a href="http://www.lichanglin.cn/%E5%9C%A8hexo%E4%B8%AD%E5%8A%A0%E5%85%A5%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA/" target="_blank" rel="external">在Hexo设置多说</a></li>
+</ul>
 
         
         
@@ -651,13 +706,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/程序库/">程序库</a>
+  <a class="article-category-link" href="/categories/博客/">博客</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/django/">django</a><a href="/tags/web/">web</a>
+  <span></span> <a href="/tags/blog-hexo-git/">blog hexo git</a>
   </div>
 
 </div>
@@ -668,7 +723,7 @@
 <div class="comments-count">
 	
 	  	<span></span>
-		<a href="/2015/02/27/django/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/django/" data-count-type="comments">&nbsp;</a>
+		<a href="/2015/02/27/hexo/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/hexo/" data-count-type="comments">&nbsp;</a>
 	
 </div>
 
@@ -688,7 +743,7 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/3guo/" title="三国志3D版" itemprop="url">三国志3D版</a>
+      <a href="/2015/02/27/graphic_gameengine/" title="图形与游戏引擎基础" itemprop="url">图形与游戏引擎基础</a>
   </h1>
   <p class="article-author">By
        
@@ -701,14 +756,7 @@
 </header>
     <div class="article-content">
         
-        <h1 id="资源管理器"><a href="#资源管理器" class="headerlink" title="资源管理器"></a>资源管理器</h1><ol>
-<li>相关路径<ul>
-<li>各平台资源保存目录</li>
-<li>远程资源URL</li>
-<li>各平台资源加载器</li>
-</ul>
-</li>
-</ol>
+        <h1 id="骨骼蒙皮动画"><a href="#骨骼蒙皮动画" class="headerlink" title="骨骼蒙皮动画"></a>骨骼蒙皮动画</h1><p><a href="http://blog.csdn.net/n5/article/details/3105872" target="_blank" rel="external">Skinned Mesh 原理解析和一个最简单的实现示例</a></p>
 
         
         
@@ -721,13 +769,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/项目分析/">项目分析</a>
+  <a class="article-category-link" href="/categories/game-dev/">game-dev</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/三国志3D版/">三国志3D版</a>
+  <span></span> <a href="/tags/graphic/">graphic</a><a href="/tags/game-engine/">game-engine</a>
   </div>
 
 </div>
@@ -738,7 +786,7 @@
 <div class="comments-count">
 	
 	  	<span></span>
-		<a href="/2015/02/27/3guo/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/3guo/" data-count-type="comments">&nbsp;</a>
+		<a href="/2015/02/27/graphic_gameengine/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/graphic_gameengine/" data-count-type="comments">&nbsp;</a>
 	
 </div>
 
@@ -781,11 +829,9 @@
 		  
 		
 		  
-			<li><a href="/categories/Linux系统/" title="Linux系统">Linux系统<sup>1</sup></a></li>
-		  
 		
 		  
-			<li><a href="/categories/Linux系统管理/" title="Linux系统管理">Linux系统管理<sup>1</sup></a></li>
+			<li><a href="/categories/Linux系统管理/" title="Linux系统管理">Linux系统管理<sup>2</sup></a></li>
 		  
 		
 		  

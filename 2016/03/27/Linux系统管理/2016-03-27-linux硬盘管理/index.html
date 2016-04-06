@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>MongoDB | Pretty Sunshine</title>
+    <title>linux硬盘管理 | Pretty Sunshine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="开伦">
@@ -12,30 +12,45 @@
 
     
     <meta name="description" content="参考链接
-MongoDB手册
+Linux 查看系统硬件信息(实例详解)
+如何给linux添加新硬盘
 
-CSharp版驱动参考链接
-官方主页
-Serialize Documents with the CSharp Driver">
+查看硬盘
+查看硬盘及分区详情 fdisk -l
+查看分区概况 lsblk -a
+查看分区大小 df -h
+分析文件夹大小du --max-depth=1 -h
+
+挂载新硬盘">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MongoDB">
-<meta property="og:url" content="http://yangguosdxl.github.io/2016/03/31/2016/2016-03-31-MongoDB/index.html">
+<meta property="og:title" content="linux硬盘管理">
+<meta property="og:url" content="http://yangguosdxl.github.io/2016/03/27/Linux系统管理/2016-03-27-linux硬盘管理/index.html">
 <meta property="og:site_name" content="Pretty Sunshine">
 <meta property="og:description" content="参考链接
-MongoDB手册
+Linux 查看系统硬件信息(实例详解)
+如何给linux添加新硬盘
 
-CSharp版驱动参考链接
-官方主页
-Serialize Documents with the CSharp Driver">
-<meta property="og:updated_time" content="2016-03-31T10:19:19.823Z">
+查看硬盘
+查看硬盘及分区详情 fdisk -l
+查看分区概况 lsblk -a
+查看分区大小 df -h
+分析文件夹大小du --max-depth=1 -h
+
+挂载新硬盘">
+<meta property="og:updated_time" content="2016-03-27T16:09:01.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MongoDB">
+<meta name="twitter:title" content="linux硬盘管理">
 <meta name="twitter:description" content="参考链接
-MongoDB手册
+Linux 查看系统硬件信息(实例详解)
+如何给linux添加新硬盘
 
-CSharp版驱动参考链接
-官方主页
-Serialize Documents with the CSharp Driver">
+查看硬盘
+查看硬盘及分区详情 fdisk -l
+查看分区概况 lsblk -a
+查看分区大小 df -h
+分析文件夹大小du --max-depth=1 -h
+
+挂载新硬盘">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -95,14 +110,14 @@ Serialize Documents with the CSharp Driver">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/31/2016/2016-03-31-MongoDB/" title="MongoDB" itemprop="url">MongoDB</a>
+      <a href="/2016/03/27/Linux系统管理/2016-03-27-linux硬盘管理/" title="linux硬盘管理" itemprop="url">linux硬盘管理</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
 		
   <p class="article-time">
-    <time datetime="2016-03-31T02:47:00.000Z" itemprop="datePublished"> 发表于 Mar 31 2016</time>
+    <time datetime="2016-03-27T15:56:00.000Z" itemprop="datePublished"> 发表于 Mar 27 2016</time>
     
   </p>
 </header>
@@ -111,31 +126,34 @@ Serialize Documents with the CSharp Driver">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSharp版驱动"><span class="toc-number">2.</span> <span class="toc-text">CSharp版驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-1"><span class="toc-number">2.1.</span> <span class="toc-text">参考链接</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看硬盘"><span class="toc-number">2.</span> <span class="toc-text">查看硬盘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#挂载新硬盘"><span class="toc-number">3.</span> <span class="toc-text">挂载新硬盘</span></a></li></ol>
 		
 		</div>
 		
 		<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
-<li><a href="https://mongodb-documentation.readthedocs.org/en/latest/index.html" target="_blank" rel="external">MongoDB手册</a></li>
+<li><a href="http://www.cnblogs.com/ggjucheng/archive/2013/01/14/2859613.html" target="_blank" rel="external">Linux 查看系统硬件信息(实例详解)</a></li>
+<li><a href="http://bbs.chinaunix.net/thread-2247599-1-1.html" target="_blank" rel="external">如何给linux添加新硬盘</a></li>
 </ul>
-<h1 id="CSharp版驱动"><a href="#CSharp版驱动" class="headerlink" title="CSharp版驱动"></a>CSharp版驱动</h1><h2 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="http://mongodb.github.io/mongo-csharp-driver/" target="_blank" rel="external">官方主页</a></li>
-<li><a href="https://mongodb-documentation.readthedocs.org/en/latest/ecosystem/tutorial/serialize-documents-with-the-csharp-driver.html" target="_blank" rel="external">Serialize Documents with the CSharp Driver</a></li>
+<h1 id="查看硬盘"><a href="#查看硬盘" class="headerlink" title="查看硬盘"></a>查看硬盘</h1><ul>
+<li>查看硬盘及分区详情 <code>fdisk -l</code></li>
+<li>查看分区概况 <code>lsblk -a</code></li>
+<li>查看分区大小 <code>df -h</code></li>
+<li>分析文件夹大小<code>du --max-depth=1 -h</code></li>
 </ul>
-  
+<h1 id="挂载新硬盘"><a href="#挂载新硬盘" class="headerlink" title="挂载新硬盘"></a>挂载新硬盘</h1>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/数据库/">数据库</a>
+  <a class="article-category-link" href="/categories/Linux系统管理/">Linux系统管理</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/db-MongoDB/">db MongoDB</a>
+  <span></span> <a href="/tags/Linux/">Linux</a>
   </div>
 
 </div>
@@ -144,7 +162,7 @@ Serialize Documents with the CSharp Driver">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yangguosdxl.github.io/2016/03/31/2016/2016-03-31-MongoDB/" data-title="MongoDB | Pretty Sunshine" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yangguosdxl.github.io/2016/03/27/Linux系统管理/2016-03-27-linux硬盘管理/" data-title="linux硬盘管理 | Pretty Sunshine" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -158,18 +176,18 @@ Serialize Documents with the CSharp Driver">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/04/02/unity3d/2016-04-02-Unity3D光照图/" title="Unity3D光照图">
+ <a href="/2016/03/28/2016/2016-03-28-lua/" title="lua">
   <strong>上一篇：</strong><br/>
   <span>
-  Unity3D光照图</span>
+  lua</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/03/31/2016/2016-03-31-mono/"  title="mono">
+<a href="/2016/03/25/2016/2016-03-25-一些好书/"  title="一些好书">
  <strong>下一篇：</strong><br/> 
- <span>mono
+ <span>一些好书
 </span>
 </a>
 </div>
@@ -178,7 +196,7 @@ Serialize Documents with the CSharp Driver">
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/03/31/2016/2016-03-31-MongoDB/" data-title="MongoDB" data-url="http://yangguosdxl.github.io/2016/03/31/2016/2016-03-31-MongoDB/"></div>
+	<div class="ds-thread" data-thread-key="2016/03/27/Linux系统管理/2016-03-27-linux硬盘管理/" data-title="linux硬盘管理" data-url="http://yangguosdxl.github.io/2016/03/27/Linux系统管理/2016-03-27-linux硬盘管理/"></div>
 
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -203,7 +221,7 @@ Serialize Documents with the CSharp Driver">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSharp版驱动"><span class="toc-number">2.</span> <span class="toc-text">CSharp版驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-1"><span class="toc-number">2.1.</span> <span class="toc-text">参考链接</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看硬盘"><span class="toc-number">2.</span> <span class="toc-text">查看硬盘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#挂载新硬盘"><span class="toc-number">3.</span> <span class="toc-text">挂载新硬盘</span></a></li></ol>
  
   </div>
 
@@ -228,11 +246,9 @@ Serialize Documents with the CSharp Driver">
 		  
 		
 		  
-			<li><a href="/categories/Linux系统/" title="Linux系统">Linux系统<sup>1</sup></a></li>
-		  
 		
 		  
-			<li><a href="/categories/Linux系统管理/" title="Linux系统管理">Linux系统管理<sup>1</sup></a></li>
+			<li><a href="/categories/Linux系统管理/" title="Linux系统管理">Linux系统管理<sup>2</sup></a></li>
 		  
 		
 		  
