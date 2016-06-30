@@ -14,11 +14,14 @@
     <meta name="description" content="Daemon
 mono-service
 
-#参考链接
-
+参考链接
 mono-service
+Mono中处理Posix信号
 Application Portability，VS与Mono，Win与Linux
-iomap">
+iomap
+
+安装Linux
+yum -y install gcc gcc-c++ bison pkgconfig glib2-devel gettext make libpng-devel libjpeg-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mono">
 <meta property="og:url" content="http://yangguosdxl.github.io/2016/03/31/2016/2016-03-31-mono/index.html">
@@ -26,22 +29,28 @@ iomap">
 <meta property="og:description" content="Daemon
 mono-service
 
-#参考链接
-
+参考链接
 mono-service
+Mono中处理Posix信号
 Application Portability，VS与Mono，Win与Linux
-iomap">
-<meta property="og:updated_time" content="2016-03-31T02:25:46.949Z">
+iomap
+
+安装Linux
+yum -y install gcc gcc-c++ bison pkgconfig glib2-devel gettext make libpng-devel libjpeg-">
+<meta property="og:updated_time" content="2016-06-13T10:28:37.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mono">
 <meta name="twitter:description" content="Daemon
 mono-service
 
-#参考链接
-
+参考链接
 mono-service
+Mono中处理Posix信号
 Application Portability，VS与Mono，Win与Linux
-iomap">
+iomap
+
+安装Linux
+yum -y install gcc gcc-c++ bison pkgconfig glib2-devel gettext make libpng-devel libjpeg-">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -117,19 +126,24 @@ iomap">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Daemon"><span class="toc-number">1.</span> <span class="toc-text">Daemon</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Daemon"><span class="toc-number">1.</span> <span class="toc-text">Daemon</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">3.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux"><span class="toc-number">3.1.</span> <span class="toc-text">Linux</span></a></li></ol></li></ol>
 		
 		</div>
 		
 		<h1 id="Daemon"><a href="#Daemon" class="headerlink" title="Daemon"></a>Daemon</h1><ul>
 <li>mono-service</li>
 </ul>
-<p>#参考链接</p>
-<ul>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
 <li><a href="http://docs.go-mono.com/index.aspx?link=man%3amono-service%281%29" target="_blank" rel="external">mono-service</a></li>
+<li><a href="http://www.mono-project.com/docs/faq/technical/" target="_blank" rel="external">Mono中处理Posix信号</a></li>
 <li><a href="http://www.mono-project.com/docs/getting-started/application-portability/" target="_blank" rel="external">Application Portability，VS与Mono，Win与Linux</a></li>
 <li><a href="http://www.mono-project.com/docs/advanced/iomap/" target="_blank" rel="external">iomap</a></li>
 </ul>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ol>
+<li>yum -y install gcc gcc-c++ bison pkgconfig glib2-devel gettext make libpng-devel libjpeg-devel libtiff-devel libexif-devel giflib-devel libX11-devel freetype-devel fontconfig-devel cairo-devel</li>
+<li>到<a href="http://download.mono-project.com/sources/mono/" target="_blank" rel="external">这里</a>找到合适的版本，并安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#cd /usr/local/src/</span><br><span class="line">#wget http://download.mono-project.com/sources/mono/mono-x.x.x.tar.bz2</span><br><span class="line">#tar -jxvf mono-3.4.0.tar.bz2</span><br><span class="line">#cd mono-3.4.0</span><br><span class="line">#./configure --prefix=/usr</span><br><span class="line">#make</span><br><span class="line">#make instal</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -211,7 +225,7 @@ iomap">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Daemon"><span class="toc-number">1.</span> <span class="toc-text">Daemon</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Daemon"><span class="toc-number">1.</span> <span class="toc-text">Daemon</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">3.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux"><span class="toc-number">3.1.</span> <span class="toc-text">Linux</span></a></li></ol></li></ol>
  
   </div>
 
@@ -228,11 +242,7 @@ iomap">
 		<ul>
 		
 		  
-		
-		  
 			<li><a href="/categories/DevTools/" title="DevTools">DevTools<sup>1</sup></a></li>
-		  
-		
 		  
 		
 		  
@@ -240,11 +250,11 @@ iomap">
 		  
 		
 		  
-		
+			<li><a href="/categories/VR/" title="VR">VR<sup>1</sup></a></li>
 		  
 		
 		  
-		
+			<li><a href="/categories/Windows系统管理/" title="Windows系统管理">Windows系统管理<sup>1</sup></a></li>
 		  
 		
 		  
@@ -252,7 +262,7 @@ iomap">
 		  
 		
 		  
-			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>5</sup></a></li>
+			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>6</sup></a></li>
 		  
 		
 		  
@@ -261,6 +271,10 @@ iomap">
 		
 		  
 			<li><a href="/categories/博客/" title="博客">博客<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/可复用游戏框架/" title="可复用游戏框架">可复用游戏框架<sup>1</sup></a></li>
 		  
 		
 		  
@@ -273,6 +287,10 @@ iomap">
 		
 		  
 			<li><a href="/categories/娱乐/" title="娱乐">娱乐<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/" title="工具">工具<sup>2</sup></a></li>
 		  
 		
 		  
@@ -292,6 +310,10 @@ iomap">
 		  
 		
 		  
+			<li><a href="/categories/杂类/" title="杂类">杂类<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>2</sup></a></li>
 		  
 		
@@ -304,6 +326,10 @@ iomap">
 		  
 		
 		  
+			<li><a href="/categories/生活/" title="生活">生活<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/程序库/" title="程序库">程序库<sup>3</sup></a></li>
 		  
 		
@@ -312,7 +338,7 @@ iomap">
 		  
 		
 		  
-			<li><a href="/categories/项目分析/" title="项目分析">项目分析<sup>1</sup></a></li>
+			<li><a href="/categories/项目分析/" title="项目分析">项目分析<sup>3</sup></a></li>
 		  
 		
 		</ul>
@@ -325,11 +351,11 @@ iomap">
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/game/" title="game">game<sup>6</sup></a></li>
+				<li><a href="/tags/game/" title="game">game<sup>8</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>5</sup></a></li>
+				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>6</sup></a></li>
 			
 		
 			
@@ -341,35 +367,11 @@ iomap">
 			
 		
 			
-				<li><a href="/tags/mysql-db/" title="mysql db">mysql db<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
+				<li><a href="/tags/360-游戏运营/" title="360 游戏运营">360 游戏运营<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
 			
 		
 			
@@ -381,11 +383,11 @@ iomap">
 			
 		
 			
-				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/mongo/" title="mongo">mongo<sup>1</sup></a></li>
+				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
 			
 		
 			
@@ -393,7 +395,7 @@ iomap">
 			
 		
 			
-				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+				<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
 			
 		
 			
@@ -401,7 +403,31 @@ iomap">
 			
 		
 			
-				<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
+				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/scut-gameserver/" title="scut gameserver">scut gameserver<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Windows/" title="Windows">Windows<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
 			
 		
 		</ul>

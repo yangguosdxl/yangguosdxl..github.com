@@ -21,12 +21,15 @@
 <meta property="og:description" content="使用凹凸贴图Shader换装Unity3D 模型换肤技术Unity里的人物驱动/换装备/换武器/换衣服/动画重定位换装demo时美术遇到的问题详解
 挂点这是为了应付不同模型同一装备要挂在不同位置而提出的解决方法。如果整个工程只能一个角色模型，那也就只用固定的挂点了，而程序也不用知道这个挂点在哪，用默认的就行了。unity中武器替换的注意点
 刀光Melee Weapon Trail–Unity刀光插">
-<meta property="og:updated_time" content="2016-03-25T11:57:09.374Z">
+<meta property="og:image" content="http://yangguosdxl.github.io/images\MissDiffuseShader.jpg">
+<meta property="og:image" content="http://yangguosdxl.github.io/images\animator_transform_cannot_move.png">
+<meta property="og:updated_time" content="2016-06-28T08:12:45.428Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="unity3d">
 <meta name="twitter:description" content="使用凹凸贴图Shader换装Unity3D 模型换肤技术Unity里的人物驱动/换装备/换武器/换衣服/动画重定位换装demo时美术遇到的问题详解
 挂点这是为了应付不同模型同一装备要挂在不同位置而提出的解决方法。如果整个工程只能一个角色模型，那也就只用固定的挂点了，而程序也不用知道这个挂点在哪，用默认的就行了。unity中武器替换的注意点
 刀光Melee Weapon Trail–Unity刀光插">
+<meta name="twitter:image" content="http://yangguosdxl.github.io/images\MissDiffuseShader.jpg">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -102,7 +105,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用凹凸贴图"><span class="toc-number">1.</span> <span class="toc-text">使用凹凸贴图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shader"><span class="toc-number">2.</span> <span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#换装"><span class="toc-number">3.</span> <span class="toc-text">换装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#挂点"><span class="toc-number">3.1.</span> <span class="toc-text">挂点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刀光"><span class="toc-number">4.</span> <span class="toc-text">刀光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#着色器"><span class="toc-number">5.</span> <span class="toc-text">着色器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#地形"><span class="toc-number">6.</span> <span class="toc-text">地形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图像特效"><span class="toc-number">7.</span> <span class="toc-text">图像特效</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mobile相关"><span class="toc-number">8.</span> <span class="toc-text">Mobile相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Asset-store"><span class="toc-number">9.</span> <span class="toc-text">Asset store</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mecanim动画"><span class="toc-number">10.</span> <span class="toc-text">Mecanim动画</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#场景加载"><span class="toc-number">11.</span> <span class="toc-text">场景加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#杂项"><span class="toc-number">12.</span> <span class="toc-text">杂项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刚体与受力"><span class="toc-number">13.</span> <span class="toc-text">刚体与受力</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些限制"><span class="toc-number">14.</span> <span class="toc-text">一些限制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图形性能分析"><span class="toc-number">15.</span> <span class="toc-text">图形性能分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-number">16.</span> <span class="toc-text">Android</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打包相关"><span class="toc-number">17.</span> <span class="toc-text">打包相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2015-Mobile图形限制"><span class="toc-number">18.</span> <span class="toc-text">2015 Mobile图形限制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FAQ"><span class="toc-number">19.</span> <span class="toc-text">FAQ</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#unity-crash-原因收集"><span class="toc-number">20.</span> <span class="toc-text">unity crash 原因收集</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用凹凸贴图"><span class="toc-number">1.</span> <span class="toc-text">使用凹凸贴图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shader"><span class="toc-number">2.</span> <span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#换装"><span class="toc-number">3.</span> <span class="toc-text">换装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#挂点"><span class="toc-number">3.1.</span> <span class="toc-text">挂点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刀光"><span class="toc-number">4.</span> <span class="toc-text">刀光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#着色器"><span class="toc-number">5.</span> <span class="toc-text">着色器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#地形"><span class="toc-number">6.</span> <span class="toc-text">地形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图像特效"><span class="toc-number">7.</span> <span class="toc-text">图像特效</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mobile相关"><span class="toc-number">8.</span> <span class="toc-text">Mobile相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Asset-store"><span class="toc-number">9.</span> <span class="toc-text">Asset store</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mecanim动画"><span class="toc-number">10.</span> <span class="toc-text">Mecanim动画</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#场景加载"><span class="toc-number">11.</span> <span class="toc-text">场景加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#杂项"><span class="toc-number">12.</span> <span class="toc-text">杂项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刚体与受力"><span class="toc-number">13.</span> <span class="toc-text">刚体与受力</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些限制"><span class="toc-number">14.</span> <span class="toc-text">一些限制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图形性能分析"><span class="toc-number">15.</span> <span class="toc-text">图形性能分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-number">16.</span> <span class="toc-text">Android</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打包相关"><span class="toc-number">17.</span> <span class="toc-text">打包相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2015-Mobile图形限制"><span class="toc-number">18.</span> <span class="toc-text">2015 Mobile图形限制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图片质量"><span class="toc-number">19.</span> <span class="toc-text">图片质量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FAQ"><span class="toc-number">20.</span> <span class="toc-text">FAQ</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#unity-crash-原因收集"><span class="toc-number">21.</span> <span class="toc-text">unity crash 原因收集</span></a></li></ol>
 		
 		</div>
 		
@@ -143,6 +146,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 <li>面数 Batches</li>
 <li>最影响效率的是角色</li>
 <li>面数高并不可怕，可怕是Batch多</li>
+<li>如果发现渲染性能有问题，可以用排除法，就是把场景里的东西一点一点删掉，看看是什么影响了性能。</li>
 </ul>
 <h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><ul>
 <li>apk本身是一个压缩包，不能用普通文件系统的API来存取，可以用WWW和Zip API来读取。</li>
@@ -152,12 +156,19 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 <h1 id="打包相关"><a href="#打包相关" class="headerlink" title="打包相关"></a>打包相关</h1><ul>
 <li>有依赖的AssetBundle（简称AB），只有所有依赖的AB都在内存（不用加载AB内对象）才能加载此AB内的资源,否则可能引起崩溃，已知的一种崩溃原因是：加载的对象带有Animator组件，在克隆该对象时会崩溃</li>
 <li>5.0-5.3，在使用LoadLevelAsync加载场景AB包时，会出现无法正确加载光照图的BUG，目前的解决方式是将场景打包为Prefab，手动加载光照图</li>
+<li>FBX的压缩比大概在10%-20%之间</li>
 </ul>
 <h1 id="2015-Mobile图形限制"><a href="#2015-Mobile图形限制" class="headerlink" title="2015 Mobile图形限制"></a>2015 Mobile图形限制</h1><ul>
 <li>场景7万面，同屏40批次</li>
 <li>精细模型1万面</li>
 <li>UI支持最大分辨率1920X1080，实际制作缩小为0.625倍</li>
 </ul>
+<h1 id="图片质量"><a href="#图片质量" class="headerlink" title="图片质量"></a>图片质量</h1><ol>
+<li>filter，采样算法<ul>
+<li>point(no filter) 不过滤，可能会出算边缘锯齿，但类似2x2 1x1的小图片要用这种，其它过滤算法使用小图边缘不是纯色，而是从中间深色过渡到边缘颜色。<br>-</li>
+</ul>
+</li>
+</ol>
 <h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><ul>
 <li>5.0-5.1 SampleAnimation 在Android下都会崩溃</li>
 <li>为什么在没有LOD，可见页数不变的情况下，物体离摄像机越远，帧率越高？</li>
@@ -174,6 +185,14 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 <li>运行时显示Unable to find shaders used for the terrain engine. Please include Nature/Terrain/Diffuse shader in Graphics settings.<br>  5.0以后要包含三个Shader<br>  Nature/Terrain/Standard (Only adding this solved the same problem for me)<br>  Nature/Terrain/Diffuse<br>  Nature/Terrain/Specular</li>
 <li>Texture2D.ReadPixels() 在Windows与Editor下是以左上角为原点，在Android下是以右下角为原点</li>
 <li>工程画质的设置（Quality）会影响到图片压缩的质量，网格的平滑程度</li>
+<li>美术工程与客户端工程是两个不同的工程时，美术工程编译出来的Assetbundle在某些情况下，在客户端加载了AB后可能会出现无法加载Shader的情况。<br>可能的原因：<ol>
+<li>美术工程的配置文件不正确，如果下三个配置文件之一或全部可能引起该问题：<br><img src="images\MissDiffuseShader.jpg" alt="MissDiffuseShader"></li>
+</ol>
+</li>
+<li>运行时Transform的参数不能设置了<br>可参原因：<ol>
+<li>Animator的Controller中有的动画对根节点K帧了，不论这个动画是否在运行，都会导致Transform的参数不能改变 <img src="images\animator_transform_cannot_move.png" alt=""></li>
+</ol>
+</li>
 </ul>
 <h1 id="unity-crash-原因收集"><a href="#unity-crash-原因收集" class="headerlink" title="unity crash 原因收集"></a>unity crash 原因收集</h1><ul>
 <li>Assetbundle关联的Assetbundle发生了变化，而原Assetbundle没有更新，加载这个的Assetbundle可能会崩溃<br>  可能的Backtrace：<br>  0x0000000140D63DC6 (Unity) AnimationClip::GetRuntimeAsset<br>  0x000000014113F4CD (Unity) mecanim::animation::EvaluateBlendTree<br>  0x000000014115922E (Unity) mecanim::statemachine::DoBlendTreeEvaluation<br>  0x000000014115B15D (Unity) mecanim::statemachine::EvaluateState<br>  0x000000014115B9DA (Unity) mecanim::statemachine::EvaluateStateMachine<br>  0x00000001411159B5 (Unity) AnimatorControllerPlayable::UpdateGraph<br>  0x0000000140D926C4 (Unity) Animator::UpdateAvatars<br>  0x0000000140D935F1 (Unity) Animator::UpdateWithDelta<br>  0x0000000140F442EE (Unity) Animator_CUSTOM_Update</li>
@@ -214,18 +233,18 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/02/27/unity3d/unity3d_plugin/" title="unity3d 插件相关">
+ <a href="/2015/02/27/devtools/" title="开发工具">
   <strong>上一篇：</strong><br/>
   <span>
-  unity3d 插件相关</span>
+  开发工具</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/02/27/Linux系统管理/linux_manage/"  title="Linux系统管理">
+<a href="/2015/02/27/open_source_misc/"  title="开源杂谈">
  <strong>下一篇：</strong><br/> 
- <span>Linux系统管理
+ <span>开源杂谈
 </span>
 </a>
 </div>
@@ -259,7 +278,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用凹凸贴图"><span class="toc-number">1.</span> <span class="toc-text">使用凹凸贴图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shader"><span class="toc-number">2.</span> <span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#换装"><span class="toc-number">3.</span> <span class="toc-text">换装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#挂点"><span class="toc-number">3.1.</span> <span class="toc-text">挂点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刀光"><span class="toc-number">4.</span> <span class="toc-text">刀光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#着色器"><span class="toc-number">5.</span> <span class="toc-text">着色器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#地形"><span class="toc-number">6.</span> <span class="toc-text">地形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图像特效"><span class="toc-number">7.</span> <span class="toc-text">图像特效</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mobile相关"><span class="toc-number">8.</span> <span class="toc-text">Mobile相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Asset-store"><span class="toc-number">9.</span> <span class="toc-text">Asset store</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mecanim动画"><span class="toc-number">10.</span> <span class="toc-text">Mecanim动画</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#场景加载"><span class="toc-number">11.</span> <span class="toc-text">场景加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#杂项"><span class="toc-number">12.</span> <span class="toc-text">杂项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刚体与受力"><span class="toc-number">13.</span> <span class="toc-text">刚体与受力</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些限制"><span class="toc-number">14.</span> <span class="toc-text">一些限制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图形性能分析"><span class="toc-number">15.</span> <span class="toc-text">图形性能分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-number">16.</span> <span class="toc-text">Android</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打包相关"><span class="toc-number">17.</span> <span class="toc-text">打包相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2015-Mobile图形限制"><span class="toc-number">18.</span> <span class="toc-text">2015 Mobile图形限制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FAQ"><span class="toc-number">19.</span> <span class="toc-text">FAQ</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#unity-crash-原因收集"><span class="toc-number">20.</span> <span class="toc-text">unity crash 原因收集</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用凹凸贴图"><span class="toc-number">1.</span> <span class="toc-text">使用凹凸贴图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shader"><span class="toc-number">2.</span> <span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#换装"><span class="toc-number">3.</span> <span class="toc-text">换装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#挂点"><span class="toc-number">3.1.</span> <span class="toc-text">挂点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刀光"><span class="toc-number">4.</span> <span class="toc-text">刀光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#着色器"><span class="toc-number">5.</span> <span class="toc-text">着色器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#地形"><span class="toc-number">6.</span> <span class="toc-text">地形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图像特效"><span class="toc-number">7.</span> <span class="toc-text">图像特效</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mobile相关"><span class="toc-number">8.</span> <span class="toc-text">Mobile相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Asset-store"><span class="toc-number">9.</span> <span class="toc-text">Asset store</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mecanim动画"><span class="toc-number">10.</span> <span class="toc-text">Mecanim动画</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#场景加载"><span class="toc-number">11.</span> <span class="toc-text">场景加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#杂项"><span class="toc-number">12.</span> <span class="toc-text">杂项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刚体与受力"><span class="toc-number">13.</span> <span class="toc-text">刚体与受力</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些限制"><span class="toc-number">14.</span> <span class="toc-text">一些限制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图形性能分析"><span class="toc-number">15.</span> <span class="toc-text">图形性能分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-number">16.</span> <span class="toc-text">Android</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打包相关"><span class="toc-number">17.</span> <span class="toc-text">打包相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2015-Mobile图形限制"><span class="toc-number">18.</span> <span class="toc-text">2015 Mobile图形限制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图片质量"><span class="toc-number">19.</span> <span class="toc-text">图片质量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FAQ"><span class="toc-number">20.</span> <span class="toc-text">FAQ</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#unity-crash-原因收集"><span class="toc-number">21.</span> <span class="toc-text">unity crash 原因收集</span></a></li></ol>
  
   </div>
 
@@ -276,11 +295,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		<ul>
 		
 		  
-		
-		  
 			<li><a href="/categories/DevTools/" title="DevTools">DevTools<sup>1</sup></a></li>
-		  
-		
 		  
 		
 		  
@@ -288,11 +303,11 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
-		
+			<li><a href="/categories/VR/" title="VR">VR<sup>1</sup></a></li>
 		  
 		
 		  
-		
+			<li><a href="/categories/Windows系统管理/" title="Windows系统管理">Windows系统管理<sup>1</sup></a></li>
 		  
 		
 		  
@@ -300,7 +315,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
-			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>5</sup></a></li>
+			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>6</sup></a></li>
 		  
 		
 		  
@@ -309,6 +324,10 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		
 		  
 			<li><a href="/categories/博客/" title="博客">博客<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/可复用游戏框架/" title="可复用游戏框架">可复用游戏框架<sup>1</sup></a></li>
 		  
 		
 		  
@@ -321,6 +340,10 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		
 		  
 			<li><a href="/categories/娱乐/" title="娱乐">娱乐<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/" title="工具">工具<sup>2</sup></a></li>
 		  
 		
 		  
@@ -340,6 +363,10 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
+			<li><a href="/categories/杂类/" title="杂类">杂类<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>2</sup></a></li>
 		  
 		
@@ -352,6 +379,10 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
+			<li><a href="/categories/生活/" title="生活">生活<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/程序库/" title="程序库">程序库<sup>3</sup></a></li>
 		  
 		
@@ -360,7 +391,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
-			<li><a href="/categories/项目分析/" title="项目分析">项目分析<sup>1</sup></a></li>
+			<li><a href="/categories/项目分析/" title="项目分析">项目分析<sup>3</sup></a></li>
 		  
 		
 		</ul>
@@ -373,11 +404,11 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/game/" title="game">game<sup>6</sup></a></li>
+				<li><a href="/tags/game/" title="game">game<sup>8</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>5</sup></a></li>
+				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>6</sup></a></li>
 			
 		
 			
@@ -389,35 +420,11 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 			
 		
 			
-				<li><a href="/tags/mysql-db/" title="mysql db">mysql db<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
+				<li><a href="/tags/360-游戏运营/" title="360 游戏运营">360 游戏运营<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
 			
 		
 			
@@ -429,11 +436,11 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 			
 		
 			
-				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/mongo/" title="mongo">mongo<sup>1</sup></a></li>
+				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
 			
 		
 			
@@ -441,7 +448,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 			
 		
 			
-				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+				<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
 			
 		
 			
@@ -449,7 +456,31 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 			
 		
 			
-				<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
+				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/scut-gameserver/" title="scut gameserver">scut gameserver<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Windows/" title="Windows">Windows<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
 			
 		
 		</ul>
