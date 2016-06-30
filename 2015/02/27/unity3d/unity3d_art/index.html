@@ -31,13 +31,13 @@
 
 哪些工作应该由美术做
 对于要外包的美术资源，能策划做的尽量让策划">
-<meta property="og:image" content="http://yangguosdxl.github.io/images\RootNodeBeKFrame.png">
-<meta property="og:image" content="http://yangguosdxl.github.io/images\ModelExportRootNode.png">
-<meta property="og:image" content="http://yangguosdxl.github.io/images\ImportFBXTimeRangeErrorSolution.png">
-<meta property="og:image" content="http://yangguosdxl.github.io/images\AnimationErrorRotation_1.png">
-<meta property="og:image" content="http://yangguosdxl.github.io/images\AnimationErrorRotation_2.png">
-<meta property="og:image" content="http://yangguosdxl.github.io/images\AnimationErrorRotation_3.png">
-<meta property="og:updated_time" content="2016-06-29T10:27:23.471Z">
+<meta property="og:image" content="http://yangguosdxl.github.io/\images\RootNodeBeKFrame.png">
+<meta property="og:image" content="http://yangguosdxl.github.io/\images\ModelExportRootNode.png">
+<meta property="og:image" content="http://yangguosdxl.github.io/\images\ImportFBXTimeRangeErrorSolution.png">
+<meta property="og:image" content="http://yangguosdxl.github.io/\images\AnimationErrorRotation_1.png">
+<meta property="og:image" content="http://yangguosdxl.github.io/\images\AnimationErrorRotation_2.png">
+<meta property="og:image" content="http://yangguosdxl.github.io/\images\AnimationErrorRotation_3.png">
+<meta property="og:updated_time" content="2016-06-30T02:08:35.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="unity3d 美术相关">
 <meta name="twitter:description" content="场景制作
@@ -48,7 +48,7 @@
 
 哪些工作应该由美术做
 对于要外包的美术资源，能策划做的尽量让策划">
-<meta name="twitter:image" content="http://yangguosdxl.github.io/images\RootNodeBeKFrame.png">
+<meta name="twitter:image" content="http://yangguosdxl.github.io/\images\RootNodeBeKFrame.png">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -165,8 +165,8 @@
 <h2 id="角色与动画"><a href="#角色与动画" class="headerlink" title="角色与动画"></a>角色与动画</h2><ul>
 <li>同一循环动作的起始位置与终止位置要重合</li>
 <li>对于不同动作，如果脚踏地，则踏地高度要一致，以免播放不同动作时，出现角色脚不在地面上的问题</li>
-<li>动画导出时不能勾选&lt;烘焙动画&gt;选项，否则根节点会被K上帧<br><img src="images\RootNodeBeKFrame.png" alt="  "></li>
-<li>模型FBX导入unity3d后，unity3d是如何决定这个FBX的根节点的？<br><img src="images\ModelExportRootNode.png" alt="  "><ol>
+<li>动画导出时不能勾选&lt;烘焙动画&gt;选项，否则根节点会被K上帧<br><img src="\images\RootNodeBeKFrame.png" alt="  "></li>
+<li>模型FBX导入unity3d后，unity3d是如何决定这个FBX的根节点的？<br><img src="\images\ModelExportRootNode.png" alt="  "><ol>
 <li>如果上图中Toudai,hair,MaWei,cc全在Dummy001节点下，则unity3d从FBX创建GameObject时，根节点就是Dummy001，但根节点名字不叫Dummy001</li>
 <li>如果Toudai，hair, MaWei不在Dummy001下，cc在Dummy001下，则unity3d从FBX创建GameObject时，会自动创建一个全新的节点做为根节点，这个根节和Dummy001没有任何关系<br><strong>总结</strong>：<ul>
 <li>如果FBX中所有节点都在一个节点A（并且这个节点是虚拟体）下，那么unity3d从FBX创建GameObject时，会以FBX中那个总的根节点作为GameObject的根节点。但如果这个节点A不是虚拟体（如骨骼，网格等），则会创建一个全新的根节点作为GameObject的根节点</li>
@@ -175,15 +175,17 @@
 </li>
 </ol>
 </li>
-<li><p>ImportFBX Errors: TimeRange (447392) for translation curve(s) on node ‘Bone005’ on take ‘Take 001’ larger than maximum allowed(100000)<br><img src="images\ImportFBXTimeRangeErrorSolution.png" alt=""></p>
+<li><p>ImportFBX Errors: TimeRange (447392) for translation curve(s) on node ‘Bone005’ on take ‘Take 001’ larger than maximum allowed(100000)<br><img src="\images\ImportFBXTimeRangeErrorSolution.png" alt=""></p>
 </li>
 <li><p>在播放动画后，人物旋转值不对。</p>
 <ol>
-<li>人物模型初始旋转值为(0,0,0)，此种旋转值下，人物模型应该是正立的<br><img src="images\AnimationErrorRotation_1.png" alt=""></li>
-<li>动画如下，但请注意，该动画是基于(-90,0,0)的旋转值做的<br><img src="images\AnimationErrorRotation_2.png" alt=""></li>
-<li>在人物模型上播放该动画后，出现如下情况：<br><img src="images\AnimationErrorRotation_3.png" alt=""><br>分析：<br> 动画在制作时，是基于根节点有(-90,0,0)的旋转值做的，结果在导入Unity3D后，在人物默认旋转值(0,0,0)下播放出动画后，就会出现人物模型表现出来的旋转不对的问题。<h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2></li>
+<li>人物模型初始旋转值为(0,0,0)，此种旋转值下，人物模型应该是正立的<br><img src="\images\AnimationErrorRotation_1.png" alt=""></li>
+<li>动画如下，但请注意，该动画是基于(-90,0,0)的旋转值做的<br><img src="\images\AnimationErrorRotation_2.png" alt=""></li>
+<li>在人物模型上播放该动画后，出现如下情况：<br><img src="\images\AnimationErrorRotation_3.png" alt=""><br>分析：<br> 动画在制作时，是基于根节点有(-90,0,0)的旋转值做的，结果在导入Unity3D后，在人物默认旋转值(0,0,0)下播放出动画后，就会出现人物模型表现出来的旋转不对的问题。</li>
 </ol>
 </li>
+</ul>
+<h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><ul>
 <li>目前特效系统是ParticleSystem</li>
 </ul>
 <h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><ul>
@@ -232,18 +234,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/02/27/unity3d/unity3d_plugin/" title="unity3d 插件相关">
+ <a href="/2015/03/24/scut/" title="scut">
   <strong>上一篇：</strong><br/>
   <span>
-  unity3d 插件相关</span>
+  scut</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/02/27/数据库/mysql/"  title="mysql">
+<a href="/2015/02/27/Linux系统管理/linux_manage/"  title="Linux系统管理">
  <strong>下一篇：</strong><br/> 
- <span>mysql
+ <span>Linux系统管理
 </span>
 </a>
 </div>
@@ -419,11 +421,23 @@
 			
 		
 			
-				<li><a href="/tags/360-游戏运营/" title="360 游戏运营">360 游戏运营<sup>1</sup></a></li>
+				<li><a href="/tags/网站/" title="网站">网站<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
+				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
 			
 		
 			
@@ -435,11 +449,11 @@
 			
 		
 			
-				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
+				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
 			
 		
 			
@@ -455,31 +469,19 @@
 			
 		
 			
-				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/scut-gameserver/" title="scut gameserver">scut gameserver<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+				<li><a href="/tags/atom/" title="atom">atom<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+				<li><a href="/tags/mono/" title="mono">mono<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Windows/" title="Windows">Windows<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
+				<li><a href="/tags/书/" title="书">书<sup>1</sup></a></li>
 			
 		
 		</ul>

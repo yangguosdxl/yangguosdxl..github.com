@@ -643,11 +643,36 @@
         
         <h1 id="主要的类"><a href="#主要的类" class="headerlink" title="主要的类"></a>主要的类</h1><h2 id="IBehaviorScheduler"><a href="#IBehaviorScheduler" class="headerlink" title="IBehaviorScheduler"></a>IBehaviorScheduler</h2><h2 id="BehaviorScheduler"><a href="#BehaviorScheduler" class="headerlink" title="BehaviorScheduler"></a>BehaviorScheduler</h2><ul>
 <li>驱动PlayerActionExecutor，PlayerAIExecutor，BallActionExecutor，CoachSkillEventConsumer，MatchEventConsumer的Update,LateUpdate,FixedUpdate<h2 id="PlayerActionExecutor"><a href="#PlayerActionExecutor" class="headerlink" title="PlayerActionExecutor"></a>PlayerActionExecutor</h2></li>
-<li>每个队员身上都会挂一个该脚本，并在Start()中，向GameHub注册自己<h2 id="PlayerAIExecutor"><a href="#PlayerAIExecutor" class="headerlink" title="PlayerAIExecutor"></a>PlayerAIExecutor</h2></li>
+<li>每个队员身上都会挂一个该脚本，并在Start()中，向GameHub注册自己</li>
+<li>驱动：BallActionHandler，PlayerStateHandler，PlayerTransformHandler，ExtraTimeActionExecutor</li>
+<li><strong>PlayerStateHandler</strong><ol>
+<li>持有ActionBuffer</li>
+<li>触发NotifyNewActionStart事件</li>
+<li>有三态<ul>
+<li><em>Stop</em> 当前没有动作运行中</li>
+<li><em>Running</em> 当前有动作在运行中，此状态下，如果发现需中断，则查看自身动作是否为休闲状态或者动画是否播完，如果满足则响应中断。</li>
+<li><em>TakeOverByOthers</em> 受到外部中断指令，指示现在角色动作由外部接管，不再产生自主行为</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>IKHandler</strong><ol>
+<li>控制守门员救球时的反向动力学</li>
+<li>主要方法：<code>OnNewSaveActionStart</code></li>
+</ol>
+</li>
+<li><strong>BallActionHandler</strong><ol>
+<li>用来响应击球事件，并产生相应动作交与BallActionExcutor</li>
+<li>输入为Action(Player动作),输出为BallAction（BallActionExutor动作）<h2 id="PlayerAIExecutor"><a href="#PlayerAIExecutor" class="headerlink" title="PlayerAIExecutor"></a>PlayerAIExecutor</h2></li>
+</ol>
+</li>
 <li>每个队员身上都会挂一个该脚本，并在Start()中，向GameHub注册自己</li>
 <li>主要工作交给PlayerHeadHandler和PlayerUpperBodyHandler来做</li>
 <li>PlayerHeadHandler</li>
-<li>PlayerUpperBodyHandler<h2 id="BallActionExecutor"><a href="#BallActionExecutor" class="headerlink" title="BallActionExecutor"></a>BallActionExecutor</h2><h2 id="CoachSkillEventConsumer"><a href="#CoachSkillEventConsumer" class="headerlink" title="CoachSkillEventConsumer"></a>CoachSkillEventConsumer</h2><h2 id="MatchEventConsumer"><a href="#MatchEventConsumer" class="headerlink" title="MatchEventConsumer"></a>MatchEventConsumer</h2><h2 id="TeamStateManager"><a href="#TeamStateManager" class="headerlink" title="TeamStateManager"></a>TeamStateManager</h2><h2 id="GameHub"><a href="#GameHub" class="headerlink" title="GameHub"></a>GameHub</h2></li>
+<li>PlayerUpperBodyHandler<h2 id="BallActionExecutor"><a href="#BallActionExecutor" class="headerlink" title="BallActionExecutor"></a>BallActionExecutor</h2></li>
+<li>控制球动作</li>
+<li><strong>BallActionHandler</strong> 用来响应击球事件，并产生相应动作交与BallActionExcutor。每个队员身上都有一个BallActionHandler。</li>
+<li>这个组件是挂在球上面的<br>-<h2 id="CoachSkillEventConsumer"><a href="#CoachSkillEventConsumer" class="headerlink" title="CoachSkillEventConsumer"></a>CoachSkillEventConsumer</h2><h2 id="MatchEventConsumer"><a href="#MatchEventConsumer" class="headerlink" title="MatchEventConsumer"></a>MatchEventConsumer</h2><h2 id="TeamStateManager"><a href="#TeamStateManager" class="headerlink" title="TeamStateManager"></a>TeamStateManager</h2><h2 id="GameHub"><a href="#GameHub" class="headerlink" title="GameHub"></a>GameHub</h2></li>
 </ul>
 <ol>
 <li>拥有双方队员的Animator组件</li>
@@ -659,7 +684,7 @@
 <li>作用：<ul>
 <li>管理比赛过程，比如比赛开始流程</li>
 <li>驱动BehaviorScheduler</li>
-<li>HandleMatchEvent（这个好像是用来做回放的）</li>
+<li>HandleMatchEvent 广播比赛特殊事件，如比赛开始，开球，比赛结束等</li>
 <li>管理队员<h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><h2 id="DottedLine-划线击球射门"><a href="#DottedLine-划线击球射门" class="headerlink" title="DottedLine 划线击球射门"></a>DottedLine 划线击球射门</h2><h2 id="AthleteLabels-头顶板"><a href="#AthleteLabels-头顶板" class="headerlink" title="AthleteLabels 头顶板"></a>AthleteLabels 头顶板</h2><h2 id="TimeLine-时间控制，暂停，运行，挂起"><a href="#TimeLine-时间控制，暂停，运行，挂起" class="headerlink" title="TimeLine 时间控制，暂停，运行，挂起"></a>TimeLine 时间控制，暂停，运行，挂起</h2></li>
 </ul>
 </li>
@@ -674,6 +699,13 @@
 <li><p>系统级暂停，StopTimeProceed()与ResumeTimeProceed()，对Time.timeScale进行设置</p>
 </li>
 </ol>
+<h2 id="DataProvider"><a href="#DataProvider" class="headerlink" title="DataProvider"></a>DataProvider</h2><ul>
+<li><strong>提供比赛事件存储队列matchKeyFrameQueue</strong><br>此队列中的事件由MatchEventConsumer单例处理，MatchEventConsumer调用GameHub的HandleMatchEvent将事件广播给所有的队员<br>比赛特殊事件，比如开球，正常比赛，点球，罚球，比赛结束等</li>
+</ul>
+<h1 id="一些约定"><a href="#一些约定" class="headerlink" title="一些约定"></a>一些约定</h1><ul>
+<li>双方队员编号，0-10，11-21</li>
+<li>0与11是守门员</li>
+</ul>
 <h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><ul>
 <li>Assets/CapstonesRes/Game/Config =&gt; /res/res_Game_Config/CAB-res_Game_Config</li>
 <li><strong># 开头的是注释</strong></li>
@@ -728,6 +760,10 @@
 </li>
 </ul>
 </li>
+</ul>
+<h2 id="AI中Lua部分"><a href="#AI中Lua部分" class="headerlink" title="AI中Lua部分"></a>AI中Lua部分</h2><ul>
+<li>估计是用行为树</li>
+<li>AI脚本位置：zcfy/spt/emulator<br>-</li>
 </ul>
 
         
@@ -984,11 +1020,23 @@
 			
 		
 			
-				<li><a href="/tags/360-游戏运营/" title="360 游戏运营">360 游戏运营<sup>1</sup></a></li>
+				<li><a href="/tags/网站/" title="网站">网站<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
+				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
 			
 		
 			
@@ -1000,11 +1048,11 @@
 			
 		
 			
-				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
+				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
 			
 		
 			
@@ -1020,31 +1068,19 @@
 			
 		
 			
-				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/scut-gameserver/" title="scut gameserver">scut gameserver<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+				<li><a href="/tags/atom/" title="atom">atom<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+				<li><a href="/tags/mono/" title="mono">mono<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Windows/" title="Windows">Windows<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>1</sup></a></li>
+				<li><a href="/tags/书/" title="书">书<sup>1</sup></a></li>
 			
 		
 		</ul>
