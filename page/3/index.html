@@ -81,6 +81,281 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/03/25/unity3d/2016-03-25-unity3d_merge_mesh/" title="Unity3D合并网格" itemprop="url">Unity3D合并网格</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-25T13:04:00.000Z" itemprop="datePublished"> 发表于 Mar 25 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h4 id="1-合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。"><a href="#1-合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。" class="headerlink" title="1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。"></a>1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。</h4><h4 id="2-合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。"><a href="#2-合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。" class="headerlink" title="2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。"></a>2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。</h4><h4 id="3-对MeshBaker-合并的网格进行烘焙，光照图出现黑斑，如图"><a href="#3-对MeshBaker-合并的网格进行烘焙，光照图出现黑斑，如图" class="headerlink" title="3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图"></a>3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图</h4><p>  <img src="/images/unity3d_meshbaker_blackpoint.png" alt=""><br>  这种情况是在Unity5下，没有设置LightMapping UVs 为Generate_new_uv2_layout导致的<br>  <img src="/images/unity3d_meshbaker_blackpoint2.png" alt=""></p>
+<h1 id="合并网格代码"><a href="#合并网格代码" class="headerlink" title="合并网格代码"></a>合并网格代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line"></span><br><span class="line">public class CombineBones : MonoBehaviour &#123;</span><br><span class="line"></span><br><span class="line">    public GameObject bone;</span><br><span class="line">    public List&lt;GameObject&gt; models = new List&lt;GameObject&gt;();</span><br><span class="line">    public GameObject human;</span><br><span class="line"></span><br><span class="line">	// Use this for initialization</span><br><span class="line">	void Start () &#123;</span><br><span class="line">        human = GameObject.Instantiate&lt;GameObject&gt;(bone);</span><br><span class="line">        human.SetActive(true);</span><br><span class="line">        bone.SetActive(false);</span><br><span class="line"></span><br><span class="line">        // 这种是合并网格</span><br><span class="line">        addPart2();</span><br><span class="line">        // 这种是组合网格。只是把模型挂到骨骼里，并替换模型的骨骼</span><br><span class="line">        // addPart3()</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    void addPart2()</span><br><span class="line">    &#123;</span><br><span class="line">        var bones = getAllChildTransform(human.transform);</span><br><span class="line">        List&lt;Material&gt; mats = new List&lt;Material&gt;();</span><br><span class="line">        List&lt;Transform&gt; newBones = new List&lt;Transform&gt;();</span><br><span class="line">        List&lt;CombineInstance&gt; combineInstances = new List&lt;CombineInstance&gt;();</span><br><span class="line"></span><br><span class="line">        foreach (var go in models)</span><br><span class="line">        &#123;</span><br><span class="line">            var smrs = go.GetComponentsInChildren&lt;SkinnedMeshRenderer&gt;();</span><br><span class="line">            foreach (var smr in smrs)</span><br><span class="line">            &#123;</span><br><span class="line">                foreach (var b1 in smr.bones)</span><br><span class="line">                &#123;</span><br><span class="line">                    Transform finded = null;</span><br><span class="line">                    foreach (var b in bones)</span><br><span class="line">                        if (b1.name == b.name)</span><br><span class="line">                        &#123;</span><br><span class="line">                            finded = b;</span><br><span class="line">                            break;</span><br><span class="line">                        &#125;</span><br><span class="line">                    if (finded != null)</span><br><span class="line">                    &#123;</span><br><span class="line">                        newBones.Add(finded);</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        Debug.LogError(&quot;Can not find bone &quot; + b1.name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                mats.AddRange(smr.sharedMaterials);</span><br><span class="line"></span><br><span class="line">                for (int sub = 0; sub &lt; smr.sharedMesh.subMeshCount; ++sub)</span><br><span class="line">                &#123;</span><br><span class="line">                    var ci = new CombineInstance();</span><br><span class="line">                    ci.mesh = smr.sharedMesh;</span><br><span class="line">                    ci.subMeshIndex = sub;</span><br><span class="line">                    ci.transform = smr.transform.localToWorldMatrix;</span><br><span class="line">                    combineInstances.Add(ci);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var humanSMR = human.AddComponent&lt;SkinnedMeshRenderer&gt;();</span><br><span class="line">        humanSMR.materials = mats.ToArray();</span><br><span class="line">        humanSMR.sharedMesh = new Mesh();</span><br><span class="line">        humanSMR.sharedMesh.CombineMeshes(combineInstances.ToArray(), false, false);</span><br><span class="line">        humanSMR.sharedMesh.Optimize();</span><br><span class="line">        humanSMR.bones = newBones.ToArray();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void addPart3()</span><br><span class="line">    &#123;</span><br><span class="line">        foreach (var go in models)</span><br><span class="line">        &#123;</span><br><span class="line">            var smrs = go.GetComponentsInChildren&lt;SkinnedMeshRenderer&gt;();</span><br><span class="line">            foreach (var smr in smrs)</span><br><span class="line">            &#123;</span><br><span class="line">                var originSmr = GameObject.Instantiate&lt;SkinnedMeshRenderer&gt;(smr);</span><br><span class="line">                var bones = getAllChildTransform(human.transform);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                originSmr.transform.parent = human.transform;</span><br><span class="line">                originSmr.transform.localPosition = originSmr.transform.localPosition;</span><br><span class="line">                originSmr.transform.localScale = originSmr.transform.localScale;</span><br><span class="line">                originSmr.transform.localRotation = originSmr.transform.localRotation;</span><br><span class="line"></span><br><span class="line">                List&lt;Transform&gt; newBones = new List&lt;Transform&gt;();</span><br><span class="line">                foreach (var b1 in originSmr.bones)</span><br><span class="line">                &#123;</span><br><span class="line">                    Transform finded = null;</span><br><span class="line">                    foreach (var b in bones)</span><br><span class="line">                        if (b1.name == b.name)</span><br><span class="line">                        &#123;</span><br><span class="line">                            finded = b;</span><br><span class="line">                            break;</span><br><span class="line">                        &#125;</span><br><span class="line">                    if (finded != null)</span><br><span class="line">                    &#123;</span><br><span class="line">                        newBones.Add(finded);</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        Debug.LogError(&quot;Can not find bone &quot; + b1.name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                originSmr.bones = newBones.ToArray();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Transform[] getAllChildTransform(Transform t)</span><br><span class="line">    &#123;</span><br><span class="line">        List&lt;Transform&gt; ts = new List&lt;Transform&gt;();</span><br><span class="line">        _getAllChildTransform(t, ts);</span><br><span class="line">        return ts.ToArray();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void _getAllChildTransform(Transform t, List&lt;Transform&gt; ts)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int i = 0; i &lt; t.childCount; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            ts.Add(t.GetChild(i));</span><br><span class="line">            _getAllChildTransform(t.GetChild(i), ts);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/unity3d/">unity3d</a><a href="/tags/merge/">merge</a><a href="/tags/mesh/">mesh</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/03/25/unity3d/2016-03-25-unity3d_merge_mesh/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/03/25/unity3d/2016-03-25-unity3d_merge_mesh/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/25/2016/2016-03-25-atom/" title="atom" itemprop="url">atom</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-25T13:00:00.000Z" itemprop="datePublished"> 发表于 Mar 25 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h1><h2 id="markdown-writer"><a href="#markdown-writer" class="headerlink" title="markdown writer"></a><a href="https://github.com/zhuochun/md-writer/wiki/Quick-Start" target="_blank" rel="external">markdown writer</a></h2><ol>
+<li>project 相关的_mdwriter.cson文件，这里project指Atom的Project，比如把blog/source目录加为Atom的Project，则Project目录就是source目录，所以应该把_mdwriter.cson放到source目录下。<br>2.</li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/博客/">博客</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/atom/">atom</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/03/25/2016/2016-03-25-atom/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/03/25/2016/2016-03-25-atom/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/25/3dmax/" title="3dMax" itemprop="url">3dMax</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-25T11:49:45.000Z" itemprop="datePublished"> 发表于 Mar 25 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><ul>
+<li><p>打开结点层次图<br><img src="\images\max_schematic_view.png" alt=""></p>
+</li>
+<li><p>加载Bip骨骼动画<br>选中一根骨骼，然后在Motion面板加载BIP骨骼动画文件</p>
+</li>
+<li><p>线框和实体相互转换的快捷键是F3。<br>如果你文件中的骨骼显示的形状是立方体的话，需要选中所有的骨骼，右击进入物体属性，把 display as box 勾选掉就可以了。</p>
+</li>
+<li><p>设置Pivot<br>选中物体~进入设置面板（Herarchy）,(影响轴)Adjust Pivot，（仅影响轴）Affect Pivot only</p>
+</li>
+<li><p>快捷键<br>7-查看面数<br>m-材质面板</p>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/图形工具/">图形工具</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/3dmax/">3dmax</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/03/25/3dmax/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/03/25/3dmax/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/19/游戏运营/360运营/" title="360 运营" itemprop="url">360 运营</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-19T15:08:00.000Z" itemprop="datePublished"> 发表于 Mar 19 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><ul>
+<li>默认80端口是封闭的，要设置iptables 开放端口</li>
+<li>不能使用root用户，只能使用sudo</li>
+<li><p>ssh连接奇慢，服务器SSH配置有问题</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UseDNS no</span><br><span class="line">GSSAPIAuthentication no</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺少软件：expect zip</p>
+</li>
+<li>防火墙要关掉</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/游戏运营/">游戏运营</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/360-游戏运营/">360 游戏运营</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/03/19/游戏运营/360运营/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/03/19/游戏运营/360运营/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/03/19/expect/" title="expect" itemprop="url">expect</a>
   </h1>
   <p class="article-author">By
@@ -202,6 +477,296 @@
 	
 	  	<span></span>
 		<a href="/2015/03/24/scut/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/24/scut/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/funny/" title="好玩的" itemprop="url">好玩的</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h1><ul>
+<li><a href="http://www.gamersky.com/z/oatbf/" target="_blank" rel="external">奥日与黑暗森林</a></li>
+<li><a href="">三位一体</a></li>
+<li>[饥荒]</li>
+<li>[纸境]</li>
+<li>[劳拉GO]</li>
+<li>[地狱边境]</li>
+<li></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/娱乐/">娱乐</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/funny/">funny</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/funny/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/funny/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/unity3d/unity3d/" title="unity3d" itemprop="url">unity3d</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="使用凹凸贴图"><a href="#使用凹凸贴图" class="headerlink" title="使用凹凸贴图"></a><a href="http://www.gopedu.com/article/954" target="_blank" rel="external">使用凹凸贴图</a></h1><h1 id="Shader"><a href="#Shader" class="headerlink" title="Shader"></a>Shader</h1><h1 id="换装"><a href="#换装" class="headerlink" title="换装"></a>换装</h1><p><a href="http://blog.csdn.net/nin_cool/article/details/12714993" target="_blank" rel="external">Unity3D 模型换肤技术</a><br><a href="http://blog.csdn.net/ljy1988123/article/details/8037081" target="_blank" rel="external">Unity里的人物驱动/换装备/换武器/换衣服/动画重定位</a><br><a href="http://www.unitymanual.com/3543.html" target="_blank" rel="external">换装demo时美术遇到的问题详解</a></p>
+<h2 id="挂点"><a href="#挂点" class="headerlink" title="挂点"></a>挂点</h2><p>这是为了应付不同模型同一装备要挂在不同位置而提出的解决方法。如果整个工程只能一个角色模型，那也就只用固定的挂点了，而程序也不用知道这个挂点在哪，用默认的就行了。<br><a href="http://jiaowodouge.blog.163.com/blog/static/18724516820118805239994/" target="_blank" rel="external">unity中武器替换的注意点</a></p>
+<h1 id="刀光"><a href="#刀光" class="headerlink" title="刀光"></a>刀光</h1><p><a href="http://blog.sina.com.cn/s/blog_840e41e10102uzto.html" target="_blank" rel="external">Melee Weapon Trail–Unity刀光插件分享</a></p>
+<h1 id="着色器"><a href="#着色器" class="headerlink" title="着色器"></a>着色器</h1><p><a href="http://unitytaiwan.blogspot.com/2014/11/unity5.html" target="_blank" rel="external">Unity5 中基於物理的著色器</a><br><a href="http://www.cnblogs.com/martianzone/p/3394092.html" target="_blank" rel="external">Unity3d 如何找到游戏对象并改变其颜色</a></p>
+<h1 id="地形"><a href="#地形" class="headerlink" title="地形"></a>地形</h1><p><a href="http://www.cnblogs.com/TouchAfflatus/p/3536661.html" target="_blank" rel="external">IClone地形编辑器结合T4M插件在Unity3D使用</a><br><a href="http://www.reallusion.com/iClone/" target="_blank" rel="external">iClone</a><br><a href="http://v.youku.com/v_show/id_XNTI2ODIzOTA0.html" target="_blank" rel="external">视频: iClone動畫教學<em>12</em>地形轉換</a><br><a href="http://www.azert2k.fr/T4M.html" target="_blank" rel="external">t4m</a><br><a href="http://wiki.unity3d.com/index.php?title=Object2Terrain" target="_blank" rel="external">Object2Terrain</a></p>
+<h1 id="图像特效"><a href="#图像特效" class="headerlink" title="图像特效"></a><a href="http://game.ceeger.com/Components/comp-ImageEffects.html" target="_blank" rel="external">图像特效</a></h1><h1 id="Mobile相关"><a href="#Mobile相关" class="headerlink" title="Mobile相关"></a>Mobile相关</h1><p><a href="http://blogs.unity3d.com/2015/04/23/making-your-mobile-game-a-success-part-one-f2p-game-design/" target="_blank" rel="external">MAKING YOUR MOBILE GAME A SUCCESS. PART ONE: F2P GAME DESIGN</a></p>
+<p><a href="http://blogs.unity3d.com/2015/04/30/making-your-mobile-game-a-success-part-two-the-premium-option/" target="_blank" rel="external">MAKING YOUR MOBILE GAME A SUCCESS. PART TWO: THE PREMIUM OPTION</a></p>
+<p><a href="http://blogs.unity3d.com/2015/05/08/making-your-mobile-game-a-success-part-three-acquiring-users/" target="_blank" rel="external">MAKING YOUR MOBILE GAME A SUCCESS. PART THREE: ACQUIRING USERS</a></p>
+<p><a href="http://blogs.unity3d.com/?s=Mobile" target="_blank" rel="external">unity3d blog about mobile</a></p>
+<p><a href="http://blogs.unity3d.com/2012/07/05/unity-4-aaa-graphics-and-performance-for-your-mobile-games/" target="_blank" rel="external">UNITY 4: AAA GRAPHICS AND PERFORMANCE FOR YOUR MOBILE GAMES</a></p>
+<p><a href="http://stats.unity3d.com/web/" target="_blank" rel="external">UNITY HARDWARE STATISTICS</a></p>
+<h1 id="Asset-store"><a href="#Asset-store" class="headerlink" title="Asset store"></a>Asset store</h1><ul>
+<li>下载目录：C:\Users\Administrator\AppData\Roaming\Unity\Asset Store</li>
+</ul>
+<h1 id="Mecanim动画"><a href="#Mecanim动画" class="headerlink" title="Mecanim动画"></a>Mecanim动画</h1><ul>
+<li>连续两次调用CrossFade，则后一次的CrossFade不会替换前一个，而是会丢失</li>
+<li>根动画<br>  1 如果是Human自动就设置好了，只要启用Animator的Apply root motion就可以了<br>  2 如果是Generic<pre><code>a 设置模型骨骼的根节点，bip骨骼一般是Bip 001
+b 动画的Rig-&gt;Avatar Definition选择Copy From Other Avatar，Rig-&gt;Source选择对应骨骼的Avatar（也可以选择Create From This Model，然后设置根骨骼为Bip 001）
+c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform Rotation-&gt;Based Upon(at Start)选择Original
+</code></pre></li>
+<li>表情动画<br>  普通的哭笑等动画做一帧就可以了，不过Max里要做成两帧，不然Max导不出动画<br>导出FBX时，MAX用Morpha做的表情动画要同时导出变形器所在的模型，如果模型有蒙皮则还要带上蒙皮<br>  1 Avatar Mask要选择对应的骨骼类型，对于Generic类型骨骼，如果想屏蔽某个骨骼，不勾选对应的骨骼Transform就行了<br>  2 动画类型选择与骨骼对应的类型<br>  3 把表情动画加到AniamtorController里对应的Layer下,Layer设置好Avatar Mask，调整好权重</li>
+<li>在Animator所在GameObject隐藏后再显示出来，激活的动画会变成默认动画，而不是上一个动画。</li>
+<li>立即播放动画到某一时刻<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">animator.Play(animState)</span><br><span class="line">animator.Update(0)</span><br><span class="line">animator.Update(time)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="场景加载"><a href="#场景加载" class="headerlink" title="场景加载"></a>场景加载</h1><ul>
+<li>LoadLevel 会加载场景的环境配置，也就是RenderSettings里的参数，包括天空盒，而LoadLevelAdditive则不会</li>
+<li>5.0到5.1，Android版场景Assetbundle在编辑器下无法正确加载，但是真机下是正常的。而Webplayer版的AB在Android平台的编辑器里是可以正常加载的，但在真机里是无法加载的。</li>
+<li>Android下PlayerSettings/Graphics Level要设置为Force OpenGLES2.0，否则加载场景Assetbundle后，会无法显示天空盒，所有Shader也会不正常。<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1></li>
+</ul>
+<h1 id="刚体与受力"><a href="#刚体与受力" class="headerlink" title="刚体与受力"></a>刚体与受力</h1><ul>
+<li>刚体要连续受力，才会有受力表现，也就是在Update里连续调用受力接口。并且一个物体上所有刚体都受力才会有受力表现。</li>
+</ul>
+<h1 id="一些限制"><a href="#一些限制" class="headerlink" title="一些限制"></a>一些限制</h1><ul>
+<li>一个模型最多65535个顶点，超过此数量的模型在运行时将被Unity自动分割为多个模型</li>
+</ul>
+<h1 id="图形性能分析"><a href="#图形性能分析" class="headerlink" title="图形性能分析"></a>图形性能分析</h1><ul>
+<li>面数 Batches</li>
+<li>最影响效率的是角色</li>
+<li>面数高并不可怕，可怕是Batch多</li>
+<li>如果发现渲染性能有问题，可以用排除法，就是把场景里的东西一点一点删掉，看看是什么影响了性能。</li>
+</ul>
+<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><ul>
+<li>apk本身是一个压缩包，不能用普通文件系统的API来存取，可以用WWW和Zip API来读取。</li>
+<li>使用WWW来读取本地文件时要加file://前缀</li>
+<li>首选项Player-&gt;Write Access要设置成External(SDCard)才能对Application.persistentDataPath进行写操作，此时该目录为/Android/data/包名/files/（此目录可写），否则是/data/data/包名（此目录不可写）</li>
+</ul>
+<h1 id="打包相关"><a href="#打包相关" class="headerlink" title="打包相关"></a>打包相关</h1><ul>
+<li>有依赖的AssetBundle（简称AB），只有所有依赖的AB都在内存（不用加载AB内对象）才能加载此AB内的资源,否则可能引起崩溃，已知的一种崩溃原因是：加载的对象带有Animator组件，在克隆该对象时会崩溃</li>
+<li>5.0-5.3，在使用LoadLevelAsync加载场景AB包时，会出现无法正确加载光照图的BUG，目前的解决方式是将场景打包为Prefab，手动加载光照图</li>
+<li>FBX的压缩比大概在10%-20%之间</li>
+</ul>
+<h1 id="2015-Mobile图形限制"><a href="#2015-Mobile图形限制" class="headerlink" title="2015 Mobile图形限制"></a>2015 Mobile图形限制</h1><ul>
+<li>场景7万面，同屏40-60批次，包括灯光，水，粒子</li>
+<li>精细模型1万面，133根骨骼</li>
+<li>UI支持最大分辨率1920X1080，实际制作缩小为0.625倍</li>
+</ul>
+<h1 id="图片质量"><a href="#图片质量" class="headerlink" title="图片质量"></a>图片质量</h1><ol>
+<li>filter，采样算法<ul>
+<li>point(no filter) 不过滤，可能会出算边缘锯齿，但类似2x2 1x1的小图片要用这种，其它过滤算法使用小图边缘不是纯色，而是从中间深色过渡到边缘颜色。<br>-</li>
+</ul>
+</li>
+</ol>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><ul>
+<li>5.0-5.1 SampleAnimation 在Android下都会崩溃</li>
+<li>为什么在没有LOD，可见页数不变的情况下，物体离摄像机越远，帧率越高？</li>
+<li>如何计算图片所占用的内存数量？</li>
+<li>为什么同材质的不同粒子发射器会在运行时合并批次？动态合并已关闭。</li>
+<li>使用同样材质的多个粒子发射器只会占用一个批次？</li>
+<li>透明贴图有几种方法？<ol>
+<li>Alpha通道</li>
+<li>图片本身背景填充色不是100%</li>
+<li>自定义Shader，以某种颜色作为Alpha值</li>
+</ol>
+</li>
+<li>GameObject  references runtime script in scene file. Fixing!<br>出现这种错误首先Reimport All试试</li>
+<li>运行时显示Unable to find shaders used for the terrain engine. Please include Nature/Terrain/Diffuse shader in Graphics settings.<br>  5.0以后要包含三个Shader<br>  Nature/Terrain/Standard (Only adding this solved the same problem for me)<br>  Nature/Terrain/Diffuse<br>  Nature/Terrain/Specular</li>
+<li>Texture2D.ReadPixels() 在Windows与Editor下是以左上角为原点，在Android下是以右下角为原点</li>
+<li>工程画质的设置（Quality）会影响到图片压缩的质量，网格的平滑程度</li>
+<li>美术工程与客户端工程是两个不同的工程时，美术工程编译出来的Assetbundle在某些情况下，在客户端加载了AB后可能会出现无法加载Shader的情况。<br>可能的原因：<ol>
+<li>美术工程的配置文件不正确，如果下三个配置文件之一或全部可能引起该问题：<br><img src="\images\MissDiffuseShader.jpg" alt="MissDiffuseShader"></li>
+</ol>
+</li>
+<li>运行时Transform的参数不能设置了<br>可参原因：<ol>
+<li>Animator的Controller中有的动画对根节点K帧了，不论这个动画是否在运行，都会导致Transform的参数不能改变 <img src="\images\animator_transform_cannot_move.png" alt=""></li>
+</ol>
+</li>
+</ul>
+<h1 id="unity-crash-原因收集"><a href="#unity-crash-原因收集" class="headerlink" title="unity crash 原因收集"></a>unity crash 原因收集</h1><ul>
+<li>Assetbundle关联的Assetbundle发生了变化，而原Assetbundle没有更新，加载这个的Assetbundle可能会崩溃<br>  可能的Backtrace：<br>  0x0000000140D63DC6 (Unity) AnimationClip::GetRuntimeAsset<br>  0x000000014113F4CD (Unity) mecanim::animation::EvaluateBlendTree<br>  0x000000014115922E (Unity) mecanim::statemachine::DoBlendTreeEvaluation<br>  0x000000014115B15D (Unity) mecanim::statemachine::EvaluateState<br>  0x000000014115B9DA (Unity) mecanim::statemachine::EvaluateStateMachine<br>  0x00000001411159B5 (Unity) AnimatorControllerPlayable::UpdateGraph<br>  0x0000000140D926C4 (Unity) Animator::UpdateAvatars<br>  0x0000000140D935F1 (Unity) Animator::UpdateWithDelta<br>  0x0000000140F442EE (Unity) Animator_CUSTOM_Update</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/game/">game</a><a href="/tags/unity3d/">unity3d</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/unity3d/unity3d/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/unity3d/unity3d/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/mygame/" title="想要的游戏特征" itemprop="url">想要的游戏特征</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h2><ul>
+<li>高AI</li>
+<li>更多的环境互动</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/游戏开发/">游戏开发</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/游戏/">游戏</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/mygame/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/mygame/" data-count-type="comments">&nbsp;</a>
 	
 </div>
 
@@ -347,579 +912,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/Linux系统管理/linux_manage/" title="Linux系统管理" itemprop="url">Linux系统管理</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="ulimit"><a href="#ulimit" class="headerlink" title="ulimit"></a>ulimit</h2><p>所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制<br>例如打开文件数的限制可以在/etc/security/limits.conf加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*               soft    nofile           64000</span><br><span class="line">*               hard    nofile           64000</span><br></pre></td></tr></table></figure></p>
-<h1 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h1><h1 id="查看Linux系统性能"><a href="#查看Linux系统性能" class="headerlink" title="查看Linux系统性能"></a>查看Linux系统性能</h1><p>1 iotop<br>root权限<br>查看实时磁盘读写情况</p>
-<p>2 vmstat 秒数<br>主要看si so ，单位字节<br>si:从交换分区换入的页面<br>so:从内存换出的页面</p>
-<p>3 free -m<br>以MB查看内存使用情况</p>
-<p>-/+buffers/cache 1024                 1024</p>
-<p>真正使用的内存        可释放内存+空闲内存</p>
-<p>以上两个值的和等于总内存</p>
-<p>buffers指buffer cache</p>
-<p>cached指page cache</p>
-<h1 id="VirtualBox"><a href="#VirtualBox" class="headerlink" title="VirtualBox"></a>VirtualBox</h1><p>迁移virtualbox虚拟机<br>1 vboxmanage list vms<br>2 vboxmanage unregistervm vm_name<br>3 移动虚拟机文件夹到新的目录<br>4 移除虚拟机关联的硬盘<br>5 vboxmanage registervm vm_new_absolute_path/xxx.vbox</p>
-<p>VBoxManager controlvm centos75 poweroff<br>VBoxManager startvm centos75 –type headless</p>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
-<li><a href="https://www.ttlsa.com/linux/update-linux-swap/" target="_blank" rel="external">linux下如何增加swap交换分区</a></li>
-<li><a href="http://coolshell.cn" target="_blank" rel="external">CoolShell</a></li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Linux系统管理/">Linux系统管理</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux-system-manage/">linux system manage</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/Linux系统管理/linux_manage/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/Linux系统管理/linux_manage/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/3guo/" title="三国志3D版" itemprop="url">三国志3D版</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="资源管理器"><a href="#资源管理器" class="headerlink" title="资源管理器"></a>资源管理器</h1><ol>
-<li>相关路径<ul>
-<li>各平台资源保存目录</li>
-<li>远程资源URL</li>
-<li>各平台资源加载器</li>
-</ul>
-</li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/项目分析/">项目分析</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/三国志3D版/">三国志3D版</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/3guo/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/3guo/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/ps/" title="ps" itemprop="url">ps</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h3 id="序列帧生成GIF图"><a href="#序列帧生成GIF图" class="headerlink" title="序列帧生成GIF图"></a><a href="http://blog.163.com/lrm_1036/blog/static/9291615020126443450414/" target="_blank" rel="external">序列帧生成GIF图</a></h3><h3 id="制作alpha通道"><a href="#制作alpha通道" class="headerlink" title="制作alpha通道"></a><a href="http://www.chinavid.com/2d/2008-8-4/PhotoshopAlpha.htm" target="_blank" rel="external">制作alpha通道</a></h3>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/图形处理/">图形处理</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/ps/">ps</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/ps/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/ps/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/funny/" title="好玩的" itemprop="url">好玩的</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h1><ul>
-<li><a href="http://www.gamersky.com/z/oatbf/" target="_blank" rel="external">奥日与黑暗森林</a></li>
-<li><a href="">三位一体</a></li>
-<li>[饥荒]</li>
-<li>[纸境]</li>
-<li>[劳拉GO]</li>
-<li>[地狱边境]</li>
-<li></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/娱乐/">娱乐</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/funny/">funny</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/funny/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/funny/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/unity3d/unity3d/" title="unity3d" itemprop="url">unity3d</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="使用凹凸贴图"><a href="#使用凹凸贴图" class="headerlink" title="使用凹凸贴图"></a><a href="http://www.gopedu.com/article/954" target="_blank" rel="external">使用凹凸贴图</a></h1><h1 id="Shader"><a href="#Shader" class="headerlink" title="Shader"></a>Shader</h1><h1 id="换装"><a href="#换装" class="headerlink" title="换装"></a>换装</h1><p><a href="http://blog.csdn.net/nin_cool/article/details/12714993" target="_blank" rel="external">Unity3D 模型换肤技术</a><br><a href="http://blog.csdn.net/ljy1988123/article/details/8037081" target="_blank" rel="external">Unity里的人物驱动/换装备/换武器/换衣服/动画重定位</a><br><a href="http://www.unitymanual.com/3543.html" target="_blank" rel="external">换装demo时美术遇到的问题详解</a></p>
-<h2 id="挂点"><a href="#挂点" class="headerlink" title="挂点"></a>挂点</h2><p>这是为了应付不同模型同一装备要挂在不同位置而提出的解决方法。如果整个工程只能一个角色模型，那也就只用固定的挂点了，而程序也不用知道这个挂点在哪，用默认的就行了。<br><a href="http://jiaowodouge.blog.163.com/blog/static/18724516820118805239994/" target="_blank" rel="external">unity中武器替换的注意点</a></p>
-<h1 id="刀光"><a href="#刀光" class="headerlink" title="刀光"></a>刀光</h1><p><a href="http://blog.sina.com.cn/s/blog_840e41e10102uzto.html" target="_blank" rel="external">Melee Weapon Trail–Unity刀光插件分享</a></p>
-<h1 id="着色器"><a href="#着色器" class="headerlink" title="着色器"></a>着色器</h1><p><a href="http://unitytaiwan.blogspot.com/2014/11/unity5.html" target="_blank" rel="external">Unity5 中基於物理的著色器</a><br><a href="http://www.cnblogs.com/martianzone/p/3394092.html" target="_blank" rel="external">Unity3d 如何找到游戏对象并改变其颜色</a></p>
-<h1 id="地形"><a href="#地形" class="headerlink" title="地形"></a>地形</h1><p><a href="http://www.cnblogs.com/TouchAfflatus/p/3536661.html" target="_blank" rel="external">IClone地形编辑器结合T4M插件在Unity3D使用</a><br><a href="http://www.reallusion.com/iClone/" target="_blank" rel="external">iClone</a><br><a href="http://v.youku.com/v_show/id_XNTI2ODIzOTA0.html" target="_blank" rel="external">视频: iClone動畫教學<em>12</em>地形轉換</a><br><a href="http://www.azert2k.fr/T4M.html" target="_blank" rel="external">t4m</a><br><a href="http://wiki.unity3d.com/index.php?title=Object2Terrain" target="_blank" rel="external">Object2Terrain</a></p>
-<h1 id="图像特效"><a href="#图像特效" class="headerlink" title="图像特效"></a><a href="http://game.ceeger.com/Components/comp-ImageEffects.html" target="_blank" rel="external">图像特效</a></h1><h1 id="Mobile相关"><a href="#Mobile相关" class="headerlink" title="Mobile相关"></a>Mobile相关</h1><p><a href="http://blogs.unity3d.com/2015/04/23/making-your-mobile-game-a-success-part-one-f2p-game-design/" target="_blank" rel="external">MAKING YOUR MOBILE GAME A SUCCESS. PART ONE: F2P GAME DESIGN</a></p>
-<p><a href="http://blogs.unity3d.com/2015/04/30/making-your-mobile-game-a-success-part-two-the-premium-option/" target="_blank" rel="external">MAKING YOUR MOBILE GAME A SUCCESS. PART TWO: THE PREMIUM OPTION</a></p>
-<p><a href="http://blogs.unity3d.com/2015/05/08/making-your-mobile-game-a-success-part-three-acquiring-users/" target="_blank" rel="external">MAKING YOUR MOBILE GAME A SUCCESS. PART THREE: ACQUIRING USERS</a></p>
-<p><a href="http://blogs.unity3d.com/?s=Mobile" target="_blank" rel="external">unity3d blog about mobile</a></p>
-<p><a href="http://blogs.unity3d.com/2012/07/05/unity-4-aaa-graphics-and-performance-for-your-mobile-games/" target="_blank" rel="external">UNITY 4: AAA GRAPHICS AND PERFORMANCE FOR YOUR MOBILE GAMES</a></p>
-<p><a href="http://stats.unity3d.com/web/" target="_blank" rel="external">UNITY HARDWARE STATISTICS</a></p>
-<h1 id="Asset-store"><a href="#Asset-store" class="headerlink" title="Asset store"></a>Asset store</h1><ul>
-<li>下载目录：C:\Users\Administrator\AppData\Roaming\Unity\Asset Store</li>
-</ul>
-<h1 id="Mecanim动画"><a href="#Mecanim动画" class="headerlink" title="Mecanim动画"></a>Mecanim动画</h1><ul>
-<li>连续两次调用CrossFade，则后一次的CrossFade不会替换前一个，而是会丢失</li>
-<li>根动画<br>  1 如果是Human自动就设置好了，只要启用Animator的Apply root motion就可以了<br>  2 如果是Generic<pre><code>a 设置模型骨骼的根节点，bip骨骼一般是Bip 001
-b 动画的Rig-&gt;Avatar Definition选择Copy From Other Avatar，Rig-&gt;Source选择对应骨骼的Avatar
-c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform Rotation-&gt;Based Upon(at Start)选择Original
-</code></pre></li>
-<li>表情动画<br>  普通的哭笑等动画做一帧就可以了，不过Max里要做成两帧，不然Max导不出动画<br>导出FBX时，MAX用Morpha做的表情动画要同时导出变形器所在的模型，如果模型有蒙皮则还要带上蒙皮<br>  1 Avatar Mask要选择对应的骨骼类型，对于Generic类型骨骼，如果想屏蔽某个骨骼，不勾选对应的骨骼Transform就行了<br>  2 动画类型选择与骨骼对应的类型<br>  3 把表情动画加到AniamtorController里对应的Layer下,Layer设置好Avatar Mask，调整好权重</li>
-</ul>
-<h1 id="场景加载"><a href="#场景加载" class="headerlink" title="场景加载"></a>场景加载</h1><ul>
-<li>LoadLevel 会加载场景的环境配置，也就是RenderSettings里的参数，包括天空盒，而LoadLevelAdditive则不会</li>
-<li>5.0到5.1，Android版场景Assetbundle在编辑器下无法正确加载，但是真机下是正常的。而Webplayer版的AB在Android平台的编辑器里是可以正常加载的，但在真机里是无法加载的。</li>
-<li>Android下PlayerSettings/Graphics Level要设置为Force OpenGLES2.0，否则加载场景Assetbundle后，会无法显示天空盒，所有Shader也会不正常。<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1></li>
-</ul>
-<h1 id="刚体与受力"><a href="#刚体与受力" class="headerlink" title="刚体与受力"></a>刚体与受力</h1><ul>
-<li>刚体要连续受力，才会有受力表现，也就是在Update里连续调用受力接口。并且一个物体上所有刚体都受力才会有受力表现。</li>
-</ul>
-<h1 id="一些限制"><a href="#一些限制" class="headerlink" title="一些限制"></a>一些限制</h1><ul>
-<li>一个模型最多65535个顶点，超过此数量的模型在运行时将被Unity自动分割为多个模型</li>
-</ul>
-<h1 id="图形性能分析"><a href="#图形性能分析" class="headerlink" title="图形性能分析"></a>图形性能分析</h1><ul>
-<li>面数 Batches</li>
-<li>最影响效率的是角色</li>
-<li>面数高并不可怕，可怕是Batch多</li>
-<li>如果发现渲染性能有问题，可以用排除法，就是把场景里的东西一点一点删掉，看看是什么影响了性能。</li>
-</ul>
-<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><ul>
-<li>apk本身是一个压缩包，不能用普通文件系统的API来存取，可以用WWW和Zip API来读取。</li>
-<li>使用WWW来读取本地文件时要加file://前缀</li>
-<li>首选项Player-&gt;Write Access要设置成External(SDCard)才能对Application.persistentDataPath进行写操作，此时该目录为/Android/data/包名/files/（此目录可写），否则是/data/data/包名（此目录不可写）</li>
-</ul>
-<h1 id="打包相关"><a href="#打包相关" class="headerlink" title="打包相关"></a>打包相关</h1><ul>
-<li>有依赖的AssetBundle（简称AB），只有所有依赖的AB都在内存（不用加载AB内对象）才能加载此AB内的资源,否则可能引起崩溃，已知的一种崩溃原因是：加载的对象带有Animator组件，在克隆该对象时会崩溃</li>
-<li>5.0-5.3，在使用LoadLevelAsync加载场景AB包时，会出现无法正确加载光照图的BUG，目前的解决方式是将场景打包为Prefab，手动加载光照图</li>
-<li>FBX的压缩比大概在10%-20%之间</li>
-</ul>
-<h1 id="2015-Mobile图形限制"><a href="#2015-Mobile图形限制" class="headerlink" title="2015 Mobile图形限制"></a>2015 Mobile图形限制</h1><ul>
-<li>场景7万面，同屏40批次</li>
-<li>精细模型1万面</li>
-<li>UI支持最大分辨率1920X1080，实际制作缩小为0.625倍</li>
-</ul>
-<h1 id="图片质量"><a href="#图片质量" class="headerlink" title="图片质量"></a>图片质量</h1><ol>
-<li>filter，采样算法<ul>
-<li>point(no filter) 不过滤，可能会出算边缘锯齿，但类似2x2 1x1的小图片要用这种，其它过滤算法使用小图边缘不是纯色，而是从中间深色过渡到边缘颜色。<br>-</li>
-</ul>
-</li>
-</ol>
-<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><ul>
-<li>5.0-5.1 SampleAnimation 在Android下都会崩溃</li>
-<li>为什么在没有LOD，可见页数不变的情况下，物体离摄像机越远，帧率越高？</li>
-<li>如何计算图片所占用的内存数量？</li>
-<li>为什么同材质的不同粒子发射器会在运行时合并批次？动态合并已关闭。</li>
-<li>使用同样材质的多个粒子发射器只会占用一个批次？</li>
-<li>透明贴图有几种方法？<ol>
-<li>Alpha通道</li>
-<li>图片本身背景填充色不是100%</li>
-<li>自定义Shader，以某种颜色作为Alpha值</li>
-</ol>
-</li>
-<li>GameObject  references runtime script in scene file. Fixing!<br>出现这种错误首先Reimport All试试</li>
-<li>运行时显示Unable to find shaders used for the terrain engine. Please include Nature/Terrain/Diffuse shader in Graphics settings.<br>  5.0以后要包含三个Shader<br>  Nature/Terrain/Standard (Only adding this solved the same problem for me)<br>  Nature/Terrain/Diffuse<br>  Nature/Terrain/Specular</li>
-<li>Texture2D.ReadPixels() 在Windows与Editor下是以左上角为原点，在Android下是以右下角为原点</li>
-<li>工程画质的设置（Quality）会影响到图片压缩的质量，网格的平滑程度</li>
-<li>美术工程与客户端工程是两个不同的工程时，美术工程编译出来的Assetbundle在某些情况下，在客户端加载了AB后可能会出现无法加载Shader的情况。<br>可能的原因：<ol>
-<li>美术工程的配置文件不正确，如果下三个配置文件之一或全部可能引起该问题：<br><img src="\images\MissDiffuseShader.jpg" alt="MissDiffuseShader"></li>
-</ol>
-</li>
-<li>运行时Transform的参数不能设置了<br>可参原因：<ol>
-<li>Animator的Controller中有的动画对根节点K帧了，不论这个动画是否在运行，都会导致Transform的参数不能改变 <img src="\images\animator_transform_cannot_move.png" alt=""></li>
-</ol>
-</li>
-</ul>
-<h1 id="unity-crash-原因收集"><a href="#unity-crash-原因收集" class="headerlink" title="unity crash 原因收集"></a>unity crash 原因收集</h1><ul>
-<li>Assetbundle关联的Assetbundle发生了变化，而原Assetbundle没有更新，加载这个的Assetbundle可能会崩溃<br>  可能的Backtrace：<br>  0x0000000140D63DC6 (Unity) AnimationClip::GetRuntimeAsset<br>  0x000000014113F4CD (Unity) mecanim::animation::EvaluateBlendTree<br>  0x000000014115922E (Unity) mecanim::statemachine::DoBlendTreeEvaluation<br>  0x000000014115B15D (Unity) mecanim::statemachine::EvaluateState<br>  0x000000014115B9DA (Unity) mecanim::statemachine::EvaluateStateMachine<br>  0x00000001411159B5 (Unity) AnimatorControllerPlayable::UpdateGraph<br>  0x0000000140D926C4 (Unity) Animator::UpdateAvatars<br>  0x0000000140D935F1 (Unity) Animator::UpdateWithDelta<br>  0x0000000140F442EE (Unity) Animator_CUSTOM_Update</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/game/">game</a><a href="/tags/unity3d/">unity3d</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/unity3d/unity3d/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/unity3d/unity3d/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/open_source_misc/" title="开源杂谈" itemprop="url">开源杂谈</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="大公司的开源地址"><a href="#大公司的开源地址" class="headerlink" title="大公司的开源地址"></a>大公司的开源地址</h1><p><a href="http://my.oschina.net/flashsword/blog/156638" target="_blank" rel="external">国内一些大公司的开源项目</a></p>
-<ul>
-<li><a href="https://github.com/alibaba" target="_blank" rel="external">阿里巴巴</a></li>
-<li><a href="https://github.com/TencentOpen" target="_blank" rel="external">腾讯</a></li>
-<li><a href="https://github.com/netease" target="_blank" rel="external">网易</a></li>
-<li><a href="https://github.com/douban" target="_blank" rel="external">豆瓣</a></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/开源/">开源</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/opensource/">opensource</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/open_source_misc/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/open_source_misc/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/game_art/" title="游戏美术规则" itemprop="url">游戏美术规则</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="图片格式"><a href="#图片格式" class="headerlink" title="图片格式"></a>图片格式</h1><p><a href="http://zh.wikipedia.org/wiki/%E5%9B%BE%E5%BD%A2%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E6%AF%94%E8%BE%83" target="_blank" rel="external">图形文件格式比较-维基</a></p>
-<p>tga 无损无压缩有Alpha通道 图片资源大，占硬盘大 加载速度快</p>
-<p>png 有损压缩有Alpha通道   图片资源小，占硬盘小 加载速度慢</p>
-<h1 id="动作捕捉"><a href="#动作捕捉" class="headerlink" title="动作捕捉"></a>动作捕捉</h1><h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><ul>
-<li>确定动作的起始与结束姿势</li>
-<li>动捕的动画，最终可以处理成Max文件</li>
-<li>动捕出来的动画，可以套在现有的骨骼上</li>
-<li>动捕出的动画一般是满帧的，也就是说可能1秒有30个关键帧，因此动画文件比较大，而挑选关键帧的工作量比较大。</li>
-<li>粗略来算，动捕出的动画，导出成FBX后，1帧大概16KB</li>
-<li>一些动作幅度比较大，或比较夸张的动作，动捕时会将动作拆分，按分镜做动捕，然后再后期对多个分镜进行人工拼接。</li>
-<li>动画导出FBX时，骨骼里不要带多余的虚拟体，否则导出文件会增大，增大幅度与虚拟体数量及帧数有关，可能会达到几百K</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/游戏开发/">游戏开发</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/game/">game</a><a href="/tags/art/">art</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/game_art/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/game_art/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
@@ -949,7 +941,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
-			<li><a href="/categories/VR/" title="VR">VR<sup>1</sup></a></li>
+			<li><a href="/categories/VR/" title="VR">VR<sup>3</sup></a></li>
 		  
 		
 		  
@@ -1001,6 +993,10 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
+			<li><a href="/categories/数学/" title="数学">数学<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/数据库/" title="数据库">数据库<sup>2</sup></a></li>
 		  
 		
@@ -1010,6 +1006,10 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		
 		  
 			<li><a href="/categories/杂类/" title="杂类">杂类<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/游戏/" title="游戏">游戏<sup>1</sup></a></li>
 		  
 		
 		  
@@ -1066,7 +1066,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 			
 		
 			
-				<li><a href="/tags/网站/" title="网站">网站<sup>1</sup></a></li>
+				<li><a href="/tags/script/" title="script">script<sup>1</sup></a></li>
 			
 		
 			

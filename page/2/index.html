@@ -81,6 +81,406 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/04/15/unity3d/2016-04-15-Unity3D性能优化/" title="Unity3D性能优化" itemprop="url">Unity3D性能优化</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-14T16:11:00.000Z" itemprop="datePublished"> 发表于 Apr 15 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="图形性能分析"><a href="#图形性能分析" class="headerlink" title="图形性能分析"></a>图形性能分析</h1><ul>
+<li>面数 Batches</li>
+<li>最影响效率的是角色</li>
+<li>面数高并不可怕，可怕是Batch多</li>
+<li>如果发现渲染性能有问题，可以用排除法，就是把场景里的东西一点一点删掉，看看是什么影响了性能。</li>
+</ul>
+<h1 id="MeshBaker非常好用"><a href="#MeshBaker非常好用" class="headerlink" title="MeshBaker非常好用"></a>MeshBaker非常好用</h1><ul>
+<li>200M内的模型合一起没什么问题</li>
+</ul>
+<h1 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="memoryprofiler"><a href="#memoryprofiler" class="headerlink" title="memoryprofiler"></a><a href="https://bitbucket.org/Unity-Technologies/memoryprofiler" target="_blank" rel="external">memoryprofiler</a></h3><h3 id="Unity-为被-Lua-隔断的-C-实现添加-Profiler-支持"><a href="#Unity-为被-Lua-隔断的-C-实现添加-Profiler-支持" class="headerlink" title="(Unity) 为被 Lua 隔断的 C# 实现添加 Profiler 支持"></a><a href="https://zhuanlan.zhihu.com/p/21291304?refer=gu-lu" target="_blank" rel="external">(Unity) 为被 Lua 隔断的 C# 实现添加 Profiler 支持</a></h3><h2 id="图片内存优化"><a href="#图片内存优化" class="headerlink" title="图片内存优化"></a>图片内存优化</h2><h3 id="Unity3D的图片占用内存是原图片的2倍"><a href="#Unity3D的图片占用内存是原图片的2倍" class="headerlink" title="Unity3D的图片占用内存是原图片的2倍"></a>Unity3D的图片占用内存是原图片的2倍</h3><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="http://biobeasts.artix.com/unity-2d-texture-optimization/" target="_blank" rel="external">按透明度分类优化</a><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><h4 id="ETC-4bit"><a href="#ETC-4bit" class="headerlink" title="ETC 4bit"></a>ETC 4bit</h4>不带Alpha通道的RGB图，1024X1024的图大概占用0.7M内存<h4 id="ETC"><a href="#ETC" class="headerlink" title="ETC"></a>ETC</h4></li>
+</ul>
+<h1 id="骨骼动画与蒙皮优化"><a href="#骨骼动画与蒙皮优化" class="headerlink" title="骨骼动画与蒙皮优化"></a>骨骼动画与蒙皮优化</h1><ul>
+<li><a href="http://gad.qq.com/content/wendetail/7159675" target="_blank" rel="external">把动画烘培到mesh中然后通过插值来得到动画</a></li>
+</ul>
+<h1 id="性能拖后腿的大户们"><a href="#性能拖后腿的大户们" class="headerlink" title="性能拖后腿的大户们"></a>性能拖后腿的大户们</h1><ul>
+<li>摄像机滤镜</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/unity3d/">unity3d</a><a href="/tags/Unity3D性能优化/">Unity3D性能优化</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/04/15/unity3d/2016-04-15-Unity3D性能优化/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/04/15/unity3d/2016-04-15-Unity3D性能优化/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/14/2016/2016-04-14-可复用游戏框架/" title="可复用游戏框架" itemprop="url">可复用游戏框架</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-14T09:38:00.000Z" itemprop="datePublished"> 发表于 Apr 14 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li>软件质量之路系列文章<ul>
+<li><a href="http://www.ibm.com/developerworks/cn/linux/software_engineering/l-frmwk/index5.html" target="_blank" rel="external">面向组件的大规模软件架构</a></li>
+</ul>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/可复用游戏框架/">可复用游戏框架</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/可复用游戏框架/">可复用游戏框架</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/04/14/2016/2016-04-14-可复用游戏框架/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/04/14/2016/2016-04-14-可复用游戏框架/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/12/项目分析/2016-04-12-某足球游戏/" title="某足球游戏" itemprop="url">某足球游戏</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-12T15:38:00.000Z" itemprop="datePublished"> 发表于 Apr 12 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="主要的类"><a href="#主要的类" class="headerlink" title="主要的类"></a>主要的类</h1><h2 id="IBehaviorScheduler"><a href="#IBehaviorScheduler" class="headerlink" title="IBehaviorScheduler"></a>IBehaviorScheduler</h2><h2 id="BehaviorScheduler"><a href="#BehaviorScheduler" class="headerlink" title="BehaviorScheduler"></a>BehaviorScheduler</h2><ul>
+<li>驱动PlayerActionExecutor，PlayerAIExecutor，BallActionExecutor，CoachSkillEventConsumer，MatchEventConsumer的Update,LateUpdate,FixedUpdate<h2 id="PlayerActionExecutor"><a href="#PlayerActionExecutor" class="headerlink" title="PlayerActionExecutor"></a>PlayerActionExecutor</h2></li>
+<li>每个队员身上都会挂一个该脚本，并在Start()中，向GameHub注册自己</li>
+<li>驱动：BallActionHandler，PlayerStateHandler，PlayerTransformHandler，ExtraTimeActionExecutor</li>
+<li><strong>PlayerStateHandler</strong><ol>
+<li>持有ActionBuffer</li>
+<li>触发NotifyNewActionStart事件</li>
+<li>有三态<ul>
+<li><em>Stop</em> 当前没有动作运行中</li>
+<li><em>Running</em> 当前有动作在运行中，此状态下，如果发现需中断，则查看自身动作是否为休闲状态或者动画是否播完，如果满足则响应中断。</li>
+<li><em>TakeOverByOthers</em> 受到外部中断指令，指示现在角色动作由外部接管，不再产生自主行为</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>IKHandler</strong><ol>
+<li>控制守门员救球时的反向动力学</li>
+<li>主要方法：<code>OnNewSaveActionStart</code></li>
+</ol>
+</li>
+<li><strong>BallActionHandler</strong><ol>
+<li>用来响应击球事件，并产生相应动作交与BallActionExcutor</li>
+<li>输入为Action(Player动作),输出为BallAction（BallActionExutor动作）<h2 id="PlayerAIExecutor"><a href="#PlayerAIExecutor" class="headerlink" title="PlayerAIExecutor"></a>PlayerAIExecutor</h2></li>
+</ol>
+</li>
+<li>每个队员身上都会挂一个该脚本，并在Start()中，向GameHub注册自己</li>
+<li>主要工作交给PlayerHeadHandler和PlayerUpperBodyHandler来做</li>
+<li>PlayerHeadHandler</li>
+<li>PlayerUpperBodyHandler<h2 id="BallActionExecutor"><a href="#BallActionExecutor" class="headerlink" title="BallActionExecutor"></a>BallActionExecutor</h2></li>
+<li>控制球动作</li>
+<li><strong>BallActionHandler</strong> 用来响应击球事件，并产生相应动作交与BallActionExcutor。每个队员身上都有一个BallActionHandler。</li>
+<li>这个组件是挂在球上面的<br>-<h2 id="CoachSkillEventConsumer"><a href="#CoachSkillEventConsumer" class="headerlink" title="CoachSkillEventConsumer"></a>CoachSkillEventConsumer</h2><h2 id="MatchEventConsumer"><a href="#MatchEventConsumer" class="headerlink" title="MatchEventConsumer"></a>MatchEventConsumer</h2><h2 id="TeamStateManager"><a href="#TeamStateManager" class="headerlink" title="TeamStateManager"></a>TeamStateManager</h2><h2 id="GameHub"><a href="#GameHub" class="headerlink" title="GameHub"></a>GameHub</h2></li>
+</ul>
+<ol>
+<li>拥有双方队员的Animator组件</li>
+<li>动作与AI调度器</li>
+<li>Start()-&gt; 发出 onMatchStart 事件</li>
+<li>RegisterPlayerAIExecutor 注册PlayerAIExecutor</li>
+<li>RegisterPlayer 注册队员的Transform，Animator及ActionExecutor</li>
+<li>RegisterPlayerAIExecutor 注册PlayerAIExcutor</li>
+<li>作用：<ul>
+<li>管理比赛过程，比如比赛开始流程</li>
+<li>驱动BehaviorScheduler</li>
+<li>HandleMatchEvent 广播比赛特殊事件，如比赛开始，开球，比赛结束等</li>
+<li>管理队员<h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><h2 id="DottedLine-划线击球射门"><a href="#DottedLine-划线击球射门" class="headerlink" title="DottedLine 划线击球射门"></a>DottedLine 划线击球射门</h2><h2 id="AthleteLabels-头顶板"><a href="#AthleteLabels-头顶板" class="headerlink" title="AthleteLabels 头顶板"></a>AthleteLabels 头顶板</h2><h2 id="TimeLine-时间控制，暂停，运行，挂起"><a href="#TimeLine-时间控制，暂停，运行，挂起" class="headerlink" title="TimeLine 时间控制，暂停，运行，挂起"></a>TimeLine 时间控制，暂停，运行，挂起</h2></li>
+</ul>
+</li>
+<li>冻结队员动作的实现方法：设置所有队员的动画组件的speed属性为0</li>
+<li><code>挂起</code>会冻结队员动作，挂起结束后会解冻队员，并恢复上一个时间状态</li>
+<li><p><code>暂停</code></p>
+<ul>
+<li>TLUnfreeze()与TLFreeze()</li>
+<li>还会更新当前时间，但使用TLMatchTime()将得到暂停的起始时刻，其它状态下，该方法得到的是当前时间</li>
+</ul>
+</li>
+<li><p>系统级暂停，StopTimeProceed()与ResumeTimeProceed()，对Time.timeScale进行设置</p>
+</li>
+</ol>
+<h2 id="DataProvider"><a href="#DataProvider" class="headerlink" title="DataProvider"></a>DataProvider</h2><ul>
+<li><strong>提供比赛事件存储队列matchKeyFrameQueue</strong><br>此队列中的事件由MatchEventConsumer单例处理，MatchEventConsumer调用GameHub的HandleMatchEvent将事件广播给所有的队员<br>比赛特殊事件，比如开球，正常比赛，点球，罚球，比赛结束等</li>
+</ul>
+<h1 id="一些约定"><a href="#一些约定" class="headerlink" title="一些约定"></a>一些约定</h1><ul>
+<li>双方队员编号，0-10，11-21</li>
+<li>0与11是守门员</li>
+</ul>
+<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><ul>
+<li>Assets/CapstonesRes/Game/Config =&gt; /res/res_Game_Config/CAB-res_Game_Config</li>
+<li><strong># 开头的是注释</strong></li>
+<li><strong>一行一条记录</strong></li>
+<li><p><strong>ActionAttributes.txt</strong></p>
+<ul>
+<li>作用：每个动作的长度，及触球相关参数</li>
+<li>加载类：ActionAttributeLoader 用于解析动画相关属性，并提供Get接口</li>
+<li>按#分隔字段</li>
+<li>第一行为字段名字<br> clip_name  clip_offset  clip_duration  clip_rotation ( first_touch_ball_offset  first_touch_ball_duration first_touch_ball_player_offset  last_touch_ball_offset  last_touch_ball_duration )<ul>
+<li>clip_offset   是Vector3</li>
+<li>clip_rotation 是Vector4</li>
+</ul>
+</li>
+<li>前四个字段是必须的,数据项要么是4个字段的，要么是9个字段的，其它数量的字段都是非法数据项</li>
+<li>clip_name的第一个字母是用意义的<ul>
+<li>3_1, A-Z 并且不是A01或T</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>ActionConfig.txt</strong></p>
+<ul>
+<li>作用：逻辑动作对应的动画，是一对多的关系</li>
+<li>加载类：ActionConfig</li>
+<li>两个字段<ul>
+<li>第一个字段是逻辑动作名字</li>
+<li>第二个字段是具体动画名字，相应的动画在ActionAttribute中都有配置，以<code>,</code>分隔</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>PlayerAction, PlayerTransform</strong></p>
+<ul>
+<li>PlayerAction作用：每个Player自已所能做的动作 ？</li>
+<li>PlayerTransfrom<ul>
+<li>作用：每个Player的初始位置与面向</li>
+<li>所有数据都在一行上，记录以<code>#</code>分隔，记录内以<code>;</code>分隔，每条记录有3项</li>
+</ul>
+</li>
+<li>加载类：PlayerActionLoader</li>
+</ul>
+</li>
+<li><p><strong>ActionMergeInfo</strong></p>
+<ul>
+<li>作用：动作混合</li>
+<li>三个字段<ul>
+<li>层</li>
+<li>动作状态</li>
+<li>条件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="AI中Lua部分"><a href="#AI中Lua部分" class="headerlink" title="AI中Lua部分"></a>AI中Lua部分</h2><ul>
+<li>估计是用行为树</li>
+<li>AI脚本位置：zcfy/spt/emulator<br>-</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/项目分析/">项目分析</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/game/">game</a><a href="/tags/football/">football</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/04/12/项目分析/2016-04-12-某足球游戏/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/04/12/项目分析/2016-04-12-某足球游戏/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/12/Windows系统管理/2016-04-12-Windows系统管理/" title="Windows系统管理" itemprop="url">Windows系统管理</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-12T04:29:00.000Z" itemprop="datePublished"> 发表于 Apr 12 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><ul>
+<li>删除服务<br>sc delete “服务名”</li>
+<li>安装服务</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Windows系统管理/">Windows系统管理</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Windows/">Windows</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/04/12/Windows系统管理/2016-04-12-Windows系统管理/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/04/12/Windows系统管理/2016-04-12-Windows系统管理/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/04/02/unity3d/2016-04-02-Unity3D光照/" title="Unity3D光照" itemprop="url">Unity3D光照</a>
   </h1>
   <p class="article-author">By
@@ -107,6 +507,11 @@
 <hr>
 <ol>
 <li>LightingData.asset文件非常大，达到MB数量级，使得打包出来的场景AssetBundle很大<br>原因是在烘焙时勾选了PreComputed RealTime GI</li>
+<li>无法从AB加载完整的光照图。<ul>
+<li>原因1：打包出现问题，可以试着将场景打成一个AB包。</li>
+<li>原因2：SVN更新出现问题，可以将SVN本地目录删除，重新更新。</li>
+</ul>
+</li>
 </ol>
 <h2 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a href="https://goo.gl/bHsCyq" target="_blank" rel="external">UVs for GI </a></li>
@@ -519,281 +924,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/03/25/unity3d/2016-03-25-unity3d_merge_mesh/" title="Unity3D合并网格" itemprop="url">Unity3D合并网格</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2016-03-25T13:04:00.000Z" itemprop="datePublished"> 发表于 Mar 25 2016</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h4 id="1-合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。"><a href="#1-合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。" class="headerlink" title="1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。"></a>1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。</h4><h4 id="2-合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。"><a href="#2-合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。" class="headerlink" title="2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。"></a>2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。</h4><h4 id="3-对MeshBaker-合并的网格进行烘焙，光照图出现黑斑，如图"><a href="#3-对MeshBaker-合并的网格进行烘焙，光照图出现黑斑，如图" class="headerlink" title="3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图"></a>3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图</h4><p>  <img src="/images/unity3d_meshbaker_blackpoint.png" alt=""><br>  这种情况是在Unity5下，没有设置LightMapping UVs 为Generate_new_uv2_layout导致的<br>  <img src="/images/unity3d_meshbaker_blackpoint2.png" alt=""></p>
-<h1 id="合并网格代码"><a href="#合并网格代码" class="headerlink" title="合并网格代码"></a>合并网格代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line"></span><br><span class="line">public class CombineBones : MonoBehaviour &#123;</span><br><span class="line"></span><br><span class="line">    public GameObject bone;</span><br><span class="line">    public List&lt;GameObject&gt; models = new List&lt;GameObject&gt;();</span><br><span class="line">    public GameObject human;</span><br><span class="line"></span><br><span class="line">	// Use this for initialization</span><br><span class="line">	void Start () &#123;</span><br><span class="line">        human = GameObject.Instantiate&lt;GameObject&gt;(bone);</span><br><span class="line">        human.SetActive(true);</span><br><span class="line">        bone.SetActive(false);</span><br><span class="line"></span><br><span class="line">        // 这种是合并网格</span><br><span class="line">        addPart2();</span><br><span class="line">        // 这种是组合网格。只是把模型挂到骨骼里，并替换模型的骨骼</span><br><span class="line">        // addPart3()</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    void addPart2()</span><br><span class="line">    &#123;</span><br><span class="line">        var bones = getAllChildTransform(human.transform);</span><br><span class="line">        List&lt;Material&gt; mats = new List&lt;Material&gt;();</span><br><span class="line">        List&lt;Transform&gt; newBones = new List&lt;Transform&gt;();</span><br><span class="line">        List&lt;CombineInstance&gt; combineInstances = new List&lt;CombineInstance&gt;();</span><br><span class="line"></span><br><span class="line">        foreach (var go in models)</span><br><span class="line">        &#123;</span><br><span class="line">            var smrs = go.GetComponentsInChildren&lt;SkinnedMeshRenderer&gt;();</span><br><span class="line">            foreach (var smr in smrs)</span><br><span class="line">            &#123;</span><br><span class="line">                foreach (var b1 in smr.bones)</span><br><span class="line">                &#123;</span><br><span class="line">                    Transform finded = null;</span><br><span class="line">                    foreach (var b in bones)</span><br><span class="line">                        if (b1.name == b.name)</span><br><span class="line">                        &#123;</span><br><span class="line">                            finded = b;</span><br><span class="line">                            break;</span><br><span class="line">                        &#125;</span><br><span class="line">                    if (finded != null)</span><br><span class="line">                    &#123;</span><br><span class="line">                        newBones.Add(finded);</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        Debug.LogError(&quot;Can not find bone &quot; + b1.name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                mats.AddRange(smr.sharedMaterials);</span><br><span class="line"></span><br><span class="line">                for (int sub = 0; sub &lt; smr.sharedMesh.subMeshCount; ++sub)</span><br><span class="line">                &#123;</span><br><span class="line">                    var ci = new CombineInstance();</span><br><span class="line">                    ci.mesh = smr.sharedMesh;</span><br><span class="line">                    ci.subMeshIndex = sub;</span><br><span class="line">                    ci.transform = smr.transform.localToWorldMatrix;</span><br><span class="line">                    combineInstances.Add(ci);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var humanSMR = human.AddComponent&lt;SkinnedMeshRenderer&gt;();</span><br><span class="line">        humanSMR.materials = mats.ToArray();</span><br><span class="line">        humanSMR.sharedMesh = new Mesh();</span><br><span class="line">        humanSMR.sharedMesh.CombineMeshes(combineInstances.ToArray(), false, false);</span><br><span class="line">        humanSMR.sharedMesh.Optimize();</span><br><span class="line">        humanSMR.bones = newBones.ToArray();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void addPart3()</span><br><span class="line">    &#123;</span><br><span class="line">        foreach (var go in models)</span><br><span class="line">        &#123;</span><br><span class="line">            var smrs = go.GetComponentsInChildren&lt;SkinnedMeshRenderer&gt;();</span><br><span class="line">            foreach (var smr in smrs)</span><br><span class="line">            &#123;</span><br><span class="line">                var originSmr = GameObject.Instantiate&lt;SkinnedMeshRenderer&gt;(smr);</span><br><span class="line">                var bones = getAllChildTransform(human.transform);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                originSmr.transform.parent = human.transform;</span><br><span class="line">                originSmr.transform.localPosition = originSmr.transform.localPosition;</span><br><span class="line">                originSmr.transform.localScale = originSmr.transform.localScale;</span><br><span class="line">                originSmr.transform.localRotation = originSmr.transform.localRotation;</span><br><span class="line"></span><br><span class="line">                List&lt;Transform&gt; newBones = new List&lt;Transform&gt;();</span><br><span class="line">                foreach (var b1 in originSmr.bones)</span><br><span class="line">                &#123;</span><br><span class="line">                    Transform finded = null;</span><br><span class="line">                    foreach (var b in bones)</span><br><span class="line">                        if (b1.name == b.name)</span><br><span class="line">                        &#123;</span><br><span class="line">                            finded = b;</span><br><span class="line">                            break;</span><br><span class="line">                        &#125;</span><br><span class="line">                    if (finded != null)</span><br><span class="line">                    &#123;</span><br><span class="line">                        newBones.Add(finded);</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        Debug.LogError(&quot;Can not find bone &quot; + b1.name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                originSmr.bones = newBones.ToArray();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Transform[] getAllChildTransform(Transform t)</span><br><span class="line">    &#123;</span><br><span class="line">        List&lt;Transform&gt; ts = new List&lt;Transform&gt;();</span><br><span class="line">        _getAllChildTransform(t, ts);</span><br><span class="line">        return ts.ToArray();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void _getAllChildTransform(Transform t, List&lt;Transform&gt; ts)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int i = 0; i &lt; t.childCount; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            ts.Add(t.GetChild(i));</span><br><span class="line">            _getAllChildTransform(t.GetChild(i), ts);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/unity3d/">unity3d</a><a href="/tags/merge/">merge</a><a href="/tags/mesh/">mesh</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/03/25/unity3d/2016-03-25-unity3d_merge_mesh/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/03/25/unity3d/2016-03-25-unity3d_merge_mesh/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/03/25/2016/2016-03-25-atom/" title="atom" itemprop="url">atom</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2016-03-25T13:00:00.000Z" itemprop="datePublished"> 发表于 Mar 25 2016</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h1><h2 id="markdown-writer"><a href="#markdown-writer" class="headerlink" title="markdown writer"></a><a href="https://github.com/zhuochun/md-writer/wiki/Quick-Start" target="_blank" rel="external">markdown writer</a></h2><ol>
-<li>project 相关的_mdwriter.cson文件，这里project指Atom的Project，比如把blog/source目录加为Atom的Project，则Project目录就是source目录，所以应该把_mdwriter.cson放到source目录下。<br>2.</li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/博客/">博客</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/atom/">atom</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/03/25/2016/2016-03-25-atom/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/03/25/2016/2016-03-25-atom/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/03/25/3dmax/" title="3dMax" itemprop="url">3dMax</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2016-03-25T11:49:45.000Z" itemprop="datePublished"> 发表于 Mar 25 2016</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><ul>
-<li><p>打开结点层次图<br><img src="\images\max_schematic_view.png" alt=""></p>
-</li>
-<li><p>加载Bip骨骼动画<br>选中一根骨骼，然后在Motion面板加载BIP骨骼动画文件</p>
-</li>
-<li><p>线框和实体相互转换的快捷键是F3。<br>如果你文件中的骨骼显示的形状是立方体的话，需要选中所有的骨骼，右击进入物体属性，把 display as box 勾选掉就可以了。</p>
-</li>
-<li><p>设置Pivot<br>选中物体~进入设置面板（Herarchy）,(影响轴)Adjust Pivot，（仅影响轴）Affect Pivot only</p>
-</li>
-<li><p>快捷键<br>7-查看面数<br>m-材质面板</p>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/图形工具/">图形工具</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/3dmax/">3dmax</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/03/25/3dmax/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/03/25/3dmax/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/03/19/游戏运营/360运营/" title="360 运营" itemprop="url">360 运营</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2016-03-19T15:08:00.000Z" itemprop="datePublished"> 发表于 Mar 19 2016</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><ul>
-<li>默认80端口是封闭的，要设置iptables 开放端口</li>
-<li>不能使用root用户，只能使用sudo</li>
-<li><p>ssh连接奇慢，服务器SSH配置有问题</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UseDNS no</span><br><span class="line">GSSAPIAuthentication no</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>缺少软件：expect zip</p>
-</li>
-<li>防火墙要关掉</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/游戏运营/">游戏运营</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/360-游戏运营/">360 游戏运营</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/03/19/游戏运营/360运营/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/03/19/游戏运营/360运营/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
@@ -823,7 +953,7 @@
 		  
 		
 		  
-			<li><a href="/categories/VR/" title="VR">VR<sup>1</sup></a></li>
+			<li><a href="/categories/VR/" title="VR">VR<sup>3</sup></a></li>
 		  
 		
 		  
@@ -875,6 +1005,10 @@
 		  
 		
 		  
+			<li><a href="/categories/数学/" title="数学">数学<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/数据库/" title="数据库">数据库<sup>2</sup></a></li>
 		  
 		
@@ -884,6 +1018,10 @@
 		
 		  
 			<li><a href="/categories/杂类/" title="杂类">杂类<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/游戏/" title="游戏">游戏<sup>1</sup></a></li>
 		  
 		
 		  
@@ -940,7 +1078,7 @@
 			
 		
 			
-				<li><a href="/tags/网站/" title="网站">网站<sup>1</sup></a></li>
+				<li><a href="/tags/script/" title="script">script<sup>1</sup></a></li>
 			
 		
 			

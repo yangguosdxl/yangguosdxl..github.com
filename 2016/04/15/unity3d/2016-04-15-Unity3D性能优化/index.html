@@ -20,8 +20,7 @@
 MeshBaker非常好用
 200M内的模型合一起没什么问题
 
-内存优化工具memoryprofiler图片内存优化Unity3D的图片占用内存是原图片的2倍参考
-按透明度分类优化格式ETC 4bit不带Alph">
+内存优化工具memoryprofiler(Unity) 为被 Lua 隔断的 C# 实现添加 Profiler 支持图片内存优化Unity3D的图片">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity3D性能优化">
 <meta property="og:url" content="http://yangguosdxl.github.io/2016/04/15/unity3d/2016-04-15-Unity3D性能优化/index.html">
@@ -35,9 +34,8 @@ MeshBaker非常好用
 MeshBaker非常好用
 200M内的模型合一起没什么问题
 
-内存优化工具memoryprofiler图片内存优化Unity3D的图片占用内存是原图片的2倍参考
-按透明度分类优化格式ETC 4bit不带Alph">
-<meta property="og:updated_time" content="2016-05-16T06:45:36.626Z">
+内存优化工具memoryprofiler(Unity) 为被 Lua 隔断的 C# 实现添加 Profiler 支持图片内存优化Unity3D的图片">
+<meta property="og:updated_time" content="2016-08-02T12:18:31.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity3D性能优化">
 <meta name="twitter:description" content="图形性能分析
@@ -49,8 +47,7 @@ MeshBaker非常好用
 MeshBaker非常好用
 200M内的模型合一起没什么问题
 
-内存优化工具memoryprofiler图片内存优化Unity3D的图片占用内存是原图片的2倍参考
-按透明度分类优化格式ETC 4bit不带Alph">
+内存优化工具memoryprofiler(Unity) 为被 Lua 隔断的 C# 实现添加 Profiler 支持图片内存优化Unity3D的图片">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -126,7 +123,7 @@ MeshBaker非常好用
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图形性能分析"><span class="toc-number">1.</span> <span class="toc-text">图形性能分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MeshBaker非常好用"><span class="toc-number">2.</span> <span class="toc-text">MeshBaker非常好用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内存优化"><span class="toc-number">3.</span> <span class="toc-text">内存优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-number">3.1.</span> <span class="toc-text">工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#memoryprofiler"><span class="toc-number">3.1.1.</span> <span class="toc-text">memoryprofiler</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片内存优化"><span class="toc-number">3.2.</span> <span class="toc-text">图片内存优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity3D的图片占用内存是原图片的2倍"><span class="toc-number">3.2.1.</span> <span class="toc-text">Unity3D的图片占用内存是原图片的2倍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">3.2.2.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式"><span class="toc-number">3.2.3.</span> <span class="toc-text">格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ETC-4bit"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">ETC 4bit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ETC"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">ETC</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#骨骼动画与蒙皮优化"><span class="toc-number">4.</span> <span class="toc-text">骨骼动画与蒙皮优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能拖后腿的大户们"><span class="toc-number">5.</span> <span class="toc-text">性能拖后腿的大户们</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图形性能分析"><span class="toc-number">1.</span> <span class="toc-text">图形性能分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MeshBaker非常好用"><span class="toc-number">2.</span> <span class="toc-text">MeshBaker非常好用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内存优化"><span class="toc-number">3.</span> <span class="toc-text">内存优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-number">3.1.</span> <span class="toc-text">工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#memoryprofiler"><span class="toc-number">3.1.1.</span> <span class="toc-text">memoryprofiler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity-为被-Lua-隔断的-C-实现添加-Profiler-支持"><span class="toc-number">3.1.2.</span> <span class="toc-text">(Unity) 为被 Lua 隔断的 C# 实现添加 Profiler 支持</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片内存优化"><span class="toc-number">3.2.</span> <span class="toc-text">图片内存优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity3D的图片占用内存是原图片的2倍"><span class="toc-number">3.2.1.</span> <span class="toc-text">Unity3D的图片占用内存是原图片的2倍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">3.2.2.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式"><span class="toc-number">3.2.3.</span> <span class="toc-text">格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ETC-4bit"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">ETC 4bit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ETC"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">ETC</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#骨骼动画与蒙皮优化"><span class="toc-number">4.</span> <span class="toc-text">骨骼动画与蒙皮优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能拖后腿的大户们"><span class="toc-number">5.</span> <span class="toc-text">性能拖后腿的大户们</span></a></li></ol>
 		
 		</div>
 		
@@ -139,7 +136,7 @@ MeshBaker非常好用
 <h1 id="MeshBaker非常好用"><a href="#MeshBaker非常好用" class="headerlink" title="MeshBaker非常好用"></a>MeshBaker非常好用</h1><ul>
 <li>200M内的模型合一起没什么问题</li>
 </ul>
-<h1 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="memoryprofiler"><a href="#memoryprofiler" class="headerlink" title="memoryprofiler"></a><a href="https://bitbucket.org/Unity-Technologies/memoryprofiler" target="_blank" rel="external">memoryprofiler</a></h3><h2 id="图片内存优化"><a href="#图片内存优化" class="headerlink" title="图片内存优化"></a>图片内存优化</h2><h3 id="Unity3D的图片占用内存是原图片的2倍"><a href="#Unity3D的图片占用内存是原图片的2倍" class="headerlink" title="Unity3D的图片占用内存是原图片的2倍"></a>Unity3D的图片占用内存是原图片的2倍</h3><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<h1 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="memoryprofiler"><a href="#memoryprofiler" class="headerlink" title="memoryprofiler"></a><a href="https://bitbucket.org/Unity-Technologies/memoryprofiler" target="_blank" rel="external">memoryprofiler</a></h3><h3 id="Unity-为被-Lua-隔断的-C-实现添加-Profiler-支持"><a href="#Unity-为被-Lua-隔断的-C-实现添加-Profiler-支持" class="headerlink" title="(Unity) 为被 Lua 隔断的 C# 实现添加 Profiler 支持"></a><a href="https://zhuanlan.zhihu.com/p/21291304?refer=gu-lu" target="_blank" rel="external">(Unity) 为被 Lua 隔断的 C# 实现添加 Profiler 支持</a></h3><h2 id="图片内存优化"><a href="#图片内存优化" class="headerlink" title="图片内存优化"></a>图片内存优化</h2><h3 id="Unity3D的图片占用内存是原图片的2倍"><a href="#Unity3D的图片占用内存是原图片的2倍" class="headerlink" title="Unity3D的图片占用内存是原图片的2倍"></a>Unity3D的图片占用内存是原图片的2倍</h3><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
 <li><a href="http://biobeasts.artix.com/unity-2d-texture-optimization/" target="_blank" rel="external">按透明度分类优化</a><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><h4 id="ETC-4bit"><a href="#ETC-4bit" class="headerlink" title="ETC 4bit"></a>ETC 4bit</h4>不带Alpha通道的RGB图，1024X1024的图大概占用0.7M内存<h4 id="ETC"><a href="#ETC" class="headerlink" title="ETC"></a>ETC</h4></li>
 </ul>
 <h1 id="骨骼动画与蒙皮优化"><a href="#骨骼动画与蒙皮优化" class="headerlink" title="骨骼动画与蒙皮优化"></a>骨骼动画与蒙皮优化</h1><ul>
@@ -184,7 +181,7 @@ MeshBaker非常好用
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/04/17/unity3d/2016-04-17-Unity3D VR/" title="Unity3D VR">
+ <a href="/2016/04/17/VR/2016-04-17-Unity3D VR/" title="Unity3D VR">
   <strong>上一篇：</strong><br/>
   <span>
   Unity3D VR</span>
@@ -229,7 +226,7 @@ MeshBaker非常好用
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图形性能分析"><span class="toc-number">1.</span> <span class="toc-text">图形性能分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MeshBaker非常好用"><span class="toc-number">2.</span> <span class="toc-text">MeshBaker非常好用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内存优化"><span class="toc-number">3.</span> <span class="toc-text">内存优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-number">3.1.</span> <span class="toc-text">工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#memoryprofiler"><span class="toc-number">3.1.1.</span> <span class="toc-text">memoryprofiler</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片内存优化"><span class="toc-number">3.2.</span> <span class="toc-text">图片内存优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity3D的图片占用内存是原图片的2倍"><span class="toc-number">3.2.1.</span> <span class="toc-text">Unity3D的图片占用内存是原图片的2倍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">3.2.2.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式"><span class="toc-number">3.2.3.</span> <span class="toc-text">格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ETC-4bit"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">ETC 4bit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ETC"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">ETC</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#骨骼动画与蒙皮优化"><span class="toc-number">4.</span> <span class="toc-text">骨骼动画与蒙皮优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能拖后腿的大户们"><span class="toc-number">5.</span> <span class="toc-text">性能拖后腿的大户们</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图形性能分析"><span class="toc-number">1.</span> <span class="toc-text">图形性能分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MeshBaker非常好用"><span class="toc-number">2.</span> <span class="toc-text">MeshBaker非常好用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内存优化"><span class="toc-number">3.</span> <span class="toc-text">内存优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-number">3.1.</span> <span class="toc-text">工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#memoryprofiler"><span class="toc-number">3.1.1.</span> <span class="toc-text">memoryprofiler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity-为被-Lua-隔断的-C-实现添加-Profiler-支持"><span class="toc-number">3.1.2.</span> <span class="toc-text">(Unity) 为被 Lua 隔断的 C# 实现添加 Profiler 支持</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片内存优化"><span class="toc-number">3.2.</span> <span class="toc-text">图片内存优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity3D的图片占用内存是原图片的2倍"><span class="toc-number">3.2.1.</span> <span class="toc-text">Unity3D的图片占用内存是原图片的2倍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">3.2.2.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式"><span class="toc-number">3.2.3.</span> <span class="toc-text">格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ETC-4bit"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">ETC 4bit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ETC"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">ETC</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#骨骼动画与蒙皮优化"><span class="toc-number">4.</span> <span class="toc-text">骨骼动画与蒙皮优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能拖后腿的大户们"><span class="toc-number">5.</span> <span class="toc-text">性能拖后腿的大户们</span></a></li></ol>
  
   </div>
 
@@ -254,7 +251,7 @@ MeshBaker非常好用
 		  
 		
 		  
-			<li><a href="/categories/VR/" title="VR">VR<sup>1</sup></a></li>
+			<li><a href="/categories/VR/" title="VR">VR<sup>3</sup></a></li>
 		  
 		
 		  
@@ -306,6 +303,10 @@ MeshBaker非常好用
 		  
 		
 		  
+			<li><a href="/categories/数学/" title="数学">数学<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/数据库/" title="数据库">数据库<sup>2</sup></a></li>
 		  
 		
@@ -315,6 +316,10 @@ MeshBaker非常好用
 		
 		  
 			<li><a href="/categories/杂类/" title="杂类">杂类<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/游戏/" title="游戏">游戏<sup>1</sup></a></li>
 		  
 		
 		  
@@ -371,7 +376,7 @@ MeshBaker非常好用
 			
 		
 			
-				<li><a href="/tags/网站/" title="网站">网站<sup>1</sup></a></li>
+				<li><a href="/tags/script/" title="script">script<sup>1</sup></a></li>
 			
 		
 			

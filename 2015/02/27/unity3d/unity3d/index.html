@@ -23,7 +23,7 @@
 刀光Melee Weapon Trail–Unity刀光插">
 <meta property="og:image" content="http://yangguosdxl.github.io/\images\MissDiffuseShader.jpg">
 <meta property="og:image" content="http://yangguosdxl.github.io/\images\animator_transform_cannot_move.png">
-<meta property="og:updated_time" content="2016-06-30T02:05:43.597Z">
+<meta property="og:updated_time" content="2016-07-29T06:39:31.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="unity3d">
 <meta name="twitter:description" content="使用凹凸贴图Shader换装Unity3D 模型换肤技术Unity里的人物驱动/换装备/换武器/换衣服/动画重定位换装demo时美术遇到的问题详解
@@ -126,10 +126,13 @@
 <h1 id="Mecanim动画"><a href="#Mecanim动画" class="headerlink" title="Mecanim动画"></a>Mecanim动画</h1><ul>
 <li>连续两次调用CrossFade，则后一次的CrossFade不会替换前一个，而是会丢失</li>
 <li>根动画<br>  1 如果是Human自动就设置好了，只要启用Animator的Apply root motion就可以了<br>  2 如果是Generic<pre><code>a 设置模型骨骼的根节点，bip骨骼一般是Bip 001
-b 动画的Rig-&gt;Avatar Definition选择Copy From Other Avatar，Rig-&gt;Source选择对应骨骼的Avatar
+b 动画的Rig-&gt;Avatar Definition选择Copy From Other Avatar，Rig-&gt;Source选择对应骨骼的Avatar（也可以选择Create From This Model，然后设置根骨骼为Bip 001）
 c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform Rotation-&gt;Based Upon(at Start)选择Original
 </code></pre></li>
 <li>表情动画<br>  普通的哭笑等动画做一帧就可以了，不过Max里要做成两帧，不然Max导不出动画<br>导出FBX时，MAX用Morpha做的表情动画要同时导出变形器所在的模型，如果模型有蒙皮则还要带上蒙皮<br>  1 Avatar Mask要选择对应的骨骼类型，对于Generic类型骨骼，如果想屏蔽某个骨骼，不勾选对应的骨骼Transform就行了<br>  2 动画类型选择与骨骼对应的类型<br>  3 把表情动画加到AniamtorController里对应的Layer下,Layer设置好Avatar Mask，调整好权重</li>
+<li>在Animator所在GameObject隐藏后再显示出来，激活的动画会变成默认动画，而不是上一个动画。</li>
+<li>立即播放动画到某一时刻<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">animator.Play(animState)</span><br><span class="line">animator.Update(0)</span><br><span class="line">animator.Update(time)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h1 id="场景加载"><a href="#场景加载" class="headerlink" title="场景加载"></a>场景加载</h1><ul>
 <li>LoadLevel 会加载场景的环境配置，也就是RenderSettings里的参数，包括天空盒，而LoadLevelAdditive则不会</li>
@@ -159,8 +162,8 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 <li>FBX的压缩比大概在10%-20%之间</li>
 </ul>
 <h1 id="2015-Mobile图形限制"><a href="#2015-Mobile图形限制" class="headerlink" title="2015 Mobile图形限制"></a>2015 Mobile图形限制</h1><ul>
-<li>场景7万面，同屏40批次</li>
-<li>精细模型1万面</li>
+<li>场景7万面，同屏40-60批次，包括灯光，水，粒子</li>
+<li>精细模型1万面，133根骨骼</li>
 <li>UI支持最大分辨率1920X1080，实际制作缩小为0.625倍</li>
 </ul>
 <h1 id="图片质量"><a href="#图片质量" class="headerlink" title="图片质量"></a>图片质量</h1><ol>
@@ -242,9 +245,9 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 
 
 <div class="next">
-<a href="/2015/02/27/open_source_misc/"  title="开源杂谈">
+<a href="/2015/02/27/mygame/"  title="想要的游戏特征">
  <strong>下一篇：</strong><br/> 
- <span>开源杂谈
+ <span>想要的游戏特征
 </span>
 </a>
 </div>
@@ -303,7 +306,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
-			<li><a href="/categories/VR/" title="VR">VR<sup>1</sup></a></li>
+			<li><a href="/categories/VR/" title="VR">VR<sup>3</sup></a></li>
 		  
 		
 		  
@@ -355,6 +358,10 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
+			<li><a href="/categories/数学/" title="数学">数学<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/数据库/" title="数据库">数据库<sup>2</sup></a></li>
 		  
 		
@@ -364,6 +371,10 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		
 		  
 			<li><a href="/categories/杂类/" title="杂类">杂类<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/游戏/" title="游戏">游戏<sup>1</sup></a></li>
 		  
 		
 		  
@@ -420,7 +431,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 			
 		
 			
-				<li><a href="/tags/网站/" title="网站">网站<sup>1</sup></a></li>
+				<li><a href="/tags/script/" title="script">script<sup>1</sup></a></li>
 			
 		
 			

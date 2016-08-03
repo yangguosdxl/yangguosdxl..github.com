@@ -45,7 +45,7 @@ NGUI参考NGUI中深度depth和z轴关系的小试验
 Texture2D原点在左下角
 
 控件">
-<meta property="og:updated_time" content="2016-06-20T05:58:03.540Z">
+<meta property="og:updated_time" content="2016-07-01T10:37:18.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="unity3d 插件相关">
 <meta name="twitter:description" content="Dynamic Bone
@@ -138,7 +138,7 @@ Texture2D原点在左下角
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dynamic-Bone"><span class="toc-number">1.</span> <span class="toc-text">Dynamic Bone</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ulua"><span class="toc-number">2.</span> <span class="toc-text">ulua</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">2.1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">2.2.</span> <span class="toc-text">简介</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NGUI"><span class="toc-number">3.</span> <span class="toc-text">NGUI</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考-1"><span class="toc-number">3.1.</span> <span class="toc-text">参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NGUI中深度depth和z轴关系的小试验"><span class="toc-number">3.1.1.</span> <span class="toc-text">NGUI中深度depth和z轴关系的小试验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控件"><span class="toc-number">3.2.</span> <span class="toc-text">控件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView，UIScrollBar-与-UIGrid"><span class="toc-number">3.2.1.</span> <span class="toc-text">UIScrollView，UIScrollBar 与 UIGrid</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示顺序"><span class="toc-number">3.3.</span> <span class="toc-text">显示顺序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VSTU2012"><span class="toc-number">4.</span> <span class="toc-text">VSTU2012</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dynamic-Bone"><span class="toc-number">1.</span> <span class="toc-text">Dynamic Bone</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ulua"><span class="toc-number">2.</span> <span class="toc-text">ulua</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">2.1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">2.2.</span> <span class="toc-text">简介</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NGUI"><span class="toc-number">3.</span> <span class="toc-text">NGUI</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考-1"><span class="toc-number">3.1.</span> <span class="toc-text">参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NGUI中深度depth和z轴关系的小试验"><span class="toc-number">3.1.1.</span> <span class="toc-text">NGUI中深度depth和z轴关系的小试验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控件"><span class="toc-number">3.2.</span> <span class="toc-text">控件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView，UIScrollBar-与-UIGrid"><span class="toc-number">3.2.1.</span> <span class="toc-text">UIScrollView，UIScrollBar 与 UIGrid</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示顺序"><span class="toc-number">3.3.</span> <span class="toc-text">显示顺序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VSTU2012"><span class="toc-number">4.</span> <span class="toc-text">VSTU2012</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#曲线与路径"><span class="toc-number">5.</span> <span class="toc-text">曲线与路径</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PathMagic"><span class="toc-number">5.1.</span> <span class="toc-text">PathMagic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">5.2.</span> <span class="toc-text">[]</span></a></li></ol></li></ol>
 		
 		</div>
 		
@@ -166,7 +166,7 @@ Texture2D原点在左下角
 <li>也可以通过设置UIPanel中  </li>
 </ul>
 <h1 id="VSTU2012"><a href="#VSTU2012" class="headerlink" title="VSTU2012"></a>VSTU2012</h1><p>-5.2没有问题<br>-4.1.5不能自动检测到VSTU的包，要自己找到安装路径里的VSTU包</p>
-  
+<h1 id="曲线与路径"><a href="#曲线与路径" class="headerlink" title="曲线与路径"></a>曲线与路径</h1><h2 id="PathMagic"><a href="#PathMagic" class="headerlink" title="PathMagic"></a><a href="https://www.assetstore.unity3d.com/en/#!/content/47769" target="_blank" rel="external">PathMagic</a></h2><h2 id=""><a href="#" class="headerlink" title="[]"></a>[]</h2>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -202,10 +202,10 @@ Texture2D原点在左下角
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/02/27/django/" title="django">
+ <a href="/2015/02/27/3guo/" title="三国志3D版">
   <strong>上一篇：</strong><br/>
   <span>
-  django</span>
+  三国志3D版</span>
 </a>
 </div>
 
@@ -247,7 +247,7 @@ Texture2D原点在左下角
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dynamic-Bone"><span class="toc-number">1.</span> <span class="toc-text">Dynamic Bone</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ulua"><span class="toc-number">2.</span> <span class="toc-text">ulua</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">2.1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">2.2.</span> <span class="toc-text">简介</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NGUI"><span class="toc-number">3.</span> <span class="toc-text">NGUI</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考-1"><span class="toc-number">3.1.</span> <span class="toc-text">参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NGUI中深度depth和z轴关系的小试验"><span class="toc-number">3.1.1.</span> <span class="toc-text">NGUI中深度depth和z轴关系的小试验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控件"><span class="toc-number">3.2.</span> <span class="toc-text">控件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView，UIScrollBar-与-UIGrid"><span class="toc-number">3.2.1.</span> <span class="toc-text">UIScrollView，UIScrollBar 与 UIGrid</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示顺序"><span class="toc-number">3.3.</span> <span class="toc-text">显示顺序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VSTU2012"><span class="toc-number">4.</span> <span class="toc-text">VSTU2012</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dynamic-Bone"><span class="toc-number">1.</span> <span class="toc-text">Dynamic Bone</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ulua"><span class="toc-number">2.</span> <span class="toc-text">ulua</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">2.1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">2.2.</span> <span class="toc-text">简介</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NGUI"><span class="toc-number">3.</span> <span class="toc-text">NGUI</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考-1"><span class="toc-number">3.1.</span> <span class="toc-text">参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NGUI中深度depth和z轴关系的小试验"><span class="toc-number">3.1.1.</span> <span class="toc-text">NGUI中深度depth和z轴关系的小试验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控件"><span class="toc-number">3.2.</span> <span class="toc-text">控件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView，UIScrollBar-与-UIGrid"><span class="toc-number">3.2.1.</span> <span class="toc-text">UIScrollView，UIScrollBar 与 UIGrid</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示顺序"><span class="toc-number">3.3.</span> <span class="toc-text">显示顺序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VSTU2012"><span class="toc-number">4.</span> <span class="toc-text">VSTU2012</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#曲线与路径"><span class="toc-number">5.</span> <span class="toc-text">曲线与路径</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PathMagic"><span class="toc-number">5.1.</span> <span class="toc-text">PathMagic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">5.2.</span> <span class="toc-text">[]</span></a></li></ol></li></ol>
  
   </div>
 
@@ -272,7 +272,7 @@ Texture2D原点在左下角
 		  
 		
 		  
-			<li><a href="/categories/VR/" title="VR">VR<sup>1</sup></a></li>
+			<li><a href="/categories/VR/" title="VR">VR<sup>3</sup></a></li>
 		  
 		
 		  
@@ -324,6 +324,10 @@ Texture2D原点在左下角
 		  
 		
 		  
+			<li><a href="/categories/数学/" title="数学">数学<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/数据库/" title="数据库">数据库<sup>2</sup></a></li>
 		  
 		
@@ -333,6 +337,10 @@ Texture2D原点在左下角
 		
 		  
 			<li><a href="/categories/杂类/" title="杂类">杂类<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/游戏/" title="游戏">游戏<sup>1</sup></a></li>
 		  
 		
 		  
@@ -389,7 +397,7 @@ Texture2D原点在左下角
 			
 		
 			
-				<li><a href="/tags/网站/" title="网站">网站<sup>1</sup></a></li>
+				<li><a href="/tags/script/" title="script">script<sup>1</sup></a></li>
 			
 		
 			
