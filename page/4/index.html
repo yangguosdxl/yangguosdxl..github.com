@@ -81,6 +81,200 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/02/27/ps/" title="ps" itemprop="url">ps</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="序列帧生成GIF图"><a href="#序列帧生成GIF图" class="headerlink" title="序列帧生成GIF图"></a><a href="http://blog.163.com/lrm_1036/blog/static/9291615020126443450414/" target="_blank" rel="external">序列帧生成GIF图</a></h3><h3 id="制作alpha通道"><a href="#制作alpha通道" class="headerlink" title="制作alpha通道"></a><a href="http://www.chinavid.com/2d/2008-8-4/PhotoshopAlpha.htm" target="_blank" rel="external">制作alpha通道</a></h3>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/图形处理/">图形处理</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/ps/">ps</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/ps/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/ps/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/unity3d/unity3d_art/" title="unity3d 美术相关" itemprop="url">unity3d 美术相关</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="场景制作"><a href="#场景制作" class="headerlink" title="场景制作"></a>场景制作</h1><ul>
+<li>所有相关资源放到Assets下的一个文件夹下，比如Assets/scenes</li>
+<li>所有场景对象放到一个对象下</li>
+<li>导出成AssetBundle，好在游戏中加载，就算是Demo阶段也应该这么做，因为编辑器本身的导出包功能实在不好用。这也意味着要有编辑器加载场景AssetBundle的功能，好做调试。</li>
+<li>场景里要有一个点来确定场景位置</li>
+</ul>
+<h1 id="哪些工作应该由美术做"><a href="#哪些工作应该由美术做" class="headerlink" title="哪些工作应该由美术做"></a>哪些工作应该由美术做</h1><ul>
+<li>对于要外包的美术资源，能策划做的尽量让策划做，这样就减少了很多要和美术沟通的工作量。</li>
+</ul>
+<h1 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h1><h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ul>
+<li>三维软件单位用米制<br>保证所有场景和模型都是同一比例与单位就可以了<br>具体导出设置见《Unity3D4.x从入门到精通》资源导入部分</li>
+<li>同屏面数</li>
+<li>目录结构</li>
+<li>手机UI分辨率<ol>
+<li>定下最佳分辨率，最佳显示手机</li>
+<li>找到实际最佳分辨率：比第一条的分辨率低，但在第一条的分辨率下还是能显示得很清晰</li>
+<li>按实际最佳分辨率做UI，并定义控件大小</li>
+<li>目前NGUI的UIRoot设置为 ：<br>Scaling Style：Constrained On Mobile（在手机上按比例缩放，在电脑上按像素显示不缩放）<br>Content Width 实际最佳分辨率的宽<br>Content Height 实际最佳分辨率的高</li>
+</ol>
+</li>
+</ul>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ul>
+<li>地表过大时，由于烘焙图大小的限制，会导致烘焙出的阴影质量太差，可以在重要的区域单独使用一块地表</li>
+<li>T4M不支持5.0</li>
+<li>不能大面积使用法线贴</li>
+<li>网格与材质合并插件 MeshBaker</li>
+<li>移动端水插件MobileOcean</li>
+<li>使用3DMax制作场景<ol>
+<li>加载到U3D后，要在编辑器加调整Shader，加入水，加入天空盒，加入灯光，烘焙</li>
+<li>优化，如合并Mesh及材质</li>
+<li>地表Collider</li>
+</ol>
+</li>
+</ul>
+<h2 id="角色与动画"><a href="#角色与动画" class="headerlink" title="角色与动画"></a>角色与动画</h2><ul>
+<li>同一循环动作的起始位置与终止位置要重合</li>
+<li>对于不同动作，如果脚踏地，则踏地高度要一致，以免播放不同动作时，出现角色脚不在地面上的问题</li>
+<li>动画导出时不能勾选&lt;烘焙动画&gt;选项，否则根节点会被K上帧<br><img src="\images\RootNodeBeKFrame.png" alt="  "></li>
+<li>模型FBX导入unity3d后，unity3d是如何决定这个FBX的根节点的？<br><img src="\images\ModelExportRootNode.png" alt="  "><ol>
+<li>如果上图中Toudai,hair,MaWei,cc全在Dummy001节点下，则unity3d从FBX创建GameObject时，根节点就是Dummy001，但根节点名字不叫Dummy001</li>
+<li>如果Toudai，hair, MaWei不在Dummy001下，cc在Dummy001下，则unity3d从FBX创建GameObject时，会自动创建一个全新的节点做为根节点，这个根节和Dummy001没有任何关系<br><strong>总结</strong>：<ul>
+<li>如果FBX中所有节点都在一个节点A（并且这个节点是虚拟体）下，那么unity3d从FBX创建GameObject时，会以FBX中那个总的根节点作为GameObject的根节点。但如果这个节点A不是虚拟体（如骨骼，网格等），则会创建一个全新的根节点作为GameObject的根节点</li>
+<li>如果FBX中所有节点并不都在一个节点下，那么unity3d从FBX创建GameObject时，会自动创建一个全新的根节点作为GameObject的根节点，此根节点和FBX中的节点没有任何关系。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>ImportFBX Errors: TimeRange (447392) for translation curve(s) on node ‘Bone005’ on take ‘Take 001’ larger than maximum allowed(100000)<br><img src="\images\ImportFBXTimeRangeErrorSolution.png" alt=""></p>
+</li>
+<li><p>在播放动画后，人物旋转值不对。</p>
+<ol>
+<li>人物模型初始旋转值为(0,0,0)，此种旋转值下，人物模型应该是正立的<br><img src="\images\AnimationErrorRotation_1.png" alt=""></li>
+<li>动画如下，但请注意，该动画是基于(-90,0,0)的旋转值做的<br><img src="\images\AnimationErrorRotation_2.png" alt=""></li>
+<li>在人物模型上播放该动画后，出现如下情况：<br><img src="\images\AnimationErrorRotation_3.png" alt=""><br>分析：<br> 动画在制作时，是基于根节点有(-90,0,0)的旋转值做的，结果在导入Unity3D后，在人物默认旋转值(0,0,0)下播放出动画后，就会出现人物模型表现出来的旋转不对的问题。</li>
+</ol>
+</li>
+</ul>
+<h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><ul>
+<li>目前特效系统是ParticleSystem</li>
+</ul>
+<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><ul>
+<li>NGUI</li>
+</ul>
+<h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><ul>
+<li>Cinema Director</li>
+</ul>
+<h2 id="摄像机动画"><a href="#摄像机动画" class="headerlink" title="摄像机动画"></a>摄像机动画</h2><ul>
+<li>CameraPath</li>
+</ul>
+<p>##</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/game/">game</a><a href="/tags/art/">art</a><a href="/tags/unity3d/">unity3d</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/unity3d/unity3d_art/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/unity3d/unity3d_art/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/02/27/hexo/" title="hexo" itemprop="url">hexo</a>
   </h1>
   <p class="article-author">By
@@ -161,7 +355,7 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/27/3guo/" title="三国志3D版" itemprop="url">三国志3D版</a>
+      <a href="/2015/02/27/django/" title="django" itemprop="url">django</a>
   </h1>
   <p class="article-author">By
        
@@ -174,238 +368,13 @@
 </header>
     <div class="article-content">
         
-        <h1 id="资源管理器"><a href="#资源管理器" class="headerlink" title="资源管理器"></a>资源管理器</h1><ol>
-<li>相关路径<ul>
-<li>各平台资源保存目录</li>
-<li>远程资源URL</li>
-<li>各平台资源加载器</li>
-</ul>
-</li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/项目分析/">项目分析</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/三国志3D版/">三国志3D版</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/3guo/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/3guo/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/unity3d/unity3d_plugin/" title="unity3d 插件相关" itemprop="url">unity3d 插件相关</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="Dynamic-Bone"><a href="#Dynamic-Bone" class="headerlink" title="Dynamic Bone"></a>Dynamic Bone</h1><ul>
-<li>实时骨骼动画，用于制作乳摇，头发甩动，裙摆等</li>
-<li>至少在1.1.7之前，都是无法处理Scale为负值的骨骼</li>
-</ul>
-<h1 id="ulua"><a href="#ulua" class="headerlink" title="ulua"></a>ulua</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://doc.ulua.org/article/ulua/ziliaotietoluaxuexiziliaohuizongtie.html" target="_blank" rel="external">ulua/tolua学习资料汇总贴</a></li>
-</ul>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
-<li>集成Lua到Unity3D中，用于IOS应用内更新<br>-</li>
-</ul>
-<h1 id="NGUI"><a href="#NGUI" class="headerlink" title="NGUI"></a>NGUI</h1><h2 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h2><h3 id="NGUI中深度depth和z轴关系的小试验"><a href="#NGUI中深度depth和z轴关系的小试验" class="headerlink" title="NGUI中深度depth和z轴关系的小试验"></a><a href="http://www.voidcn.com/blog/chenluwolf/article/p-4596389.html" target="_blank" rel="external">NGUI中深度depth和z轴关系的小试验</a></h3><ul>
-<li>目前不支持Unity5的新版Assetbundle打包方式</li>
-<li>Texture2D原点在左下角</li>
-</ul>
-<h2 id="控件"><a href="#控件" class="headerlink" title="控件"></a>控件</h2><h3 id="UIScrollView，UIScrollBar-与-UIGrid"><a href="#UIScrollView，UIScrollBar-与-UIGrid" class="headerlink" title="UIScrollView，UIScrollBar 与 UIGrid"></a>UIScrollView，UIScrollBar 与 UIGrid</h3><ul>
-<li>由于执行顺序的原因，有时候UIGrid子节点变化后，UIScrollView不能主动察觉到子节点的变化，因而无法更新ScrollBar。解决办法如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UIGrid grid;</span><br><span class="line">UIScrollView scrollView;</span><br><span class="line">grid.onReposition = scrollView.ResetPosition()</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="显示顺序"><a href="#显示顺序" class="headerlink" title="显示顺序"></a>显示顺序</h2><ul>
-<li>同一Panel 不论Atlas相不相同，都以深度为准</li>
-<li>不同Panel 以Panel深度为准</li>
-<li>也可以通过设置UIPanel中  </li>
-</ul>
-<h1 id="VSTU2012"><a href="#VSTU2012" class="headerlink" title="VSTU2012"></a>VSTU2012</h1><p>-5.2没有问题<br>-4.1.5不能自动检测到VSTU的包，要自己找到安装路径里的VSTU包</p>
-<h1 id="曲线与路径"><a href="#曲线与路径" class="headerlink" title="曲线与路径"></a>曲线与路径</h1><h2 id="PathMagic"><a href="#PathMagic" class="headerlink" title="PathMagic"></a><a href="https://www.assetstore.unity3d.com/en/#!/content/47769" target="_blank" rel="external">PathMagic</a></h2><h2 id=""><a href="#" class="headerlink" title="[]"></a>[]</h2>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/game/">game</a><a href="/tags/art/">art</a><a href="/tags/unity3d/">unity3d</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/unity3d/unity3d_plugin/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/unity3d/unity3d_plugin/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/数据库/mysql/" title="mysql" itemprop="url">mysql</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="mysql-连接-127-0-0-1-与-localhost的区别"><a href="#mysql-连接-127-0-0-1-与-localhost的区别" class="headerlink" title="mysql 连接 127.0.0.1 与 localhost的区别"></a>mysql 连接 127.0.0.1 与 localhost的区别</h1><p>  127.0.0.1 通过TCP连接可指定端口<br>  localhost 通过unix socket连接，不能指定端口，指定了也不生效</p>
-<p>#FAQ</p>
-<ul>
-<li><p>无法连接数据库的一些原因<br>1 密码不对<br>2 未给用户设置密码<br>3 未给用户usage权限<br>  连接权限：GRANT USAGE ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘rootpassword’;<br>  所有权限：GRANT ALL PRIVILEGES on <em>.</em> TO ‘root’@’%’ WITH GRANT OPTION;<br>  更新密码：UPDATE mysql.user set password=PASSWORD(‘jubian@2013’) where user=’root’;<br>  更新权限：flush privileges;</p>
-</li>
-<li><p>如何安全启动mysqld_multi<br>mysqld_multi –mysqld=mysqld_safe start 1,2,3..</p>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/数据库/">数据库</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/mysql-db/">mysql db</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/数据库/mysql/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/数据库/mysql/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/boost/" title="boost" itemprop="url">boost</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="Win安装Boost"><a href="#Win安装Boost" class="headerlink" title="Win安装Boost"></a>Win安装Boost</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">打开 Visual Studio 2012 工具命令提示终端，这样VS环境就设置好了，否则在多版本VS下会出很多问题</span><br><span class="line"></span><br><span class="line">bootstrap.bat</span><br><span class="line">bjam.exe --toolset=msvc-11.0 install --prefix=E:\work\xbdg\program\dep\boost</span><br></pre></td></tr></table></figure>
-<h2 id="Linux安装Boost"><a href="#Linux安装Boost" class="headerlink" title="Linux安装Boost"></a>Linux安装Boost</h2><p><strong>编译boost</strong><br>进入libs/config<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash configure</span><br></pre></td></tr></table></figure></p>
-<p>将当前目录生成的user.hpp拷贝到boost/config下，覆盖同名文件</p>
-<p>–layout=tagged 生成带-mt的库名，mongo-cxx-driver-legacy-1.0.0需要这种名字的库<br>-j4 并行编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./b2 --with-chrono --with-date_time --with-regex --with-system --with-thread --build-type=complete --layout=tagged -j4 --prefix=/usr/<span class="built_in">local</span> threading=multi install</span><br></pre></td></tr></table></figure></p>
-<h2 id="配置boost"><a href="#配置boost" class="headerlink" title="配置boost"></a>配置boost</h2><p>配置文件 boost/config/usr.hpp<br><a href="http://cpp.ezbty.org/myfiles/boost/libs/config/doc/html/index.html#boost_config.configuring_boost_for_your_platform" target="_blank" rel="external">说明文档：Boost.Config</a></p>
-<h2 id="精简boost"><a href="#精简boost" class="headerlink" title="精简boost"></a>精简boost</h2><p>工具<a href="http://guiquanz.me/2013/05/01/boost-bcp-intro/" target="_blank" rel="external">bcp</a></p>
+        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="安装pip"><a href="#安装pip" class="headerlink" title="安装pip"></a><a href="https://pip.pypa.io/en/latest/installing.html" target="_blank" rel="external">安装pip</a></h3><h3 id="安装django"><a href="#安装django" class="headerlink" title="安装django"></a><a href="https://docs.djangoproject.com/en/1.7/topics/install/" target="_blank" rel="external">安装django</a></h3><h3 id="安装mongoengine"><a href="#安装mongoengine" class="headerlink" title="安装mongoengine"></a><a href="http://docs.mongoengine.org/en/latest/guide/installing.html" target="_blank" rel="external">安装mongoengine</a></h3><h3 id="uwsgi"><a href="#uwsgi" class="headerlink" title="uwsgi"></a><a href="https://uwsgi-docs.readthedocs.org/en/latest/#" target="_blank" rel="external">uwsgi</a></h3><p><a href="http://django-china.cn/topic/101/" target="_blank" rel="external">安装</a><br><a href="http://www.cnblogs.com/zhouej/archive/2012/03/25/2379646.html" target="_blank" rel="external">命令行参数中文参考</a></p>
+<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><h2 id="模板是自动转义的，关闭转义"><a href="#模板是自动转义的，关闭转义" class="headerlink" title="模板是自动转义的，关闭转义"></a>模板是自动转义的，关闭转义</h2><p>Django模板为了防止XSS，缺省情况下会自动将HTML进行转义。</p>
+<p>有的时候我们确实想输出一些含有HTML代码的内容（比如Web编辑器产生的文章内容数据），如何关闭自动转义？<br>方法1：使用过滤器。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">|safe</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123; data|safe &#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>这样data的内容就会原样输出，不会被转义。请确保data中的数据不会产生XSS。<br>方法2：关闭整段代码的自动转义。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; % autoescape off % &#125;</span><br><span class="line">    &#123; &#123; data &#125; &#125;</span><br><span class="line">&#123; % endautoescape % &#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://www.redicecn.com/html/blog/Django/2012/0215/370.html" target="_blank" rel="external">转自</a></p>
+<h1 id="时区"><a href="#时区" class="headerlink" title="时区"></a><a href="https://docs.djangoproject.com/en/dev/ref/settings/#time-zone" target="_blank" rel="external">时区</a></h1><p><a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区代码参考</a><br>中国上海时区代码：Asia/Shanghai</p>
 
         
         
@@ -424,7 +393,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/boost/">boost</a>
+  <span></span> <a href="/tags/django/">django</a><a href="/tags/web/">web</a>
   </div>
 
 </div>
@@ -435,7 +404,73 @@
 <div class="comments-count">
 	
 	  	<span></span>
-		<a href="/2015/02/27/boost/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/boost/" data-count-type="comments">&nbsp;</a>
+		<a href="/2015/02/27/django/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/django/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/mygame/" title="想要的游戏特征" itemprop="url">想要的游戏特征</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h2><ul>
+<li>高AI</li>
+<li>更多的环境互动</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/游戏开发/">游戏开发</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/游戏/">游戏</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/mygame/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/mygame/" data-count-type="comments">&nbsp;</a>
 	
 </div>
 
@@ -531,6 +566,218 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/02/27/Linux系统管理/linux_manage/" title="Linux系统管理" itemprop="url">Linux系统管理</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="ulimit"><a href="#ulimit" class="headerlink" title="ulimit"></a>ulimit</h2><p>所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制<br>例如打开文件数的限制可以在/etc/security/limits.conf加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*               soft    nofile           64000</span><br><span class="line">*               hard    nofile           64000</span><br></pre></td></tr></table></figure></p>
+<h1 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h1><h1 id="查看Linux系统性能"><a href="#查看Linux系统性能" class="headerlink" title="查看Linux系统性能"></a>查看Linux系统性能</h1><p>1 iotop<br>root权限<br>查看实时磁盘读写情况</p>
+<p>2 vmstat 秒数<br>主要看si so ，单位字节<br>si:从交换分区换入的页面<br>so:从内存换出的页面</p>
+<p>3 free -m<br>以MB查看内存使用情况</p>
+<p>-/+buffers/cache 1024                 1024</p>
+<p>真正使用的内存        可释放内存+空闲内存</p>
+<p>以上两个值的和等于总内存</p>
+<p>buffers指buffer cache</p>
+<p>cached指page cache</p>
+<h1 id="VirtualBox"><a href="#VirtualBox" class="headerlink" title="VirtualBox"></a>VirtualBox</h1><p>迁移virtualbox虚拟机<br>1 vboxmanage list vms<br>2 vboxmanage unregistervm vm_name<br>3 移动虚拟机文件夹到新的目录<br>4 移除虚拟机关联的硬盘<br>5 vboxmanage registervm vm_new_absolute_path/xxx.vbox</p>
+<p>VBoxManager controlvm centos75 poweroff<br>VBoxManager startvm centos75 –type headless</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
+<li><a href="https://www.ttlsa.com/linux/update-linux-swap/" target="_blank" rel="external">linux下如何增加swap交换分区</a></li>
+<li><a href="http://coolshell.cn" target="_blank" rel="external">CoolShell</a></li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Linux系统管理/">Linux系统管理</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/linux-system-manage/">linux system manage</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/Linux系统管理/linux_manage/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/Linux系统管理/linux_manage/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/devtools/" title="开发工具" itemprop="url">开发工具</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="VS"><a href="#VS" class="headerlink" title="VS"></a>VS</h1><ul>
+<li>VS2013 要安装Microsoft .NET Framework 4.6 Targeting Pack 才能在工程中选择使用.netframework 4.6</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/DevTools/">DevTools</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Dev-Tools/">Dev Tools</a><a href="/tags/game/">game</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/devtools/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/devtools/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/3guo/" title="三国志3D版" itemprop="url">三国志3D版</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="资源管理器"><a href="#资源管理器" class="headerlink" title="资源管理器"></a>资源管理器</h1><ol>
+<li>相关路径<ul>
+<li>各平台资源保存目录</li>
+<li>远程资源URL</li>
+<li>各平台资源加载器</li>
+</ul>
+</li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/项目分析/">项目分析</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/三国志3D版/">三国志3D版</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/3guo/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/3guo/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/02/27/数据库/install_mongo_cppdriver/" title="安装mongo cpp driver" itemprop="url">安装mongo cpp driver</a>
   </h1>
   <p class="article-author">By
@@ -593,201 +840,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/游戏智能/sport_ai/" title="体育AI" itemprop="url">体育AI</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h1><ul>
-<li>《AI游戏引擎程序设计》第10章 运动类游戏</li>
-<li>《人工智能游戏编程真言》第9章 竞赛与运动智能</li>
-<li>《Programing Game AI By Example》第4章 体育模拟（简单足球）</li>
-</ul>
-<h1 id="游戏参考"><a href="#游戏参考" class="headerlink" title="游戏参考"></a>游戏参考</h1><ul>
-<li><a href="https://www.assetstore.unity3d.com/cn/#!/content/48662" target="_blank" rel="external">Flick Football</a></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/游戏人工智能/">游戏人工智能</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/game/">game</a><a href="/tags/AI/">AI</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/游戏智能/sport_ai/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/游戏智能/sport_ai/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/ps/" title="ps" itemprop="url">ps</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h3 id="序列帧生成GIF图"><a href="#序列帧生成GIF图" class="headerlink" title="序列帧生成GIF图"></a><a href="http://blog.163.com/lrm_1036/blog/static/9291615020126443450414/" target="_blank" rel="external">序列帧生成GIF图</a></h3><h3 id="制作alpha通道"><a href="#制作alpha通道" class="headerlink" title="制作alpha通道"></a><a href="http://www.chinavid.com/2d/2008-8-4/PhotoshopAlpha.htm" target="_blank" rel="external">制作alpha通道</a></h3>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/图形处理/">图形处理</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/ps/">ps</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/ps/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/ps/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/27/graphic_gameengine/" title="图形与游戏引擎基础" itemprop="url">图形与游戏引擎基础</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="骨骼蒙皮动画"><a href="#骨骼蒙皮动画" class="headerlink" title="骨骼蒙皮动画"></a>骨骼蒙皮动画</h1><p><a href="http://blog.csdn.net/n5/article/details/3105872" target="_blank" rel="external">Skinned Mesh 原理解析和一个最简单的实现示例</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/游戏开发/">游戏开发</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/graphic/">graphic</a><a href="/tags/game-engine/">game-engine</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/27/graphic_gameengine/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/graphic_gameengine/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
@@ -829,7 +881,7 @@
 		  
 		
 		  
-			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>6</sup></a></li>
+			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>7</sup></a></li>
 		  
 		
 		  
@@ -942,23 +994,15 @@
 			
 		
 			
-				<li><a href="/tags/script/" title="script">script<sup>1</sup></a></li>
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
 			
 		
 			
@@ -970,7 +1014,15 @@
 			
 		
 			
-				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
+				<li><a href="/tags/游戏/" title="游戏">游戏<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
 			
 		
 			
@@ -978,7 +1030,7 @@
 			
 		
 			
-				<li><a href="/tags/游戏/" title="游戏">游戏<sup>1</sup></a></li>
+				<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
 			
 		
 			
@@ -986,7 +1038,7 @@
 			
 		
 			
-				<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
+				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
 			
 		
 			
@@ -998,11 +1050,11 @@
 			
 		
 			
-				<li><a href="/tags/mono/" title="mono">mono<sup>1</sup></a></li>
+				<li><a href="/tags/书/" title="书">书<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/书/" title="书">书<sup>1</sup></a></li>
+				<li><a href="/tags/script/" title="script">script<sup>1</sup></a></li>
 			
 		
 		</ul>
