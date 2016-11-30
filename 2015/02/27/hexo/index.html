@@ -12,27 +12,27 @@
 
     
     <meta name="description" content="gitwindows下配置 ssh 公钥1. 安装git，从程序目录打开 &amp;quot;Git Bash&amp;quot;
-2. 键入命令：ssh-keygen -t rsa -C &amp;quot;email@email.com&amp;quot;
-  &amp;quot;email@email.com&amp;quot;是github账号
+2. 键入命令：ssh-keygen -t rsa -C &amp;quot;github account&amp;quot;
+  &amp;quot;github account&amp;quot;是github账号
 3. 提醒你输入key的名称，输入如id_rsa
-4. 在C:\Documents and">
+4. 在C:\Documents and Se">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo">
 <meta property="og:url" content="http://yangguosdxl.github.io/2015/02/27/hexo/index.html">
 <meta property="og:site_name" content="Pretty Sunshine">
 <meta property="og:description" content="gitwindows下配置 ssh 公钥1. 安装git，从程序目录打开 &amp;quot;Git Bash&amp;quot;
-2. 键入命令：ssh-keygen -t rsa -C &amp;quot;email@email.com&amp;quot;
-  &amp;quot;email@email.com&amp;quot;是github账号
+2. 键入命令：ssh-keygen -t rsa -C &amp;quot;github account&amp;quot;
+  &amp;quot;github account&amp;quot;是github账号
 3. 提醒你输入key的名称，输入如id_rsa
-4. 在C:\Documents and">
-<meta property="og:updated_time" content="2016-03-25T13:45:52.000Z">
+4. 在C:\Documents and Se">
+<meta property="og:updated_time" content="2016-11-30T12:51:00.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo">
 <meta name="twitter:description" content="gitwindows下配置 ssh 公钥1. 安装git，从程序目录打开 &amp;quot;Git Bash&amp;quot;
-2. 键入命令：ssh-keygen -t rsa -C &amp;quot;email@email.com&amp;quot;
-  &amp;quot;email@email.com&amp;quot;是github账号
+2. 键入命令：ssh-keygen -t rsa -C &amp;quot;github account&amp;quot;
+  &amp;quot;github account&amp;quot;是github账号
 3. 提醒你输入key的名称，输入如id_rsa
-4. 在C:\Documents and">
+4. 在C:\Documents and Se">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -113,13 +113,13 @@
 		</div>
 		
 		<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="windows下配置-ssh-公钥"><a href="#windows下配置-ssh-公钥" class="headerlink" title="windows下配置 ssh 公钥"></a>windows下配置 ssh 公钥</h2><pre><code>1. 安装git，从程序目录打开 &quot;Git Bash&quot;
-2. 键入命令：ssh-keygen -t rsa -C &quot;email@email.com&quot;
-  &quot;email@email.com&quot;是github账号
+2. 键入命令：ssh-keygen -t rsa -C &quot;github account&quot;
+  &quot;github account&quot;是github账号
 3. 提醒你输入key的名称，输入如id_rsa
 4. 在C:\Documents and Settings\Administrator\下产生两个文件：id_rsa和id_rsa.pub
 5. 把4中生成的密钥文件复制到C:\Documents and Settings\Administrator\.ssh\ 目 录下。
 6. 用记事本打开id_rsa.pub文件，复制内容，在github.com的网站上到ssh密钥管理页面，添加新公钥，随便取个名字，内容粘贴刚公钥
-</code></pre><h2 id="git-1"><a href="#git-1" class="headerlink" title="git"></a>git</h2><p>   git 远程URL只有在使用git协议时才能使用ssh的方式pull push, https是不能使用 ssh的</p>
+</code></pre><h2 id="git-1"><a href="#git-1" class="headerlink" title="git"></a>git</h2><p>   git 远程URL只有在使用git协议时才能使用ssh的方式pull push, https是不能使用 ssh的<br>   使用git访问一下_config.yml中的git仓库地址，如 git clone git@github.com:yangguosdxl/yangguosdxl.github.com.git，应该是不需要密码的，因为有ssh key的配置</p>
 <h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><h1 id="hexo-plugin"><a href="#hexo-plugin" class="headerlink" title="hexo plugin"></a>hexo plugin</h1><ul>
 <li><a href="https://github.com/superalsrk/hexo-pdf" target="_blank" rel="external">hexo-pdf</a></li>
 </ul>
