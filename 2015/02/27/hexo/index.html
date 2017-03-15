@@ -25,7 +25,7 @@
   &amp;quot;github account&amp;quot;是github账号
 3. 提醒你输入key的名称，输入如id_rsa
 4. 在C:\Documents and Se">
-<meta property="og:updated_time" content="2016-11-30T12:51:00.027Z">
+<meta property="og:updated_time" content="2016-11-30T13:04:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo">
 <meta name="twitter:description" content="gitwindows下配置 ssh 公钥1. 安装git，从程序目录打开 &amp;quot;Git Bash&amp;quot;
@@ -108,7 +108,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows下配置-ssh-公钥"><span class="toc-number">1.1.</span> <span class="toc-text">windows下配置 ssh 公钥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-1"><span class="toc-number">1.2.</span> <span class="toc-text">git</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo"><span class="toc-number">2.</span> <span class="toc-text">hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-plugin"><span class="toc-number">3.</span> <span class="toc-text">hexo plugin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#markdown"><span class="toc-number">4.</span> <span class="toc-text">markdown</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#评论"><span class="toc-number">5.</span> <span class="toc-text">评论</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows下配置-ssh-公钥"><span class="toc-number">1.1.</span> <span class="toc-text">windows下配置 ssh 公钥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问git仓库"><span class="toc-number">1.2.</span> <span class="toc-text">访问git仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo"><span class="toc-number">2.</span> <span class="toc-text">hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-plugin"><span class="toc-number">3.</span> <span class="toc-text">hexo plugin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#markdown"><span class="toc-number">4.</span> <span class="toc-text">markdown</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#评论"><span class="toc-number">5.</span> <span class="toc-text">评论</span></a></li></ol>
 		
 		</div>
 		
@@ -119,8 +119,11 @@
 4. 在C:\Documents and Settings\Administrator\下产生两个文件：id_rsa和id_rsa.pub
 5. 把4中生成的密钥文件复制到C:\Documents and Settings\Administrator\.ssh\ 目 录下。
 6. 用记事本打开id_rsa.pub文件，复制内容，在github.com的网站上到ssh密钥管理页面，添加新公钥，随便取个名字，内容粘贴刚公钥
-</code></pre><h2 id="git-1"><a href="#git-1" class="headerlink" title="git"></a>git</h2><p>   git 远程URL只有在使用git协议时才能使用ssh的方式pull push, https是不能使用 ssh的<br>   使用git访问一下_config.yml中的git仓库地址，如 git clone git@github.com:yangguosdxl/yangguosdxl.github.com.git，应该是不需要密码的，因为有ssh key的配置</p>
-<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><h1 id="hexo-plugin"><a href="#hexo-plugin" class="headerlink" title="hexo plugin"></a>hexo plugin</h1><ul>
+</code></pre><h2 id="访问git仓库"><a href="#访问git仓库" class="headerlink" title="访问git仓库"></a>访问git仓库</h2><ol>
+<li>git 远程URL只有在使用git协议时才能使用ssh的方式pull push, https是不能使用 ssh的</li>
+<li>使用git访问一下_config.yml中的git仓库地址，如 git clone git@github.com:yangguosdxl/yangguosdxl.github.com.git，应该是不需要密码的，因为有ssh key的配置<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1></li>
+</ol>
+<h1 id="hexo-plugin"><a href="#hexo-plugin" class="headerlink" title="hexo plugin"></a>hexo plugin</h1><ul>
 <li><a href="https://github.com/superalsrk/hexo-pdf" target="_blank" rel="external">hexo-pdf</a></li>
 </ul>
 <h1 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h1><ul>
@@ -166,18 +169,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/02/27/unity3d/unity3d_art/" title="unity3d 美术相关">
+ <a href="/2015/02/27/open_source_misc/" title="开源杂谈">
   <strong>上一篇：</strong><br/>
   <span>
-  unity3d 美术相关</span>
+  开源杂谈</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/02/27/django/"  title="django">
+<a href="/2015/02/27/unity3d/unity3d_art/"  title="unity3d 美术相关">
  <strong>下一篇：</strong><br/> 
- <span>django
+ <span>unity3d 美术相关
 </span>
 </a>
 </div>
@@ -211,7 +214,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows下配置-ssh-公钥"><span class="toc-number">1.1.</span> <span class="toc-text">windows下配置 ssh 公钥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-1"><span class="toc-number">1.2.</span> <span class="toc-text">git</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo"><span class="toc-number">2.</span> <span class="toc-text">hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-plugin"><span class="toc-number">3.</span> <span class="toc-text">hexo plugin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#markdown"><span class="toc-number">4.</span> <span class="toc-text">markdown</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#评论"><span class="toc-number">5.</span> <span class="toc-text">评论</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows下配置-ssh-公钥"><span class="toc-number">1.1.</span> <span class="toc-text">windows下配置 ssh 公钥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问git仓库"><span class="toc-number">1.2.</span> <span class="toc-text">访问git仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo"><span class="toc-number">2.</span> <span class="toc-text">hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-plugin"><span class="toc-number">3.</span> <span class="toc-text">hexo plugin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#markdown"><span class="toc-number">4.</span> <span class="toc-text">markdown</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#评论"><span class="toc-number">5.</span> <span class="toc-text">评论</span></a></li></ol>
  
   </div>
 
@@ -236,7 +239,11 @@
 		  
 		
 		  
-			<li><a href="/categories/VR/" title="VR">VR<sup>3</sup></a></li>
+			<li><a href="/categories/VR/" title="VR">VR<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Web/" title="Web">Web<sup>1</sup></a></li>
 		  
 		
 		  
@@ -248,7 +255,7 @@
 		  
 		
 		  
-			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>7</sup></a></li>
+			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>8</sup></a></li>
 		  
 		
 		  
@@ -316,7 +323,7 @@
 		  
 		
 		  
-			<li><a href="/categories/游戏运营/" title="游戏运营">游戏运营<sup>1</sup></a></li>
+			<li><a href="/categories/游戏运营/" title="游戏运营">游戏运营<sup>2</sup></a></li>
 		  
 		
 		  
@@ -329,6 +336,10 @@
 		
 		  
 			<li><a href="/categories/编程语言/" title="编程语言">编程语言<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/网络管理/" title="网络管理">网络管理<sup>1</sup></a></li>
 		  
 		
 		  
@@ -349,7 +360,7 @@
 			
 		
 			
-				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>6</sup></a></li>
+				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>7</sup></a></li>
 			
 		
 			
@@ -357,11 +368,19 @@
 			
 		
 			
+				<li><a href="/tags/web/" title="web">web<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/VR/" title="VR">VR<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/AI/" title="AI">AI<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+				<li><a href="/tags/Unity3D-VR/" title="Unity3D VR">Unity3D VR<sup>1</sup></a></li>
 			
 		
 			
@@ -369,7 +388,7 @@
 			
 		
 			
-				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
 			
 		
 			
@@ -381,15 +400,11 @@
 			
 		
 			
+				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/游戏/" title="游戏">游戏<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
 			
 		
 			
@@ -397,15 +412,11 @@
 			
 		
 			
-				<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
+				<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
 			
 		
 			
@@ -413,11 +424,11 @@
 			
 		
 			
-				<li><a href="/tags/atom/" title="atom">atom<sup>1</sup></a></li>
+				<li><a href="/tags/书/" title="书">书<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/书/" title="书">书<sup>1</sup></a></li>
+				<li><a href="/tags/mono/" title="mono">mono<sup>1</sup></a></li>
 			
 		
 			
@@ -467,7 +478,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="开伦">开伦</a>
 		

@@ -81,6 +81,283 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/13/VR/2017-03-14-JetsonTX1/" title="Jetson TX1" itemprop="url">Jetson TX1</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-13T07:24:00.000Z" itemprop="datePublished"> 发表于 Mar 13 2017</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="http://developer.nvidia-china.com/" target="_blank" rel="external">Nvidia中文开发者论坛</a></li>
+<li><a href="http://elinux.org/Jetson_TX1" target="_blank" rel="external">Jetson TX1 On elinux wiki</a><h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1></li>
+</ul>
+<h1 id="性能相关"><a href="#性能相关" class="headerlink" title="性能相关"></a>性能相关</h1><h2 id="一些信息"><a href="#一些信息" class="headerlink" title="一些信息"></a>一些信息</h2><pre><code>TX1的风扇正常情况下是不转的，接上电源后，CR5 红色LED灯亮，打开电源开关后，电源旁两个绿灯亮，CR6红灯亮（表示PCIe 12V）。
+风扇是可以强制开启的。
+</code></pre><ul>
+<li><a href="http://elinux.org/Jetson/TX1_Controlling_Performance" target="_blank" rel="external">Jetson/TX1 Controlling Performance</a><br>这个脚本可以强制开启风扇，设置TX1以最高性能工作。由于这个脚本是为TK1开发的，所以在运行时可能报一些路径找不到的错误，可能是系统版本不同造成的吧。尽管如此，还是有效的。</li>
+</ul>
+<h1 id="性能设置与性能测试"><a href="#性能设置与性能测试" class="headerlink" title="性能设置与性能测试"></a>性能设置与性能测试</h1><ul>
+<li><a href="http://elinux.org/Jetson/TX1_Controlling_Performance" target="_blank" rel="external">Jetson/TX1 Controlling Performance</a><br>这个脚本运行完全没有问题<br><a href="/images/max.sh">max.sh</a></li>
+<li>tegrastats，这个脚本可以查看CPU、GPU等的频率信息，安装完L4T后，在ubuntu用户主目录下有这个脚本。运行结果如下<br><img src="/images/tegrastats_result.png" alt="tegrastats"></li>
+<li>nbody， 这个程序可以测试TX1的运算性能，这个程序的路径在 <code>~/NVIDIA_CUDA-8.0_Samples/bin/aarch64/linux/release</code>，运行结果如下：<br><img src="/images/nbody_tx1_result.png" alt="nbody"></li>
+<li>测试usb速度<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rsync -avviu ~/Videos /media/Mik2</span><br><span class="line"></span><br><span class="line">sent 874419803 bytes  received 149 bytes  4427442.79 bytes/sec</span><br><span class="line">total size is 874312527  speedup is 1.00</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/VR/">VR</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Jetson-StereoCamera-ZED/">Jetson StereoCamera ZED</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/13/VR/2017-03-14-JetsonTX1/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/03/13/VR/2017-03-14-JetsonTX1/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/03/09/Web开发/web杂记/" title="Web杂记" itemprop="url">Web杂记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-09T11:49:45.000Z" itemprop="datePublished"> 发表于 Mar 9 2017</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://reactnative.cn/" target="_blank" rel="external">react native App开发</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Web/">Web</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/web/">web</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/09/Web开发/web杂记/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/03/09/Web开发/web杂记/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/03/08/VR/2017-03-08-ZEDStereoCamera/" title="ZED Stereo Camera" itemprop="url">ZED Stereo Camera</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-07T19:11:00.000Z" itemprop="datePublished"> 发表于 Mar 8 2017</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://www.stereolabs.com" target="_blank" rel="external">官网</a></li>
+<li><a href="http://developer.nvidia-china.com/" target="_blank" rel="external">Nvidia中文开发者论坛</a></li>
+</ul>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><ul>
+<li>从命令行录视频<br><code>./ZED\ Explorer -r HD720 -f 30 -l 200 ~/zed/a.svo</code></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/VR/">VR</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Unity3D-VR-StereoCamera-ZED/">Unity3D VR StereoCamera ZED</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/08/VR/2017-03-08-ZEDStereoCamera/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/03/08/VR/2017-03-08-ZEDStereoCamera/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/02/20/网络管理/网络管理FAQ/" title="网络管理FAQ" itemprop="url">网络管理FAQ</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2017-02-20T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 20 2017</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="交换机下接无线路由器，使用无线路由器下的机器能访问交换机下的机器"><a href="#交换机下接无线路由器，使用无线路由器下的机器能访问交换机下的机器" class="headerlink" title="交换机下接无线路由器，使用无线路由器下的机器能访问交换机下的机器"></a>交换机下接无线路由器，使用无线路由器下的机器能访问交换机下的机器</h1><ol>
+<li>无线路由器要当交换机使用</li>
+<li>无线路由器的LAN网络地址段必须和交换机的网络段分开，这样方便访问无线路由器的管理页面。把无线路由器下的电脑IP设置成对应网络段的静态IP就能访问对应网络段的管理页面。</li>
+<li>有时候发现无论怎么配置，IP获取总是失败或者一时失败一时成功，可能是DHCP的IP池被限制了，可以使用静态IP分配。</li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/网络管理/">网络管理</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/网络管理/">网络管理</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/02/20/网络管理/网络管理FAQ/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/02/20/网络管理/网络管理FAQ/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/11/30/unity3d/2016-11-30-制作ugui美术字体/" title="制作UGUI美术字体" itemprop="url">制作UGUI美术字体</a>
   </h1>
   <p class="article-author">By
@@ -320,6 +597,83 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/08/02/VR/2016-08-02-VR模拟/" title="VR模拟" itemprop="url">VR模拟</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-02T02:30:00.000Z" itemprop="datePublished"> 发表于 Aug 2 2016</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><h2 id="模拟控制器输入"><a href="#模拟控制器输入" class="headerlink" title="模拟控制器输入"></a>模拟控制器输入</h2><ul>
+<li><a href="https://github.com/AndersMalmgren/FreePIE/wiki/Getting-Started" target="_blank" rel="external">FreePIE</a></li>
+<li><a href="https://www.youtube.com/watch?v=UZNttWbTiu4" target="_blank" rel="external">FreePIE Xbox to Hydra emulation for SteamVR 01</a></li>
+<li><a href="https://gist.github.com/simlrh/6c9ee2e1bdc6316d82943a29aadb86ba" target="_blank" rel="external">FreePIE hydra script</a></li>
+<li><a href="https://github.com/NoxWings/FreePie-Scripts" target="_blank" rel="external">FreePIE hydra script2</a></li>
+<li><a href="http://www.cuddleburrito.com/flrnmrr/2016/11/30/arduino-vive-controller-emulation" target="_blank" rel="external">Arduino Vive Controller Emulation</a></li>
+<li><a href="https://www.reddit.com/r/OSVR/comments/4ni85s/possible_to_spoof_vive_controller_only_to_get_the/" target="_blank" rel="external">possible_to_spoof_vive_controller</a></li>
+<li><a href="https://gist.github.com/mingchoi/9a5f04838629d574aa75" target="_blank" rel="external">把Android模拟成Oculus Rift</a></li>
+<li><a href="https://github.com/vrpn/vrpn/wiki" target="_blank" rel="external">VRPN输入转送服务器</a></li>
+</ul>
+<h2 id="头显模拟器"><a href="#头显模拟器" class="headerlink" title="头显模拟器"></a>头显模拟器</h2><ul>
+<li><a href="http://trinusvr.com/" target="_blank" rel="external">trinusvr</a></li>
+<li><a href="http://www.haosevr.com/3328.html" target="_blank" rel="external">trinusvr教程</a></li>
+<li><a href="https://riftcat.com/vridge" target="_blank" rel="external">riftcat vridge</a></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/VR/">VR</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/VR/">VR</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/08/02/VR/2016-08-02-VR模拟/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/08/02/VR/2016-08-02-VR模拟/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/08/02/VR/2016-08-02-VR/" title="VR" itemprop="url">VR</a>
   </h1>
   <p class="article-author">By
@@ -458,342 +812,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/07/22/数学/2016-07-22-贝塞尔曲线/" title="贝塞尔曲线" itemprop="url">贝塞尔曲线</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2016-07-22T08:46:00.000Z" itemprop="datePublished"> 发表于 Jul 22 2016</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
-<li><a href="http://myst729.github.io/#/category/articles/2013/bezier-curve-literacy" target="_blank" rel="external">贝塞尔曲线扫盲</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%A1%9E%E5%B0%94%E5%87%BD%E6%95%B0" target="_blank" rel="external">贝塞尔函数-维基百科</a></li>
-<li><a href="http://zqdevres.qiniucdn.com/data/20110728232822/index.html" target="_blank" rel="external">Bezier曲线原理及实现代码（c++）</a></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/数学/">数学</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/贝塞尔曲线/">贝塞尔曲线</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/07/22/数学/2016-07-22-贝塞尔曲线/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/07/22/数学/2016-07-22-贝塞尔曲线/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/06/29/杂类/2016-06-29-精选站点/" title="精选站点" itemprop="url">精选站点</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2016-06-29T02:04:00.000Z" itemprop="datePublished"> 发表于 Jun 29 2016</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="科技"><a href="#科技" class="headerlink" title="科技"></a>科技</h1><ul>
-<li><a href="http://digi.tech.qq.com" target="_blank" rel="external">The Verge 中文站</a></li>
-<li><a href="http://cn.engadget.com" target="_blank" rel="external">Engadget 中文站</a></li>
-</ul>
-<h1 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h1><ul>
-<li><a href="http://youxiputao.com/" target="_blank" rel="external">游戏葡萄</a></li>
-<li><a href="http://www.gameres.com/" target="_blank" rel="external">GameRes</a></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/杂类/">杂类</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/网站/">网站</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/06/29/杂类/2016-06-29-精选站点/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/06/29/杂类/2016-06-29-精选站点/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/06/27/2016/2016-06-27-睡眠/" title="睡眠" itemprop="url">睡眠</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2016-06-27T02:16:00.000Z" itemprop="datePublished"> 发表于 Jun 27 2016</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li><a href="http://baike.baidu.com/view/150960.htm" target="_blank" rel="external">十二时辰养生法</a></li>
-<li><a href="https://www.douban.com/note/272805001/" target="_blank" rel="external">如何一天深度睡眠4个小时</a></li>
-<li><a href="http://fishcried.com/2015-04-20/%E4%B8%8D%E7%9D%A1%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E7%9A%84%E8%A7%89/" target="_blank" rel="external">《不睡没有必要的觉 3小时深度睡眠法》读书笔记</a></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/睡眠/">睡眠</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/06/27/2016/2016-06-27-睡眠/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/06/27/2016/2016-06-27-睡眠/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/06/20/工具/2016-06-20-代理工具/" title="代理工具" itemprop="url">代理工具</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2016-06-20T09:20:00.000Z" itemprop="datePublished"> 发表于 Jun 20 2016</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="代理工具"><a href="#代理工具" class="headerlink" title="代理工具"></a>代理工具</h1><h2 id="相关网站"><a href="#相关网站" class="headerlink" title="相关网站"></a>相关网站</h2><ul>
-<li><a href="http://www.shadowss5.com/" target="_blank" rel="external">shadowss5</a></li>
-</ul>
-<h2 id="shadowsocks"><a href="#shadowsocks" class="headerlink" title="shadowsocks"></a>shadowsocks</h2><ul>
-<li><a href="https://smileawei.com/windows2003-shadowsocks-server/" target="_blank" rel="external">windows2003上搭建shadowsocks服务端</a><br>-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/工具/">工具</a>
-</div>
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/06/20/工具/2016-06-20-代理工具/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/06/20/工具/2016-06-20-代理工具/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/05/26/工具/2016-05-26-GraphicsMagick/" title="GraphicsMagick" itemprop="url">GraphicsMagick</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
-		
-  <p class="article-time">
-    <time datetime="2016-05-26T03:00:00.000Z" itemprop="datePublished"> 发表于 May 26 2016</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ul>
-<li>identify<br>按一定格式输出图片大小：<code>gm identify -format &#39;%w %h&#39; a.png</code></li>
-<li>resize<br>缩放图片，可使用-filter指定缩放算法。不同缩放算法生成的图片质量不同。<br>resize 默认使用lanczos算法<br><code>gm mogrify -resize 100x100 -filter Lanczos a.png</code><br><a href="http://www.imagemagick.org/script/command-line-options.php?#filter" target="_blank" rel="external">filter</a></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/工具/">工具</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/image/">image</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/05/26/工具/2016-05-26-GraphicsMagick/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/05/26/工具/2016-05-26-GraphicsMagick/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
   </nav>
 
 </div>
@@ -820,7 +841,11 @@
 		  
 		
 		  
-			<li><a href="/categories/VR/" title="VR">VR<sup>3</sup></a></li>
+			<li><a href="/categories/VR/" title="VR">VR<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Web/" title="Web">Web<sup>1</sup></a></li>
 		  
 		
 		  
@@ -832,7 +857,7 @@
 		  
 		
 		  
-			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>7</sup></a></li>
+			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>8</sup></a></li>
 		  
 		
 		  
@@ -900,7 +925,7 @@
 		  
 		
 		  
-			<li><a href="/categories/游戏运营/" title="游戏运营">游戏运营<sup>1</sup></a></li>
+			<li><a href="/categories/游戏运营/" title="游戏运营">游戏运营<sup>2</sup></a></li>
 		  
 		
 		  
@@ -913,6 +938,10 @@
 		
 		  
 			<li><a href="/categories/编程语言/" title="编程语言">编程语言<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/网络管理/" title="网络管理">网络管理<sup>1</sup></a></li>
 		  
 		
 		  
@@ -933,7 +962,7 @@
 			
 		
 			
-				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>6</sup></a></li>
+				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>7</sup></a></li>
 			
 		
 			
@@ -941,11 +970,19 @@
 			
 		
 			
+				<li><a href="/tags/web/" title="web">web<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/VR/" title="VR">VR<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/AI/" title="AI">AI<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+				<li><a href="/tags/Unity3D-VR/" title="Unity3D VR">Unity3D VR<sup>1</sup></a></li>
 			
 		
 			
@@ -953,7 +990,7 @@
 			
 		
 			
-				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
 			
 		
 			
@@ -965,15 +1002,11 @@
 			
 		
 			
+				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/游戏/" title="游戏">游戏<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/django/" title="django">django<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/web/" title="web">web<sup>1</sup></a></li>
 			
 		
 			
@@ -981,15 +1014,11 @@
 			
 		
 			
-				<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Dev-Tools/" title="Dev Tools">Dev Tools<sup>1</sup></a></li>
+				<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
 			
 		
 			
@@ -997,11 +1026,11 @@
 			
 		
 			
-				<li><a href="/tags/atom/" title="atom">atom<sup>1</sup></a></li>
+				<li><a href="/tags/书/" title="书">书<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/书/" title="书">书<sup>1</sup></a></li>
+				<li><a href="/tags/mono/" title="mono">mono<sup>1</sup></a></li>
 			
 		
 			
@@ -1051,7 +1080,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="开伦">开伦</a>
 		
