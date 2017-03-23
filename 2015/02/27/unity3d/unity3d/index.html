@@ -23,7 +23,7 @@
 刀光Melee Weapon Trail–Unity刀光插">
 <meta property="og:image" content="http://yangguosdxl.github.io/\images\MissDiffuseShader.jpg">
 <meta property="og:image" content="http://yangguosdxl.github.io/\images\animator_transform_cannot_move.png">
-<meta property="og:updated_time" content="2016-10-11T06:43:12.000Z">
+<meta property="og:updated_time" content="2017-03-17T10:22:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="unity3d">
 <meta name="twitter:description" content="使用凹凸贴图Shader换装Unity3D 模型换肤技术Unity里的人物驱动/换装备/换武器/换衣服/动画重定位换装demo时美术遇到的问题详解
@@ -197,6 +197,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 </ol>
 </li>
 <li>清除工程历史记录<br><a href="http://blog.csdn.net/i1tws/article/details/51098838" target="_blank" rel="external">http://blog.csdn.net/i1tws/article/details/51098838</a></li>
+<li><strong>渲染顺序</strong><br>在ZTest开启的情况下，由Z值决定。<br>其它情况下，渲染顺序为：Render queue &gt; sorting layer &gt; order in layer<br>UGUI的UI内部由节点顺序决定前后关系。UI在transparent queue，所以有时候可能会和粒子的显示顺序产生冲突，此时可以调整UI的Sorting layer</li>
 </ul>
 <h1 id="unity-crash-原因收集"><a href="#unity-crash-原因收集" class="headerlink" title="unity crash 原因收集"></a>unity crash 原因收集</h1><ul>
 <li>Assetbundle关联的Assetbundle发生了变化，而原Assetbundle没有更新，加载这个的Assetbundle可能会崩溃<br>  可能的Backtrace：<br>  0x0000000140D63DC6 (Unity) AnimationClip::GetRuntimeAsset<br>  0x000000014113F4CD (Unity) mecanim::animation::EvaluateBlendTree<br>  0x000000014115922E (Unity) mecanim::statemachine::DoBlendTreeEvaluation<br>  0x000000014115B15D (Unity) mecanim::statemachine::EvaluateState<br>  0x000000014115B9DA (Unity) mecanim::statemachine::EvaluateStateMachine<br>  0x00000001411159B5 (Unity) AnimatorControllerPlayable::UpdateGraph<br>  0x0000000140D926C4 (Unity) Animator::UpdateAvatars<br>  0x0000000140D935F1 (Unity) Animator::UpdateWithDelta<br>  0x0000000140F442EE (Unity) Animator_CUSTOM_Update</li>
@@ -241,18 +242,18 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/02/27/3guo/" title="三国志3D版">
+ <a href="/2015/02/27/mygame/" title="想要的游戏特征">
   <strong>上一篇：</strong><br/>
   <span>
-  三国志3D版</span>
+  想要的游戏特征</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/02/27/django/"  title="django">
+<a href="/2015/02/27/ps/"  title="ps">
  <strong>下一篇：</strong><br/> 
- <span>django
+ <span>ps
 </span>
 </a>
 </div>
@@ -343,6 +344,10 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
+			<li><a href="/categories/图形API/" title="图形API">图形API<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/图形处理/" title="图形处理">图形处理<sup>1</sup></a></li>
 		  
 		
@@ -395,6 +400,10 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 		  
 		
 		  
+			<li><a href="/categories/游戏引擎/" title="游戏引擎">游戏引擎<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/游戏运营/" title="游戏运营">游戏运营<sup>2</sup></a></li>
 		  
 		
@@ -444,11 +453,11 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 			
 		
 			
-				<li><a href="/tags/VR/" title="VR">VR<sup>2</sup></a></li>
+				<li><a href="/tags/web/" title="web">web<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/web/" title="web">web<sup>2</sup></a></li>
+				<li><a href="/tags/VR/" title="VR">VR<sup>2</sup></a></li>
 			
 		
 			
@@ -456,7 +465,7 @@ c 查看动画的面向是否正确，不正确则Aniamtions-&gt;Root Transform 
 			
 		
 			
-				<li><a href="/tags/3dmax/" title="3dmax">3dmax<sup>1</sup></a></li>
+				<li><a href="/tags/Vive/" title="Vive">Vive<sup>1</sup></a></li>
 			
 		
 			
