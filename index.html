@@ -157,7 +157,10 @@
 </header>
     <div class="article-content">
         
-        <p>#FAQ</p>
+        <h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><ul>
+<li><a href="https://github.com/discosultan/dx12-game-programming" target="_blank" rel="external">DirectX 12 C# samples from Frank D. Luna’s book “Introduction to 3D Game Programming with Direct3D 12.0”</a></li>
+</ul>
+<p>#FAQ</p>
 <ul>
 <li><strong>D3DXMatrixReflect 出现指针错误</strong><br>运行环境VS2012, DXSDK june 2010，win10。解决方法是：don’t link d3dx10d.lib,link d3dx10.lib! It appears it is a bug in D3D,not in the code!</li>
 <li><p><strong>DirectX在VS2015上编译时遇到“无法解析的外部符号 __vsnwprintf”的解决方法及原因</strong><br><a href="http://blog.csdn.net/just0kk/article/details/51583218?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="external">解决方法及原因</a></p>
@@ -168,8 +171,15 @@
 </li>
 <li><p><strong>DX调试工具</strong><br><a href="https://msdn.microsoft.com/zh-cn/library/hh873207%28v=vs.110%29.aspx" target="_blank" rel="external">VS的图形调试工具</a></p>
 </li>
+<li><p><strong>龙书DirectX12编译工程时出现Shader错误</strong><br>把Shader目录从工程中去掉</p>
+</li>
+<li><p><strong>在Win10，VS2015环境下运行龙书DX10的示例程序</strong><br><img src="/images/dx10_vs2015_win10_1.png" alt="1"><br><img src="/images/dx10_vs2015_win10_2.png" alt="2"><br><img src="/images/dx10_vs2015_win10_3.png" alt="3"><br><img src="/images/dx10_vs2015_win10_4.png" alt="4"></p>
+</li>
+<li><p><strong>以下代码使点位于远平面上</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// set z = w so that z/w = 1 (i.e., skydome always on far plane). posH是未经过透视除尘的投影坐标</span><br><span class="line">vOut.posH = mul(float4(vIn.posL, 1.0f), gWVP).xyww;</span><br></pre></td></tr></table></figure>
+<p>由于<code>z = w</code>那么经过透视除法后，<code>posH</code>为<code>(x/z, y/z, 1, w/z)</code>，透视除法后，<code>x,y,z</code>坐标都应该在<code>[-1,1]</code>范围内，而远平面上的点的<code>z</code>值为<code>1</code>，近平面点的<code>z</code>值为<code>-1</code>。所以该点位于远平面上。</p>
+</li>
 </ul>
-<p>-</p>
 
         
         
@@ -379,6 +389,22 @@
 <li><a href="http://gad.qq.com/college/articledetail/4646" target="_blank" rel="external">NVIDIA的黑科技3：VXGI体素全局光照</a></li>
 <li><a href="http://gad.qq.com/article/detail/4653" target="_blank" rel="external">Voxel Cone Tracing based Global Illumination</a></li>
 <li><a href="/asset/Advanced Ambient Occlusion, Shadow and Anti-Aliasing in NVIDIA GameWorks_cn.pdf">NVIDIA高级光阴与搞锯齿物效</a></li>
+<li><a href="https://developer.nvidia.com/designworks" target="_blank" rel="external">NVIDIA DesignWorks专注与高级图形渲染的套件</a></li>
+</ul>
+<h1 id="图形学与引擎方面的技术博客"><a href="#图形学与引擎方面的技术博客" class="headerlink" title="图形学与引擎方面的技术博客"></a>图形学与引擎方面的技术博客</h1><ul>
+<li><a href="http://blog.csdn.net/wolf96" target="_blank" rel="external">wolf96的专栏</a></li>
+<li><a href="https://www.zhihu.com/question/26720808/answer/33885578" target="_blank" rel="external">系统的学习计算机图形学，有哪些不同阶段的书籍的推荐？知乎</a></li>
+</ul>
+<h1 id="卡通渲染"><a href="#卡通渲染" class="headerlink" title="卡通渲染"></a>卡通渲染</h1><ul>
+<li><a href="http://zhangwenli.com/blog/2017/03/05/cartoon-shading-1/" target="_blank" rel="external">卡通渲染</a></li>
+<li><a href="http://www.cnblogs.com/zhanlang96/p/4241727.html" target="_blank" rel="external">Unity3d shader之卡通着色Toon Shading</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%8D%A1%E9%80%9A%E6%B8%B2%E6%9F%93" target="_blank" rel="external">卡通渲染-维基百科</a></li>
+<li><a href="http://blog.csdn.net/tianhai110/article/details/5666190" target="_blank" rel="external"> 非真实渲染技术（NPR）</a></li>
+<li><a href="http://blog.csdn.net/silangquan/article/details/17184807" target="_blank" rel="external"> Real-Time Rendering (5) - 非真实性渲染</a></li>
+</ul>
+<h1 id="全局GI"><a href="#全局GI" class="headerlink" title="全局GI"></a>全局GI</h1><ul>
+<li><a href="http://baike.baidu.com/item/Ambient%20Occlusion" target="_blank" rel="external">Ambient Occlusion</a></li>
+<li><a href="http://pkuwwt.github.io/scholarship/2013-12-01-gpugems-ch17-ambient-occlusion/" target="_blank" rel="external">GPU Gems - 第17章 环境光遮蔽[译]</a></li>
 </ul>
 
         
