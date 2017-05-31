@@ -15,6 +15,8 @@
 MongoDB 英文手册
 MongoDB 中文手册
 window平台安装 MongoDB
+MongoDB数据模型分析脚本 Variety
+MongoDB 索引优化工具 Dex
 
 CSharp版驱动参考链接
 官方主页
@@ -23,10 +25,7 @@ Serialize Documents with the CSharp Driver
 创建用户
 参考链接
 【mongoDB运维篇①】用户管理
-MongoDB 3.0 用户创建 
-
-
-readWriteAnyDatabase role只能用于admin数据库">
+MongoDB 3.0 用户创">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB">
 <meta property="og:url" content="http://yangguosdxl.github.io/2016/03/31/数据库/2016-03-31-MongoDB/index.html">
@@ -35,6 +34,8 @@ readWriteAnyDatabase role只能用于admin数据库">
 MongoDB 英文手册
 MongoDB 中文手册
 window平台安装 MongoDB
+MongoDB数据模型分析脚本 Variety
+MongoDB 索引优化工具 Dex
 
 CSharp版驱动参考链接
 官方主页
@@ -43,17 +44,16 @@ Serialize Documents with the CSharp Driver
 创建用户
 参考链接
 【mongoDB运维篇①】用户管理
-MongoDB 3.0 用户创建 
-
-
-readWriteAnyDatabase role只能用于admin数据库">
-<meta property="og:updated_time" content="2016-04-20T06:30:46.000Z">
+MongoDB 3.0 用户创">
+<meta property="og:updated_time" content="2017-05-27T10:30:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB">
 <meta name="twitter:description" content="参考链接
 MongoDB 英文手册
 MongoDB 中文手册
 window平台安装 MongoDB
+MongoDB数据模型分析脚本 Variety
+MongoDB 索引优化工具 Dex
 
 CSharp版驱动参考链接
 官方主页
@@ -62,10 +62,7 @@ Serialize Documents with the CSharp Driver
 创建用户
 参考链接
 【mongoDB运维篇①】用户管理
-MongoDB 3.0 用户创建 
-
-
-readWriteAnyDatabase role只能用于admin数据库">
+MongoDB 3.0 用户创">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -141,7 +138,7 @@ readWriteAnyDatabase role只能用于admin数据库">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSharp版驱动"><span class="toc-number">2.</span> <span class="toc-text">CSharp版驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-1"><span class="toc-number">2.1.</span> <span class="toc-text">参考链接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建用户"><span class="toc-number">3.</span> <span class="toc-text">创建用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图形客户端"><span class="toc-number">4.</span> <span class="toc-text">图形客户端</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSharp版驱动"><span class="toc-number">2.</span> <span class="toc-text">CSharp版驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-1"><span class="toc-number">2.1.</span> <span class="toc-text">参考链接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建用户"><span class="toc-number">3.</span> <span class="toc-text">创建用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图形客户端"><span class="toc-number">4.</span> <span class="toc-text">图形客户端</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能"><span class="toc-number">5.</span> <span class="toc-text">性能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">5.1.</span> <span class="toc-text">参考</span></a></li></ol></li></ol>
 		
 		</div>
 		
@@ -149,6 +146,8 @@ readWriteAnyDatabase role只能用于admin数据库">
 <li><a href="https://mongodb-documentation.readthedocs.org/en/latest/index.html" target="_blank" rel="external">MongoDB 英文手册</a></li>
 <li><a href="http://docs.mongoing.com/manual/index.html" target="_blank" rel="external">MongoDB 中文手册</a></li>
 <li><a href="http://www.runoob.com/mongodb/mongodb-window-install.html" target="_blank" rel="external">window平台安装 MongoDB</a></li>
+<li><a href="https://www.oschina.net/p/variety" target="_blank" rel="external">MongoDB数据模型分析脚本 Variety</a></li>
+<li><a href="https://www.oschina.net/p/dex" target="_blank" rel="external">MongoDB 索引优化工具 Dex</a></li>
 </ul>
 <h1 id="CSharp版驱动"><a href="#CSharp版驱动" class="headerlink" title="CSharp版驱动"></a>CSharp版驱动</h1><h2 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a href="http://mongodb.github.io/mongo-csharp-driver/" target="_blank" rel="external">官方主页</a></li>
@@ -164,6 +163,11 @@ readWriteAnyDatabase role只能用于admin数据库">
 </ol>
 <h1 id="图形客户端"><a href="#图形客户端" class="headerlink" title="图形客户端"></a>图形客户端</h1><ul>
 <li><a href="https://robomongo.org" target="_blank" rel="external">robomongo</a></li>
+</ul>
+<h1 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://xiewenwei.github.io/blog/2014/06/22/trap-in-mongodb/" target="_blank" rel="external">MongoDB 那些坑</a></li>
+<li><a href="http://docs.mongoing.com/manual-zh/faq/concurrency.html" target="_blank" rel="external">官方FAQ: 并发</a></li>
+<li><a href="https://cnodejs.org/topic/55c97a997a5d91fa63fe9ce7" target="_blank" rel="external">Mongodb线上真实事故案例</a></li>
 </ul>
   
 	</div>
@@ -201,16 +205,16 @@ readWriteAnyDatabase role只能用于admin数据库">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/04/02/unity3d/2016-04-02-Unity3D光照/" title="Unity3D光照">
+ <a href="/2016/04/02/游戏引擎/unity3d/2016-04-02-Unity3D物理/" title="Unity3D物理">
   <strong>上一篇：</strong><br/>
   <span>
-  Unity3D光照</span>
+  Unity3D物理</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/03/31/2016/2016-03-31-mono/"  title="mono">
+<a href="/2016/03/31/工具/2016-03-31-mono/"  title="mono">
  <strong>下一篇：</strong><br/> 
  <span>mono
 </span>
@@ -246,7 +250,7 @@ readWriteAnyDatabase role只能用于admin数据库">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSharp版驱动"><span class="toc-number">2.</span> <span class="toc-text">CSharp版驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-1"><span class="toc-number">2.1.</span> <span class="toc-text">参考链接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建用户"><span class="toc-number">3.</span> <span class="toc-text">创建用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图形客户端"><span class="toc-number">4.</span> <span class="toc-text">图形客户端</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSharp版驱动"><span class="toc-number">2.</span> <span class="toc-text">CSharp版驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-1"><span class="toc-number">2.1.</span> <span class="toc-text">参考链接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建用户"><span class="toc-number">3.</span> <span class="toc-text">创建用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图形客户端"><span class="toc-number">4.</span> <span class="toc-text">图形客户端</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能"><span class="toc-number">5.</span> <span class="toc-text">性能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">5.1.</span> <span class="toc-text">参考</span></a></li></ol></li></ol>
  
   </div>
 
@@ -258,140 +262,11 @@ readWriteAnyDatabase role只能用于admin数据库">
 
 
   
-<div class="categorieslist">
-	<p class="asidetitle">分类</p>
-		<ul>
-		
-		  
-			<li><a href="/categories/DevTools/" title="DevTools">DevTools<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Linux系统管理/" title="Linux系统管理">Linux系统管理<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/VR/" title="VR">VR<sup>6</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Web/" title="Web">Web<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Windows系统管理/" title="Windows系统管理">Windows系统管理<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/shell/" title="shell">shell<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>8</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/书/" title="书">书<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/博客/" title="博客">博客<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/可复用游戏框架/" title="可复用游戏框架">可复用游戏框架<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/图形API/" title="图形API">图形API<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/图形处理/" title="图形处理">图形处理<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/图形工具/" title="图形工具">图形工具<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/娱乐/" title="娱乐">娱乐<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/工具/" title="工具">工具<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/应用程序平台/" title="应用程序平台">应用程序平台<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/开源/" title="开源">开源<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/数学/" title="数学">数学<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/数据库/" title="数据库">数据库<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/服务器/" title="服务器">服务器<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/杂类/" title="杂类">杂类<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/游戏/" title="游戏">游戏<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/游戏开发/" title="游戏开发">游戏开发<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/游戏引擎/" title="游戏引擎">游戏引擎<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/游戏运营/" title="游戏运营">游戏运营<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/生活/" title="生活">生活<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/程序库/" title="程序库">程序库<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/编程语言/" title="编程语言">编程语言<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/网络管理/" title="网络管理">网络管理<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/阅读/" title="阅读">阅读<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/项目分析/" title="项目分析">项目分析<sup>3</sup></a></li>
-		  
-		
-		</ul>
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DevTools/">DevTools</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux系统管理/">Linux系统管理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VR/">VR</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows系统管理/">Windows系统管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity3d/">unity3d</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书/">书</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/可复用游戏框架/">可复用游戏框架</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形API/">图形API</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形处理/">图形处理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形工具/">图形工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/娱乐/">娱乐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/应用程序平台/">应用程序平台</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开源/">开源</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/">数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂类/">杂类</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏/">游戏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏人工智能/">游戏人工智能</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏开发/">游戏开发</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏引擎/">游戏引擎</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏架构/">游戏架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏运营/">游戏运营</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/程序库/">程序库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络管理/">网络管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/项目分析/">项目分析</a><span class="category-list-count">3</span></li></ul>
 </div>
+
 
 
   
@@ -416,6 +291,10 @@ readWriteAnyDatabase role只能用于admin数据库">
 			
 		
 			
+				<li><a href="/tags/scut-gameserver/" title="scut gameserver">scut gameserver<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/VR/" title="VR">VR<sup>2</sup></a></li>
 			
 		
@@ -424,15 +303,11 @@ readWriteAnyDatabase role只能用于admin数据库">
 			
 		
 			
-				<li><a href="/tags/Vive/" title="Vive">Vive<sup>1</sup></a></li>
+				<li><a href="/tags/图形渲染/" title="图形渲染">图形渲染<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
+				<li><a href="/tags/游戏运营/" title="游戏运营">游戏运营<sup>2</sup></a></li>
 			
 		
 			
@@ -464,7 +339,7 @@ readWriteAnyDatabase role只能用于admin数据库">
 			
 		
 			
-				<li><a href="/tags/scut-gameserver/" title="scut gameserver">scut gameserver<sup>1</sup></a></li>
+				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
 			
 		
 			
@@ -476,7 +351,7 @@ readWriteAnyDatabase role只能用于admin数据库">
 			
 		
 			
-				<li><a href="/tags/script/" title="script">script<sup>1</sup></a></li>
+				<li><a href="/tags/游戏开发/" title="游戏开发">游戏开发<sup>1</sup></a></li>
 			
 		
 		</ul>

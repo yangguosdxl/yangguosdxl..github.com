@@ -1,0 +1,1038 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Pretty Sunshine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="开伦">
+    
+
+    
+    <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pretty Sunshine">
+<meta property="og:url" content="http://yangguosdxl.github.io/page/7/index.html">
+<meta property="og:site_name" content="Pretty Sunshine">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pretty Sunshine">
+<meta name="twitter:description">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Pretty Sunshine" title="Pretty Sunshine"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Pretty Sunshine">Pretty Sunshine</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yangguosdxl.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/Linux系统管理/linux_manage/" title="Linux系统管理" itemprop="url">Linux系统管理</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="ulimit"><a href="#ulimit" class="headerlink" title="ulimit"></a>ulimit</h2><p>所有用户都可用ulimit设置参数，但非Root用户会受到/etc/security/limits.conf限制<br>例如打开文件数的限制可以在/etc/security/limits.conf加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*               soft    nofile           64000</span><br><span class="line">*               hard    nofile           64000</span><br></pre></td></tr></table></figure></p>
+<h1 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h1><h1 id="查看Linux系统性能"><a href="#查看Linux系统性能" class="headerlink" title="查看Linux系统性能"></a>查看Linux系统性能</h1><p>1 iotop<br>root权限<br>查看实时磁盘读写情况</p>
+<p>2 vmstat 秒数<br>主要看si so ，单位字节<br>si:从交换分区换入的页面<br>so:从内存换出的页面</p>
+<p>3 free -m<br>以MB查看内存使用情况</p>
+<p>-/+buffers/cache 1024                 1024</p>
+<p>真正使用的内存        可释放内存+空闲内存</p>
+<p>以上两个值的和等于总内存</p>
+<p>buffers指buffer cache</p>
+<p>cached指page cache</p>
+<h1 id="VirtualBox"><a href="#VirtualBox" class="headerlink" title="VirtualBox"></a>VirtualBox</h1><p>迁移virtualbox虚拟机<br>1 vboxmanage list vms<br>2 vboxmanage unregistervm vm_name<br>3 移动虚拟机文件夹到新的目录<br>4 移除虚拟机关联的硬盘<br>5 vboxmanage registervm vm_new_absolute_path/xxx.vbox</p>
+<p>VBoxManager controlvm centos75 poweroff<br>VBoxManager startvm centos75 –type headless</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
+<li><a href="https://www.ttlsa.com/linux/update-linux-swap/" target="_blank" rel="external">linux下如何增加swap交换分区</a></li>
+<li><a href="http://coolshell.cn" target="_blank" rel="external">CoolShell</a></li>
+<li><a href="http://seanlook.com/2015/01/18/openssl-self-sign-ca/" target="_blank" rel="external">基于OpenSSL自建CA和颁发SSL证书</a></li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Linux系统管理/">Linux系统管理</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/linux-system-manage/">linux system manage</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/Linux系统管理/linux_manage/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/Linux系统管理/linux_manage/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/工具/devtools/" title="开发工具" itemprop="url">开发工具</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="VS"><a href="#VS" class="headerlink" title="VS"></a>VS</h1><ul>
+<li>VS2013 要安装Microsoft .NET Framework 4.6 Targeting Pack 才能在工程中选择使用.netframework 4.6</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/DevTools/">DevTools</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Dev-Tools/">Dev Tools</a><a href="/tags/game/">game</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/工具/devtools/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/工具/devtools/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/游戏智能/ai/" title="游戏人工智能" itemprop="url">游戏人工智能</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h1><ul>
+<li>决策</li>
+<li>决策与动作的配合，角色在做某些动作时是不能中断的。</li>
+<li>调试，行为树这类有图形编辑器的，比较好调试。但是要用好不简单。行为树在表示状态方面很简单，并不能针对状态提供进入的退出操作。</li>
+</ul>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
+<li><a href="http://gad.qq.com/article/detail/7155321" target="_blank" rel="external">【译】《最终幻想XV》中角色AI的意识决策系统解析</a></li>
+<li><a href="http://aigamedev.com" target="_blank" rel="external">AIGameDev</a></li>
+<li><a href="http://www.gameaipro.com/" target="_blank" rel="external">Game AI Pro书</a></li>
+<li><a href="http://blog.otoro.net/2015/03/28/neural-slime-volleyball/" target="_blank" rel="external">Neural Slime Volleyball</a></li>
+<li><a href="https://www.microsoft.com/en-us/research/project/project-malmo/" target="_blank" rel="external">Project Malmo</a><br>通过Minecraft游戏来测试AI，微软出品，开源项目<br>是一个基于Minecraft的复杂的人工智能实验平台，旨在支持人工智能基础研究。<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2></li>
+<li><a href="http://behavior3.com" target="_blank" rel="external">behavior3</a>支持JS，Python，不支持调试</li>
+<li><a href="https://github.com/iopass4/behavior3-lua" target="_blank" rel="external">behavior3-lua</a>Behavior3的Lua扩展</li>
+<li><a href="http://www.behaviac.com" target="_blank" rel="external">behaviac</a>腾讯开源行为树解决方案</li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/游戏人工智能/">游戏人工智能</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/游戏人工智能/">游戏人工智能</a><a href="/tags/AI/">AI</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/游戏智能/ai/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/游戏智能/ai/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/游戏引擎/graphic_gameengine/" title="图形与游戏引擎基础" itemprop="url">图形与游戏引擎基础</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="骨骼蒙皮动画"><a href="#骨骼蒙皮动画" class="headerlink" title="骨骼蒙皮动画"></a>骨骼蒙皮动画</h1><p><a href="http://blog.csdn.net/n5/article/details/3105872" target="_blank" rel="external">Skinned Mesh 原理解析和一个最简单的实现示例</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/游戏开发/">游戏开发</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/graphic/">graphic</a><a href="/tags/game-engine/">game-engine</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/游戏引擎/graphic_gameengine/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/游戏引擎/graphic_gameengine/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/杂类/open_source_misc/" title="开源杂谈" itemprop="url">开源杂谈</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="大公司的开源地址"><a href="#大公司的开源地址" class="headerlink" title="大公司的开源地址"></a>大公司的开源地址</h1><p><a href="http://my.oschina.net/flashsword/blog/156638" target="_blank" rel="external">国内一些大公司的开源项目</a></p>
+<ul>
+<li><a href="https://github.com/alibaba" target="_blank" rel="external">阿里巴巴</a></li>
+<li><a href="https://github.com/TencentOpen" target="_blank" rel="external">腾讯</a></li>
+<li><a href="https://github.com/netease" target="_blank" rel="external">网易</a></li>
+<li><a href="https://github.com/douban" target="_blank" rel="external">豆瓣</a></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/开源/">开源</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/opensource/">opensource</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/杂类/open_source_misc/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/杂类/open_source_misc/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/项目分析/3guo/" title="三国志3D版" itemprop="url">三国志3D版</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="资源管理器"><a href="#资源管理器" class="headerlink" title="资源管理器"></a>资源管理器</h1><ol>
+<li>相关路径<ul>
+<li>各平台资源保存目录</li>
+<li>远程资源URL</li>
+<li>各平台资源加载器</li>
+</ul>
+</li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/项目分析/">项目分析</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/三国志3D版/">三国志3D版</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/项目分析/3guo/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/项目分析/3guo/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/杂类/funny/" title="好玩的" itemprop="url">好玩的</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h1><ul>
+<li><a href="http://www.gamersky.com/z/oatbf/" target="_blank" rel="external">奥日与黑暗森林</a></li>
+<li><a href="">三位一体</a></li>
+<li>[饥荒]</li>
+<li>[纸境]</li>
+<li>[劳拉GO]</li>
+<li>[地狱边境]</li>
+<li></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/娱乐/">娱乐</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/funny/">funny</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/杂类/funny/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/杂类/funny/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/工具/ps/" title="ps" itemprop="url">ps</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="序列帧生成GIF图"><a href="#序列帧生成GIF图" class="headerlink" title="序列帧生成GIF图"></a><a href="http://blog.163.com/lrm_1036/blog/static/9291615020126443450414/" target="_blank" rel="external">序列帧生成GIF图</a></h3><h3 id="制作alpha通道"><a href="#制作alpha通道" class="headerlink" title="制作alpha通道"></a><a href="http://www.chinavid.com/2d/2008-8-4/PhotoshopAlpha.htm" target="_blank" rel="external">制作alpha通道</a></h3>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/图形处理/">图形处理</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/ps/">ps</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/工具/ps/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/工具/ps/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/项目分析/mygame/" title="想要的游戏特征" itemprop="url">想要的游戏特征</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h2><ul>
+<li>高AI</li>
+<li>更多的环境互动</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/游戏开发/">游戏开发</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/游戏/">游戏</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/项目分析/mygame/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/项目分析/mygame/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/27/游戏智能/sport_ai/" title="体育AI" itemprop="url">体育AI</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-27T01:50:45.000Z" itemprop="datePublished"> 发表于 Feb 27 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h1><ul>
+<li>《AI游戏引擎程序设计》第10章 运动类游戏</li>
+<li>《人工智能游戏编程真言》第9章 竞赛与运动智能</li>
+<li>《Programing Game AI By Example》第4章 体育模拟（简单足球）</li>
+</ul>
+<h1 id="游戏参考"><a href="#游戏参考" class="headerlink" title="游戏参考"></a>游戏参考</h1><ul>
+<li><a href="https://www.assetstore.unity3d.com/cn/#!/content/48662" target="_blank" rel="external">Flick Football</a></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/游戏人工智能/">游戏人工智能</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/game/">game</a><a href="/tags/AI/">AI</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/27/游戏智能/sport_ai/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/27/游戏智能/sport_ai/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix">
+    <a class="extend prev" rel="prev" href="/page/6/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next<span></span></a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DevTools/">DevTools</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux系统管理/">Linux系统管理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VR/">VR</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows系统管理/">Windows系统管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity3d/">unity3d</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书/">书</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/可复用游戏框架/">可复用游戏框架</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形API/">图形API</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形处理/">图形处理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形工具/">图形工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/娱乐/">娱乐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/应用程序平台/">应用程序平台</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开源/">开源</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/">数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂类/">杂类</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏/">游戏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏人工智能/">游戏人工智能</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏开发/">游戏开发</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏引擎/">游戏引擎</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏架构/">游戏架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏运营/">游戏运营</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/程序库/">程序库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络管理/">网络管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/项目分析/">项目分析</a><span class="category-list-count">3</span></li></ul>
+</div>
+
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/game/" title="game">game<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/art/" title="art">art<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/web/" title="web">web<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/scut-gameserver/" title="scut gameserver">scut gameserver<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/VR/" title="VR">VR<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/AI/" title="AI">AI<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/图形渲染/" title="图形渲染">图形渲染<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/游戏运营/" title="游戏运营">游戏运营<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/graphic/" title="graphic">graphic<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/game-engine/" title="game-engine">game-engine<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/游戏/" title="游戏">游戏<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/书/" title="书">书<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mono/" title="mono">mono<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/游戏开发/" title="游戏开发">游戏开发<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="开伦">开伦</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+ </html>

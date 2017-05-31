@@ -1,0 +1,543 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Unity3D合并网格 | Pretty Sunshine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="开伦">
+    
+
+    
+    <meta name="description" content="FAQ1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图    这种情况是在Unity5下，没有设置LightMapping UVs 为Generate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity3D合并网格">
+<meta property="og:url" content="http://yangguosdxl.github.io/2016/03/25/游戏引擎/unity3d/2016-03-25-unity3d_merge_mesh/index.html">
+<meta property="og:site_name" content="Pretty Sunshine">
+<meta property="og:description" content="FAQ1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图    这种情况是在Unity5下，没有设置LightMapping UVs 为Generate">
+<meta property="og:image" content="http://yangguosdxl.github.io/images/unity3d_meshbaker_blackpoint.png">
+<meta property="og:image" content="http://yangguosdxl.github.io/images/unity3d_meshbaker_blackpoint2.png">
+<meta property="og:updated_time" content="2016-04-02T09:23:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unity3D合并网格">
+<meta name="twitter:description" content="FAQ1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图    这种情况是在Unity5下，没有设置LightMapping UVs 为Generate">
+<meta name="twitter:image" content="http://yangguosdxl.github.io/images/unity3d_meshbaker_blackpoint.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Pretty Sunshine" title="Pretty Sunshine"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Pretty Sunshine">Pretty Sunshine</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yangguosdxl.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/25/游戏引擎/unity3d/2016-03-25-unity3d_merge_mesh/" title="Unity3D合并网格" itemprop="url">Unity3D合并网格</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="开伦" target="_blank" itemprop="author">开伦</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-25T13:04:00.000Z" itemprop="datePublished"> 发表于 Mar 25 2016</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FAQ"><span class="toc-number">1.</span> <span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-对MeshBaker-合并的网格进行烘焙，光照图出现黑斑，如图"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#合并网格代码"><span class="toc-number">2.</span> <span class="toc-text">合并网格代码</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h4 id="1-合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。"><a href="#1-合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。" class="headerlink" title="1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。"></a>1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。</h4><h4 id="2-合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。"><a href="#2-合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。" class="headerlink" title="2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。"></a>2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。</h4><h4 id="3-对MeshBaker-合并的网格进行烘焙，光照图出现黑斑，如图"><a href="#3-对MeshBaker-合并的网格进行烘焙，光照图出现黑斑，如图" class="headerlink" title="3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图"></a>3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图</h4><p>  <img src="/images/unity3d_meshbaker_blackpoint.png" alt=""><br>  这种情况是在Unity5下，没有设置LightMapping UVs 为Generate_new_uv2_layout导致的<br>  <img src="/images/unity3d_meshbaker_blackpoint2.png" alt=""></p>
+<h1 id="合并网格代码"><a href="#合并网格代码" class="headerlink" title="合并网格代码"></a>合并网格代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line"></span><br><span class="line">public class CombineBones : MonoBehaviour &#123;</span><br><span class="line"></span><br><span class="line">    public GameObject bone;</span><br><span class="line">    public List&lt;GameObject&gt; models = new List&lt;GameObject&gt;();</span><br><span class="line">    public GameObject human;</span><br><span class="line"></span><br><span class="line">	// Use this for initialization</span><br><span class="line">	void Start () &#123;</span><br><span class="line">        human = GameObject.Instantiate&lt;GameObject&gt;(bone);</span><br><span class="line">        human.SetActive(true);</span><br><span class="line">        bone.SetActive(false);</span><br><span class="line"></span><br><span class="line">        // 这种是合并网格</span><br><span class="line">        addPart2();</span><br><span class="line">        // 这种是组合网格。只是把模型挂到骨骼里，并替换模型的骨骼</span><br><span class="line">        // addPart3()</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    void addPart2()</span><br><span class="line">    &#123;</span><br><span class="line">        var bones = getAllChildTransform(human.transform);</span><br><span class="line">        List&lt;Material&gt; mats = new List&lt;Material&gt;();</span><br><span class="line">        List&lt;Transform&gt; newBones = new List&lt;Transform&gt;();</span><br><span class="line">        List&lt;CombineInstance&gt; combineInstances = new List&lt;CombineInstance&gt;();</span><br><span class="line"></span><br><span class="line">        foreach (var go in models)</span><br><span class="line">        &#123;</span><br><span class="line">            var smrs = go.GetComponentsInChildren&lt;SkinnedMeshRenderer&gt;();</span><br><span class="line">            foreach (var smr in smrs)</span><br><span class="line">            &#123;</span><br><span class="line">                foreach (var b1 in smr.bones)</span><br><span class="line">                &#123;</span><br><span class="line">                    Transform finded = null;</span><br><span class="line">                    foreach (var b in bones)</span><br><span class="line">                        if (b1.name == b.name)</span><br><span class="line">                        &#123;</span><br><span class="line">                            finded = b;</span><br><span class="line">                            break;</span><br><span class="line">                        &#125;</span><br><span class="line">                    if (finded != null)</span><br><span class="line">                    &#123;</span><br><span class="line">                        newBones.Add(finded);</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        Debug.LogError(&quot;Can not find bone &quot; + b1.name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                mats.AddRange(smr.sharedMaterials);</span><br><span class="line"></span><br><span class="line">                for (int sub = 0; sub &lt; smr.sharedMesh.subMeshCount; ++sub)</span><br><span class="line">                &#123;</span><br><span class="line">                    var ci = new CombineInstance();</span><br><span class="line">                    ci.mesh = smr.sharedMesh;</span><br><span class="line">                    ci.subMeshIndex = sub;</span><br><span class="line">                    ci.transform = smr.transform.localToWorldMatrix;</span><br><span class="line">                    combineInstances.Add(ci);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var humanSMR = human.AddComponent&lt;SkinnedMeshRenderer&gt;();</span><br><span class="line">        humanSMR.materials = mats.ToArray();</span><br><span class="line">        humanSMR.sharedMesh = new Mesh();</span><br><span class="line">        humanSMR.sharedMesh.CombineMeshes(combineInstances.ToArray(), false, false);</span><br><span class="line">        humanSMR.sharedMesh.Optimize();</span><br><span class="line">        humanSMR.bones = newBones.ToArray();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void addPart3()</span><br><span class="line">    &#123;</span><br><span class="line">        foreach (var go in models)</span><br><span class="line">        &#123;</span><br><span class="line">            var smrs = go.GetComponentsInChildren&lt;SkinnedMeshRenderer&gt;();</span><br><span class="line">            foreach (var smr in smrs)</span><br><span class="line">            &#123;</span><br><span class="line">                var originSmr = GameObject.Instantiate&lt;SkinnedMeshRenderer&gt;(smr);</span><br><span class="line">                var bones = getAllChildTransform(human.transform);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                originSmr.transform.parent = human.transform;</span><br><span class="line">                originSmr.transform.localPosition = originSmr.transform.localPosition;</span><br><span class="line">                originSmr.transform.localScale = originSmr.transform.localScale;</span><br><span class="line">                originSmr.transform.localRotation = originSmr.transform.localRotation;</span><br><span class="line"></span><br><span class="line">                List&lt;Transform&gt; newBones = new List&lt;Transform&gt;();</span><br><span class="line">                foreach (var b1 in originSmr.bones)</span><br><span class="line">                &#123;</span><br><span class="line">                    Transform finded = null;</span><br><span class="line">                    foreach (var b in bones)</span><br><span class="line">                        if (b1.name == b.name)</span><br><span class="line">                        &#123;</span><br><span class="line">                            finded = b;</span><br><span class="line">                            break;</span><br><span class="line">                        &#125;</span><br><span class="line">                    if (finded != null)</span><br><span class="line">                    &#123;</span><br><span class="line">                        newBones.Add(finded);</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        Debug.LogError(&quot;Can not find bone &quot; + b1.name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                originSmr.bones = newBones.ToArray();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Transform[] getAllChildTransform(Transform t)</span><br><span class="line">    &#123;</span><br><span class="line">        List&lt;Transform&gt; ts = new List&lt;Transform&gt;();</span><br><span class="line">        _getAllChildTransform(t, ts);</span><br><span class="line">        return ts.ToArray();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void _getAllChildTransform(Transform t, List&lt;Transform&gt; ts)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int i = 0; i &lt; t.childCount; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            ts.Add(t.GetChild(i));</span><br><span class="line">            _getAllChildTransform(t.GetChild(i), ts);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/unity3d/">unity3d</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/unity3d/">unity3d</a><a href="/tags/merge/">merge</a><a href="/tags/mesh/">mesh</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yangguosdxl.github.io/2016/03/25/游戏引擎/unity3d/2016-03-25-unity3d_merge_mesh/" data-title="Unity3D合并网格 | Pretty Sunshine" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/03/25/杂类/2016-03-25-一些好书/" title="一些好书">
+  <strong>上一篇：</strong><br/>
+  <span>
+  一些好书</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/03/25/工具/2016-03-25-atom/"  title="atom">
+ <strong>下一篇：</strong><br/> 
+ <span>atom
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/03/25/游戏引擎/unity3d/2016-03-25-unity3d_merge_mesh/" data-title="Unity3D合并网格" data-url="http://yangguosdxl.github.io/2016/03/25/游戏引擎/unity3d/2016-03-25-unity3d_merge_mesh/"></div>
+
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"yangguosdxl"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0]
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</section>
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FAQ"><span class="toc-number">1.</span> <span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1.合并网格后，BlendShape会丢失，组合网格，BlendShape不会丢失，但BlendShape动画会失效。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">2.合并网格时，如果SkinnedMeshRenderer里的Bone有些找不到，则会出现合并后看不到模型的情况。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-对MeshBaker-合并的网格进行烘焙，光照图出现黑斑，如图"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">3.对MeshBaker 合并的网格进行烘焙，光照图出现黑斑，如图</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#合并网格代码"><span class="toc-number">2.</span> <span class="toc-text">合并网格代码</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DevTools/">DevTools</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux系统管理/">Linux系统管理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VR/">VR</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows系统管理/">Windows系统管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity3d/">unity3d</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书/">书</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/可复用游戏框架/">可复用游戏框架</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形API/">图形API</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形处理/">图形处理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形工具/">图形工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/娱乐/">娱乐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/应用程序平台/">应用程序平台</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开源/">开源</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/">数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂类/">杂类</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏/">游戏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏人工智能/">游戏人工智能</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏开发/">游戏开发</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏引擎/">游戏引擎</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏架构/">游戏架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏运营/">游戏运营</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/程序库/">程序库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络管理/">网络管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/项目分析/">项目分析</a><span class="category-list-count">3</span></li></ul>
+</div>
+
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/game/" title="game">game<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/unity3d/" title="unity3d">unity3d<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/art/" title="art">art<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/web/" title="web">web<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/scut-gameserver/" title="scut gameserver">scut gameserver<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/VR/" title="VR">VR<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/AI/" title="AI">AI<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/图形渲染/" title="图形渲染">图形渲染<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/游戏运营/" title="游戏运营">游戏运营<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/graphic/" title="graphic">graphic<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/game-engine/" title="game-engine">game-engine<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/boost/" title="boost">boost<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/游戏/" title="游戏">游戏<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog-hexo-git/" title="blog hexo git">blog hexo git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/opensource/" title="opensource">opensource<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ps/" title="ps">ps<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/书/" title="书">书<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mono/" title="mono">mono<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/游戏开发/" title="游戏开发">游戏开发<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="开伦">开伦</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yangguosdxl"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

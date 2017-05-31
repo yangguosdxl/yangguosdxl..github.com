@@ -12,24 +12,24 @@
 
     
     <meta name="description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
-#FAQ
-
-无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
+并发innodb关于事务与锁定的官方手册   InnoDB事务模型和锁定
+innodb 事务隔离级别   MySQL中的锁（表锁、行锁） 并发控制锁   MySQL Innodb 事务隔离级别
+多线程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql">
 <meta property="og:url" content="http://yangguosdxl.github.io/2015/02/27/数据库/mysql/index.html">
 <meta property="og:site_name" content="Pretty Sunshine">
 <meta property="og:description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
-#FAQ
-
-无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
-<meta property="og:updated_time" content="2016-03-31T02:48:30.000Z">
+并发innodb关于事务与锁定的官方手册   InnoDB事务模型和锁定
+innodb 事务隔离级别   MySQL中的锁（表锁、行锁） 并发控制锁   MySQL Innodb 事务隔离级别
+多线程">
+<meta property="og:updated_time" content="2017-05-26T10:06:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql">
 <meta name="twitter:description" content="mysql 连接 127.0.0.1 与 localhost的区别  127.0.0.1 通过TCP连接可指定端口  localhost 通过unix socket连接，不能指定端口，指定了也不生效
-#FAQ
-
-无法连接数据库的一些原因1 密码不对2 未给用户设置密码3 未给用户usage权限  连接权限：GRANT USAGE ON . TO ‘root’@’%’ IDENTIFIED BY ‘">
+并发innodb关于事务与锁定的官方手册   InnoDB事务模型和锁定
+innodb 事务隔离级别   MySQL中的锁（表锁、行锁） 并发控制锁   MySQL Innodb 事务隔离级别
+多线程">
 
     
     <link rel="alternative" href="/atom.xml" title="Pretty Sunshine" type="application/atom+xml">
@@ -105,11 +105,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-连接-127-0-0-1-与-localhost的区别"><span class="toc-number">1.</span> <span class="toc-text">mysql 连接 127.0.0.1 与 localhost的区别</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-连接-127-0-0-1-与-localhost的区别"><span class="toc-number">1.</span> <span class="toc-text">mysql 连接 127.0.0.1 与 localhost的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#并发"><span class="toc-number">2.</span> <span class="toc-text">并发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#innodb关于事务与锁定的官方手册"><span class="toc-number">2.1.</span> <span class="toc-text">innodb关于事务与锁定的官方手册</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#innodb-事务隔离级别"><span class="toc-number">2.2.</span> <span class="toc-text">innodb 事务隔离级别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程访问DB"><span class="toc-number">2.3.</span> <span class="toc-text">多线程访问DB</span></a></li></ol></li></ol>
 		
 		</div>
 		
 		<h1 id="mysql-连接-127-0-0-1-与-localhost的区别"><a href="#mysql-连接-127-0-0-1-与-localhost的区别" class="headerlink" title="mysql 连接 127.0.0.1 与 localhost的区别"></a>mysql 连接 127.0.0.1 与 localhost的区别</h1><p>  127.0.0.1 通过TCP连接可指定端口<br>  localhost 通过unix socket连接，不能指定端口，指定了也不生效</p>
+<h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><h2 id="innodb关于事务与锁定的官方手册"><a href="#innodb关于事务与锁定的官方手册" class="headerlink" title="innodb关于事务与锁定的官方手册"></a>innodb关于事务与锁定的官方手册</h2><p>   <a href="http://doc.mysql.cn/mysql5/refman-5.1-zh.html-chapter/storage-engines.html#innodb-transaction-model" target="_blank" rel="external">InnoDB事务模型和锁定</a></p>
+<h2 id="innodb-事务隔离级别"><a href="#innodb-事务隔离级别" class="headerlink" title="innodb 事务隔离级别"></a>innodb 事务隔离级别</h2><p>   <a href="https://github.com/MrLining/mysql/wiki/MySQL%E4%B8%AD%E7%9A%84%E9%94%81%EF%BC%88%E8%A1%A8%E9%94%81%E3%80%81%E8%A1%8C%E9%94%81%EF%BC%89-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6%E9%94%81" target="_blank" rel="external">MySQL中的锁（表锁、行锁） 并发控制锁</a><br>   <a href="http://www.jianshu.com/p/4ba118333a19" target="_blank" rel="external">MySQL Innodb 事务隔离级别</a></p>
+<h2 id="多线程访问DB"><a href="#多线程访问DB" class="headerlink" title="多线程访问DB"></a>多线程访问DB</h2><p>   <a href="http://blog.csdn.net/lmh12506/article/details/16840605" target="_blank" rel="external">mysql链接多线程安全问题</a></p>
+<ul>
+<li>多个线程一条DB连接<br> 会有API安全问题</li>
+<li>一个线程一个DB连接<br> 没有API安全问题</li>
+</ul>
 <p>#FAQ</p>
 <ul>
 <li><p>无法连接数据库的一些原因<br>1 密码不对<br>2 未给用户设置密码<br>3 未给用户usage权限<br>  连接权限：GRANT USAGE ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘rootpassword’;<br>  所有权限：GRANT ALL PRIVILEGES on <em>.</em> TO ‘root’@’%’ WITH GRANT OPTION;<br>  更新密码：UPDATE mysql.user set password=PASSWORD(‘jubian@2013’) where user=’root’;<br>  更新权限：flush privileges;</p>
@@ -153,18 +160,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/02/27/hexo/" title="hexo">
+ <a href="/2015/02/27/游戏引擎/unity3d/unity3d/" title="unity3d">
   <strong>上一篇：</strong><br/>
   <span>
-  hexo</span>
+  unity3d</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/02/27/django/"  title="django">
+<a href="/2015/02/27/Linux系统管理/linux_manage/"  title="Linux系统管理">
  <strong>下一篇：</strong><br/> 
- <span>django
+ <span>Linux系统管理
 </span>
 </a>
 </div>
@@ -198,7 +205,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-连接-127-0-0-1-与-localhost的区别"><span class="toc-number">1.</span> <span class="toc-text">mysql 连接 127.0.0.1 与 localhost的区别</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-连接-127-0-0-1-与-localhost的区别"><span class="toc-number">1.</span> <span class="toc-text">mysql 连接 127.0.0.1 与 localhost的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#并发"><span class="toc-number">2.</span> <span class="toc-text">并发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#innodb关于事务与锁定的官方手册"><span class="toc-number">2.1.</span> <span class="toc-text">innodb关于事务与锁定的官方手册</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#innodb-事务隔离级别"><span class="toc-number">2.2.</span> <span class="toc-text">innodb 事务隔离级别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程访问DB"><span class="toc-number">2.3.</span> <span class="toc-text">多线程访问DB</span></a></li></ol></li></ol>
  
   </div>
 
@@ -210,140 +217,11 @@
 
 
   
-<div class="categorieslist">
-	<p class="asidetitle">分类</p>
-		<ul>
-		
-		  
-			<li><a href="/categories/DevTools/" title="DevTools">DevTools<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Linux系统管理/" title="Linux系统管理">Linux系统管理<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/VR/" title="VR">VR<sup>6</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Web/" title="Web">Web<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Windows系统管理/" title="Windows系统管理">Windows系统管理<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/shell/" title="shell">shell<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/unity3d/" title="unity3d">unity3d<sup>8</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/书/" title="书">书<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/博客/" title="博客">博客<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/可复用游戏框架/" title="可复用游戏框架">可复用游戏框架<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/图形API/" title="图形API">图形API<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/图形处理/" title="图形处理">图形处理<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/图形工具/" title="图形工具">图形工具<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/娱乐/" title="娱乐">娱乐<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/工具/" title="工具">工具<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/应用程序平台/" title="应用程序平台">应用程序平台<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/开源/" title="开源">开源<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/数学/" title="数学">数学<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/数据库/" title="数据库">数据库<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/服务器/" title="服务器">服务器<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/杂类/" title="杂类">杂类<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/游戏/" title="游戏">游戏<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/游戏人工智能/" title="游戏人工智能">游戏人工智能<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/游戏开发/" title="游戏开发">游戏开发<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/游戏引擎/" title="游戏引擎">游戏引擎<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/游戏运营/" title="游戏运营">游戏运营<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/生活/" title="生活">生活<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/程序库/" title="程序库">程序库<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/编程语言/" title="编程语言">编程语言<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/网络管理/" title="网络管理">网络管理<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/阅读/" title="阅读">阅读<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/项目分析/" title="项目分析">项目分析<sup>3</sup></a></li>
-		  
-		
-		</ul>
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DevTools/">DevTools</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux系统管理/">Linux系统管理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VR/">VR</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows系统管理/">Windows系统管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity3d/">unity3d</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书/">书</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/可复用游戏框架/">可复用游戏框架</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形API/">图形API</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形处理/">图形处理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/图形工具/">图形工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/娱乐/">娱乐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/应用程序平台/">应用程序平台</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开源/">开源</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/">数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂类/">杂类</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏/">游戏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏人工智能/">游戏人工智能</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏开发/">游戏开发</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏引擎/">游戏引擎</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏架构/">游戏架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏运营/">游戏运营</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/程序库/">程序库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络管理/">网络管理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/项目分析/">项目分析</a><span class="category-list-count">3</span></li></ul>
 </div>
+
 
 
   
@@ -368,6 +246,10 @@
 			
 		
 			
+				<li><a href="/tags/scut-gameserver/" title="scut gameserver">scut gameserver<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/VR/" title="VR">VR<sup>2</sup></a></li>
 			
 		
@@ -376,15 +258,11 @@
 			
 		
 			
-				<li><a href="/tags/Vive/" title="Vive">Vive<sup>1</sup></a></li>
+				<li><a href="/tags/图形渲染/" title="图形渲染">图形渲染<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/funny/" title="funny">funny<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/shell-expect/" title="shell expect">shell expect<sup>1</sup></a></li>
+				<li><a href="/tags/游戏运营/" title="游戏运营">游戏运营<sup>2</sup></a></li>
 			
 		
 			
@@ -416,7 +294,7 @@
 			
 		
 			
-				<li><a href="/tags/scut-gameserver/" title="scut gameserver">scut gameserver<sup>1</sup></a></li>
+				<li><a href="/tags/三国志3D版/" title="三国志3D版">三国志3D版<sup>1</sup></a></li>
 			
 		
 			
@@ -428,7 +306,7 @@
 			
 		
 			
-				<li><a href="/tags/script/" title="script">script<sup>1</sup></a></li>
+				<li><a href="/tags/游戏开发/" title="游戏开发">游戏开发<sup>1</sup></a></li>
 			
 		
 		</ul>
